@@ -1,0 +1,14 @@
+
+language: csharp
+solution: ./csharp6-libraries.sln
+
+mono:
+  - beta
+
+install:
+  - sudo apt-get install nunit-console
+  - nuget restore ./csharp6-libraries.sln
+ 
+script:
+  - xbuild ./csharp6-libraries.sln
+  - nunit-console ./Collections.Tests/bin/Debug/Collections.Tests.dll

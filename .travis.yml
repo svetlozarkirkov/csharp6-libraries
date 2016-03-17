@@ -1,9 +1,5 @@
-
 language: csharp
 solution: ./csharp6-libraries.sln
-
-mono:
-  - beta
 
 install:
   - sudo apt-get install nunit-console

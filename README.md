@@ -3,7 +3,7 @@ C# 6.0 - Libraries
 
 [![Build Status](https://travis-ci.org/svetlozarkirkov/csharp6-libraries.svg?branch=master)](https://travis-ci.org/svetlozarkirkov/csharp6-libraries)
 
-###<sub>Target framework: .NET 4.5.2</sub>
+###<sub>Target framework: .NET 4.5</sub>
 
 ## Download
 * [Version 0.2](https://github.com/svetlozarkirkov/csharp6-libraries/archive/master.zip)

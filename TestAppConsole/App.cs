@@ -9,6 +9,7 @@ namespace TestAppConsole
     {
         /// <exception cref="IOException">An I/O error occurred. </exception>
         /// <exception cref="ArgumentNullException"><paramref /> is null. </exception>
+        /// <exception cref="FormatException">The format specification in <paramref name="format" /> is invalid. </exception>
         internal static void Main()
         {
             var permanentStack = new PermanentStack<string>(99999999);
@@ -16,7 +17,7 @@ namespace TestAppConsole
 
             for (var i = 0; i < 99999999; i++)
             {
-                permanentStack.Push("String");
+                permanentStack.Push("This is a test string.");
             }
 
             watch.Stop();

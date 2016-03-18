@@ -8,6 +8,7 @@ namespace Collections.Stack.Base
     /// The base abstraction for IStack.
     /// </summary>
     /// <typeparam name="T">Type of the objects contained in the stack.</typeparam>
+    //[Serializable]
     public abstract class StackBase<T> : IStack<T>
     {
         /// <summary>

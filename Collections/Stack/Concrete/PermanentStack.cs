@@ -7,6 +7,7 @@
     /// Non-resizable stack.
     /// </summary>
     /// <typeparam name="T">Type of the items in the stack.</typeparam>
+    //[Serializable]
     public class PermanentStack<T> : StackBase<T>
     {
         /// <summary>

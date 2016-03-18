@@ -5,9 +5,9 @@ namespace Collections.Stack.Concrete
     using Collections.Stack.Exceptions;
 
     /// <summary>
-    /// Default implementation of the default base stack.
+    /// Default implementation of the Stack.
     /// </summary>
-    /// <typeparam name="T">The type of objects in the stack.</typeparam>
+    /// <typeparam name="T">The type of items in the stack.</typeparam>
     public class Stack<T> : StackBase<T>
     {
         /// <summary>
@@ -19,13 +19,14 @@ namespace Collections.Stack.Concrete
         }
 
         /// <summary>
-        /// Creates a new stack with the default capacity (from "DefaultStackBase")
+        /// Creates a new stack with the default capacity.
         /// </summary>
         public Stack()
         {
         }
 
         /// <summary>
+        /// Handles the behaviour when the stack has no items.
         /// </summary>
         /// <exception cref="EmptyStackException">Stack is empty.</exception>
         protected override void HandleEmptyStack()
@@ -34,6 +35,7 @@ namespace Collections.Stack.Concrete
         }
 
         /// <summary>
+        /// Hangles the behaviour when the stack is full.
         /// </summary>
         protected override void HandleFullStack()
         {
@@ -45,7 +47,7 @@ namespace Collections.Stack.Concrete
         /// </summary>
         private T[] ResizeStack()
         {
-            var updatedStackCapacity = this._stack.Length * 2;
+            var updatedStackCapacity = base._stack.Length * 2;
             var updatedStack = new T[updatedStackCapacity];
             Parallel.ForEach(this._stack, (item, state, index) => updatedStack[index] = this._stack[index]);
             return updatedStack;

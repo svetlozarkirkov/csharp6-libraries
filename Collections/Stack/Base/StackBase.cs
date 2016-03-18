@@ -7,14 +7,14 @@ namespace Collections.Stack.Base
     /// <summary>
     /// The base abstraction for IStack.
     /// </summary>
-    /// <typeparam name="T">Type of the objects contained in the stack.</typeparam>
+    /// <typeparam name="T">Type of the items contained in the stack.</typeparam>
     //[Serializable]
     public abstract class StackBase<T> : IStack<T>
     {
         /// <summary>
-        /// Holds the default size of the underlying array.
+        /// Default capacity of a Stack.
         /// </summary>
-        protected const int DefaultStackCapacity = 8;
+        private const int DefaultStackCapacity = 8;
 
         /// <summary>
         /// The underlying array.
@@ -26,10 +26,10 @@ namespace Collections.Stack.Base
         /// Each next inserted item will use this position.
         /// </summary>
         // ReSharper disable once InconsistentNaming
-        protected int _currentPosition;
+        private int _currentPosition;
 
         /// <summary>
-        /// Creates a new instance of the <see cref="StackBase{T}"/> class with given capacity.
+        /// Creates a new instance of the <see cref="StackBase{T}"/> class with the given capacity.
         /// </summary>
         /// <param name="capacity">Initial capacity.</param>
         protected StackBase(int capacity)
@@ -39,7 +39,7 @@ namespace Collections.Stack.Base
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="StackBase{T}"/> class with the default capacity.
+        /// Creates a new instance of the <see cref="StackBase{T}"/> class with the default capacity.
         /// </summary>
         protected StackBase() : this(DefaultStackCapacity)
         {
@@ -49,7 +49,7 @@ namespace Collections.Stack.Base
         /// Inserts an element at the end of the stack.
         /// </summary>
         /// <param name="item">The item to be inserted.</param>
-        public virtual void Push(T item)
+        public void Push(T item)
         {
             if (this._currentPosition == this._stack.Length)
             {
@@ -64,7 +64,7 @@ namespace Collections.Stack.Base
         /// Returns the last element and removes it from the stack.
         /// </summary>
         /// <returns>The last element in the stack.</returns>
-        public virtual T Pop()
+        public T Pop()
         {
             if (this._currentPosition == 0)
             {
@@ -80,7 +80,7 @@ namespace Collections.Stack.Base
         /// Returns the last element from the stack (without removing it).
         /// </summary>
         /// <returns>The last element in the stack.</returns>
-        public virtual T Peek()
+        public T Peek()
         {
             if (this._currentPosition == 0)
             {
@@ -97,12 +97,12 @@ namespace Collections.Stack.Base
         public virtual int Size() => this._currentPosition;
 
         /// <summary>
-        /// Handles empty stack.
+        /// Handles the behaviour when the stack has no items.
         /// </summary>
         protected abstract void HandleEmptyStack();
 
         /// <summary>
-        /// Handles full stack.
+        /// Handles the behaviour when the stack is full.
         /// </summary>
         protected abstract void HandleFullStack();
 

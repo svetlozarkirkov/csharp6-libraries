@@ -11,13 +11,15 @@
     public class PermanentStack<T> : StackBase<T>
     {
         /// <summary>
+        /// Creates a stack with permanent capacity.
         /// </summary>
-        /// <param name="capacity"></param>
+        /// <param name="capacity">Capacity size.</param>
         public PermanentStack(int capacity) : base(capacity)
         {
         }
 
         /// <summary>
+        /// Handles the behaviour when the stack has no items.
         /// </summary>
         /// <exception cref="EmptyStackException">Condition.</exception>
         protected override void HandleEmptyStack()
@@ -26,6 +28,7 @@
         }
 
         /// <summary>
+        /// Handles the behaviour when the stack is full.
         /// </summary>
         /// <exception cref="FullStackException">Condition.</exception>
         protected override void HandleFullStack()

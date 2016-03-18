@@ -13,16 +13,18 @@ namespace Collections.Stack.Base
         /// <summary>
         /// Holds the default size of the underlying array.
         /// </summary>
-        protected const int DefaultCapacity = 8;
+        protected const int DefaultStackCapacity = 8;
 
         /// <summary>
         /// The underlying array.
         /// </summary>
+        // ReSharper disable once InconsistentNaming
         protected T[] _stack;
 
         /// <summary>
         /// Each next inserted item will use this position.
         /// </summary>
+        // ReSharper disable once InconsistentNaming
         protected int _currentPosition;
 
         /// <summary>
@@ -38,7 +40,7 @@ namespace Collections.Stack.Base
         /// <summary>
         /// Initializes a new instance of the <see cref="StackBase{T}"/> class with the default capacity.
         /// </summary>
-        protected StackBase(): this(DefaultCapacity)
+        protected StackBase() : this(DefaultStackCapacity)
         {
         }
 
@@ -46,11 +48,11 @@ namespace Collections.Stack.Base
         /// Inserts an element at the end of the stack.
         /// </summary>
         /// <param name="item">The item to be inserted.</param>
-        public void Push(T item)
+        public virtual void Push(T item)
         {
-            if (this._stack.Length == this._currentPosition)
+            if (this._currentPosition == this._stack.Length)
             {
-                this._stack = this.ResizeStack();
+                this.HandleFullStack();
             }
 
             this._stack[this._currentPosition] = item;
@@ -61,11 +63,11 @@ namespace Collections.Stack.Base
         /// Returns the last element and removes it from the stack.
         /// </summary>
         /// <returns>The last element in the stack.</returns>
-        public T Pop()
+        public virtual T Pop()
         {
             if (this._currentPosition == 0)
             {
-                throw new IndexOutOfRangeException("Cannot pop from an empty stack.");
+                this.HandleEmptyStack();
             }
 
             var poppedItem = this._stack[--this._currentPosition];
@@ -77,11 +79,11 @@ namespace Collections.Stack.Base
         /// Returns the last element from the stack (without removing it).
         /// </summary>
         /// <returns>The last element in the stack.</returns>
-        public T Peek()
+        public virtual T Peek()
         {
             if (this._currentPosition == 0)
             {
-                throw new IndexOutOfRangeException("Cannot peek into an empty stack.");
+                this.HandleEmptyStack();
             }
 
             return this._stack[this._currentPosition - 1];
@@ -91,23 +93,23 @@ namespace Collections.Stack.Base
         /// Gets the count of elements in the stack (not the capacity of the underlying array).
         /// </summary>
         /// <returns>Count of elements in the stack.</returns>
-        public int Size() => this._currentPosition;
+        public virtual int Size() => this._currentPosition;
+
+        /// <summary>
+        /// Handles empty stack.
+        /// </summary>
+        protected abstract void HandleEmptyStack();
+
+        /// <summary>
+        /// Handles full stack.
+        /// </summary>
+        protected abstract void HandleFullStack();
 
         /// <summary>
         /// Returns a string representation of the stack.
         /// </summary>
         /// <returns>String representation of the stack.</returns>
+        /// <exception cref="ArgumentNullException">Stack is null.</exception>
         public override string ToString() => $"[ {string.Join(", ", this._stack.Take(this._currentPosition))} ]";
-
-        /// <summary>
-        /// Default method for increasing stack capacity.
-        /// </summary>
-        protected virtual T[] ResizeStack()
-        {
-            var updatedStackCapacity = this._stack.Length * 2;
-            var updatedStack = new T[updatedStackCapacity];
-            Array.Copy(this._stack, updatedStack, this._stack.Length);
-            return updatedStack;
-        }
     }
 }

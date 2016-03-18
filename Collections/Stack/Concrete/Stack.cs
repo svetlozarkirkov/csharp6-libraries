@@ -1,6 +1,8 @@
 namespace Collections.Stack.Concrete
 {
+    using System;
     using Collections.Stack.Base;
+    using Collections.Stack.Exceptions;
 
     /// <summary>
     /// Default implementation of the default base stack.
@@ -12,8 +14,7 @@ namespace Collections.Stack.Concrete
         /// Creates a new stack with a given initial capacity.
         /// </summary>
         /// <param name="capacity">Initial capacity of the stack.</param>
-        public Stack(int capacity)
-            : base(capacity)
+        public Stack(int capacity) : base(capacity)
         {
         }
 
@@ -22,6 +23,32 @@ namespace Collections.Stack.Concrete
         /// </summary>
         public Stack()
         {
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <exception cref="EmptyStackException">Stack is empty.</exception>
+        protected override void HandleEmptyStack()
+        {
+            throw new EmptyStackException("Stack is empty."); // Not L10N
+        }
+
+        /// <summary>
+        /// </summary>
+        protected override void HandleFullStack()
+        {
+            this.ResizeStack();
+        }
+
+        /// <summary>
+        /// Method for increasing stack capacity.
+        /// </summary>
+        private T[] ResizeStack()
+        {
+            var updatedStackCapacity = this._stack.Length * 2;
+            var updatedStack = new T[updatedStackCapacity];
+            Array.Copy(this._stack, updatedStack, this._stack.Length);
+            return updatedStack;
         }
     }
 }

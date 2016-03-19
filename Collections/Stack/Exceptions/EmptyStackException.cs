@@ -22,6 +22,7 @@
         /// <param name="message"></param>
         public EmptyStackException(string message)
         {
+            this.Message = message;
         }
 
         /// <summary>
@@ -31,6 +32,7 @@
         /// <param name="innerException">Inner Exception</param>
         public EmptyStackException(string message, Exception innerException)
         {
+            this.Message = message;
         }
 
         /// <summary>
@@ -44,5 +46,9 @@
             : base(info, context)
         {
         }
+
+        /// <summary>
+        /// </summary>
+        public override string Message { get; }
     }
 }

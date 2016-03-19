@@ -14,7 +14,7 @@ namespace Collections.Stack.Base
         /// <summary>
         /// Default capacity of a Stack.
         /// </summary>
-        private const int DefaultStackCapacity = 8;
+        protected const int DefaultStackCapacity = 8;
 
         /// <summary>
         /// The underlying array.
@@ -26,7 +26,7 @@ namespace Collections.Stack.Base
         /// Each next inserted item will use this position.
         /// </summary>
         // ReSharper disable once InconsistentNaming
-        private int _currentPosition;
+        protected int _currentPosition;
 
         /// <summary>
         /// Creates a new instance of the <see cref="StackBase{T}"/> class with the given capacity.

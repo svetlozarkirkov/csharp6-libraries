@@ -12,12 +12,14 @@ namespace TestAppConsole
         /// <exception cref="FormatException">The format specification in <paramref name="format" /> is invalid. </exception>
         internal static void Main()
         {
-            var permanentStack = new PermanentStack<string>(99999999);
+            var permanentStack = new PermanentStack<object>(2);
+            permanentStack.Push(new Stack<object>());
+
             var watch = Stopwatch.StartNew();
 
-            for (var i = 0; i < 99999999; i++)
+            for (var i = 0; i < 10; i++)
             {
-                permanentStack.Push("This is a test string.");
+                permanentStack.Push(new object());
             }
 
             watch.Stop();

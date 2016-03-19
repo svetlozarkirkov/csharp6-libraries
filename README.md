@@ -1,13 +1,13 @@
 C# 6.0 - Libraries
 ======
 
-[![Build Status](https://travis-ci.org/svetlozarkirkov/csharp6-libraries.svg?branch=master)](https://travis-ci.org/svetlozarkirkov/csharp6-libraries)
+[![Build Status](https://travis-ci.org/svetlozarkirkov/csharp6-libraries.svg?branch=master)](https://travis-ci.org/svetlozarkirkov/csharp6-libraries)   [![codecov.io](https://codecov.io/github/svetlozarkirkov/csharp6-libraries/coverage.svg?branch=master)](https://codecov.io/github/svetlozarkirkov/csharp6-libraries?branch=master)
 
 ###<sub>Target framework: .NET 4.5</sub>
 
-## Download
+<!--## Download
 * [Version 0.2](https://github.com/svetlozarkirkov/csharp6-libraries/archive/master.zip)
-* Other Versions
+* Other Versions-->
 
 ## Usage
 ```$ git clone https://github.com/svetlozarkirkov/csharp6-libraries.git
@@ -28,7 +28,7 @@ C# 6.0 - Libraries
 * see [LICENSE](https://github.com/svetlozarkirkov/csharp6-libraries/blob/master/LICENSE.md) file
 
 ## Version 
-* Version 0.2
+* Version: alpha
 
 ## How-to use this code
 * see [INSTRUCTIONS](https://github.com/svetlozarkirkov/csharp6-libraries/blob/master/INSTRUCTIONS.md) file

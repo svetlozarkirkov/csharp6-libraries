@@ -1,7 +1,7 @@
 C# 6.0 - Libraries
 ======
 
-[![Build Status](https://travis-ci.org/svetlozarkirkov/csharp6-libraries.svg?branch=master)](https://travis-ci.org/svetlozarkirkov/csharp6-libraries)   [![codecov.io](https://codecov.io/github/svetlozarkirkov/csharp6-libraries/coverage.svg?branch=master)](https://codecov.io/github/svetlozarkirkov/csharp6-libraries?branch=master)
+[![Build Status](https://travis-ci.org/svetlozarkirkov/csharp6-libraries.svg?branch=master)](https://travis-ci.org/svetlozarkirkov/csharp6-libraries)
 
 ###<sub>Target framework: .NET 4.5</sub>
 

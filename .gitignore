@@ -424,3 +424,4 @@ $RECYCLE.BIN/
 **/*.sln.ide
 
 codecoveragegenerate.txt
+Collections_coverage.xml

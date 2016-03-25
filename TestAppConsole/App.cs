@@ -3,7 +3,8 @@ namespace TestAppConsole
     using System;
     using System.Diagnostics;
     using System.IO;
-    using Collections.Stack.Concrete;
+    using Collections.Set.Core.Concrete;
+    using Collections.Stack.Core.Concrete;
 
     internal class App
     {
@@ -12,24 +13,23 @@ namespace TestAppConsole
         /// <exception cref="FormatException">The format specification in <paramref name="format" /> is invalid. </exception>
         internal static void Main()
         {
-            var permanentStack = new PermanentStack<object>(2);
-            permanentStack.Push(new Stack<object>());
-
+            var stack = new Stack<object>();
             var watch = Stopwatch.StartNew();
-
-            for (var i = 0; i < 10; i++)
+            for (var i = 0; i < 9999999; i++)
             {
-                permanentStack.Push(new object());
+                stack.Push(new object());
             }
-
             watch.Stop();
-            var elapsedMs = watch.ElapsedMilliseconds;
-            Console.WriteLine("{0}ms", elapsedMs);
+            Console.WriteLine("{0}ms", watch.ElapsedMilliseconds);
 
-            var methods = Utilities.ReflectionUtils.GetAllMethods(permanentStack.GetType());
-            var properties = Utilities.ReflectionUtils.GetAllProperties(permanentStack.GetType());
-            var constructors = Utilities.ReflectionUtils.GetAllConstructors(permanentStack.GetType());
-            var fields = Utilities.ReflectionUtils.GetAllFields(permanentStack.GetType());
+            var set = new LinkedSet<object>();
+            watch = Stopwatch.StartNew();
+            for (var i = 0; i < 9999999; i++)
+            {
+                set.Add(new object());
+            }
+            watch.Stop();
+            Console.WriteLine("{0}ms", watch.ElapsedMilliseconds);
         }
     }
 }

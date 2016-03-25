@@ -1,7 +1,7 @@
-﻿namespace Collections.Stack.Concrete
+﻿namespace Collections.Stack.Core.Concrete
 {
-    using Collections.Stack.Base;
-    using Collections.Stack.Exceptions;
+    using Collections.Stack.Core.Base;
+    using Collections.Stack.ExceptionHandling.Core.Concrete;
 
     /// <summary>
     /// Non-resizable stack.

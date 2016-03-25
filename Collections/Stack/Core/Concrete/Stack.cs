@@ -1,8 +1,8 @@
-namespace Collections.Stack.Concrete
+namespace Collections.Stack.Core.Concrete
 {
     using System.Threading.Tasks;
-    using Collections.Stack.Base;
-    using Collections.Stack.Exceptions;
+    using Collections.Stack.Core.Base;
+    using Collections.Stack.ExceptionHandling.Core.Concrete;
 
     /// <summary>
     /// Default implementation of the Stack.
@@ -45,12 +45,14 @@ namespace Collections.Stack.Concrete
         /// <summary>
         /// Multicore method for increasing stack capacity.
         /// </summary>
-        private T[] ResizeStack()
+        private void ResizeStack()
         {
-            var updatedStackCapacity = base._stack.Length * 2;
-            var updatedStack = new T[updatedStackCapacity];
-            Parallel.ForEach(this._stack, (item, state, index) => updatedStack[index] = this._stack[index]);
-            return updatedStack;
+            var resizedStack = new T[this._stack.Length * 2];
+
+            Parallel.ForEach(this._stack, (item, state, index)
+                => resizedStack[index] = this._stack[index]);
+
+            this._stack = resizedStack;
         }
     }
 }

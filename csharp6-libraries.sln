@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections.Tests", "Collec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{9539CEFA-E8BC-4C7B-A141-D933FEA76703}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{13182F21-D0BE-4944-BF59-AD7558458E97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,16 +34,12 @@ Global
 		{9539CEFA-E8BC-4C7B-A141-D933FEA76703}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9539CEFA-E8BC-4C7B-A141-D933FEA76703}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9539CEFA-E8BC-4C7B-A141-D933FEA76703}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13182F21-D0BE-4944-BF59-AD7558458E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13182F21-D0BE-4944-BF59-AD7558458E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13182F21-D0BE-4944-BF59-AD7558458E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13182F21-D0BE-4944-BF59-AD7558458E97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(AutomaticVersions) = postSolution
-		UpdateAssemblyVersion = True
-		UpdateAssemblyFileVersion = True
-		UpdateAssemblyInfoVersion = True
-		AssemblyVersionSettings = Increment.DayStamp.MonthStamp.YearStamp
-		AssemblyFileVersionSettings = Increment.DayStamp.MonthStamp.YearStamp
-		AssemblyInfoVersionSettings = Increment.DayStamp.MonthStamp.YearStamp
 	EndGlobalSection
 EndGlobal

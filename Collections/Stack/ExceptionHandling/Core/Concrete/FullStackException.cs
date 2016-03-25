@@ -1,4 +1,4 @@
-﻿namespace Collections.Stack.Exceptions
+﻿namespace Collections.Stack.ExceptionHandling.Core.Concrete
 {
     using System;
     using System.Runtime.Serialization;
@@ -7,12 +7,12 @@
     /// Exception class for full Stack.
     /// </summary>
     [Serializable]
-    public class FullStackException : Exception
+    internal class FullStackException : Exception
     {
         /// <summary>
         /// Empty constructor.
         /// </summary>
-        public FullStackException()
+        internal FullStackException()
         {
         }
 
@@ -20,9 +20,8 @@
         /// Constructor with message.
         /// </summary>
         /// <param name="message"></param>
-        public FullStackException(string message)
+        internal FullStackException(string message)
         {
-            this.Message = message;
         }
 
         /// <summary>
@@ -30,9 +29,8 @@
         /// </summary>
         /// <param name="message">Exception message.</param>
         /// <param name="innerException">Inner exception.</param>
-        public FullStackException(string message, Exception innerException)
+        internal FullStackException(string message, Exception innerException)
         {
-            this.Message = message;
         }
 
         /// <summary>
@@ -46,9 +44,5 @@
             : base(info, context)
         {
         }
-
-        /// <summary>
-        /// </summary>
-        public override string Message { get; }
     }
 }

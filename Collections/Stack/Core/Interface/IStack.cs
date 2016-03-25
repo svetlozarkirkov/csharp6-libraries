@@ -1,4 +1,4 @@
-namespace Collections.Stack.Interface
+namespace Collections.Stack.Core.Interface
 {
     /// <summary>
     /// The official interface of the Stack sub-class.

@@ -1,8 +1,9 @@
-namespace Collections.Stack.Base
+namespace Collections.Stack.Core.Base
 {
     using System;
+    using System.Diagnostics.Contracts;
     using System.Linq;
-    using Collections.Stack.Interface;
+    using Collections.Stack.Core.Interface;
 
     /// <summary>
     /// The base abstraction for IStack.
@@ -51,6 +52,8 @@ namespace Collections.Stack.Base
         /// <param name="item">The item to be inserted.</param>
         public void Push(T item)
         {
+            Contract.Requires(item != null);
+
             if (this._currentPosition == this._stack.Length)
             {
                 this.HandleFullStack();
@@ -94,7 +97,7 @@ namespace Collections.Stack.Base
         /// Gets the count of elements in the stack (not the capacity of the underlying array).
         /// </summary>
         /// <returns>Count of elements in the stack.</returns>
-        public virtual int Size() => this._currentPosition;
+        public int Size() => this._currentPosition;
 
         /// <summary>
         /// Handles the behaviour when the stack has no items.

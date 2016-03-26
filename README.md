@@ -12,8 +12,8 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 
 ----------
 <h4>List of libraries (constantly updated) :</h4>
-<sub><em>Name of collection -> Concrete Implementation -> Public Interface or Specifics
-###<sub>**Collections**
+<sub><em>Name of collection -> Concrete Implementation -> Public Interface or Specifics</em>
+###<sub>**Collections**</sub>###
   - **Stack**
  - Standard Stack
 	 - Push

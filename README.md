@@ -5,6 +5,29 @@ C# 6.0 - Libraries
 
 ###<sub>Target framework: .NET 4.5</sub>
 
+
+----------
+### <sub>About ###
+Implementing various libraries for C# from scratch using C# 6.0 syntax where possible.
+
+----------
+<h4>List of libraries (constantly updated) :</h4>
+<sub><em>Name of collection -> Concrete Implementation -> Public Interface or Specifics
+###<sub>**Collections**
+  - **Stack**
+ - Standard Stack
+	 - Push
+	 - Pop
+	 - Peek
+	 - Size 
+ - Permanent Stack
+	 - Fixed capacity
+ - Indexed Stack (implements **Standard Stack**)
+	 - get item at given index []
+  - **Set**
+ - One-Way Linked Set 
+	 - Add
+
 <!--## Download
 * [Version 0.2](https://github.com/svetlozarkirkov/csharp6-libraries/archive/master.zip)
 * Other Versions-->

@@ -12,21 +12,29 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 
 ----------
 <h4>List of libraries (constantly updated) :</h4>
-<sub><em>Name of collection -> Concrete Implementation -> Public Interface or Specifics</em>
+<sub><em>Name of collection -> Abstraction -> Concrete Implementation -> Public Interface and/or Specifics</em>
 ###<sub>**Collections**</sub>###
  - **Stack**
-	 - Standard Stack
-		 - Push
-		 - Pop
-		 - Peek
-		 - Size 
-	 - Permanent Stack
-		 - Fixed capacity
-	 - Indexed Stack (implements **Standard Stack**)
-		 - get item at given index []
+	 - Stack Base
+		 - Standard Stack
+			 - Push <em>(adds an item at the end of the stack)</em>
+			 - Pop <em>(removes the last item in the stack)</em>
+			 - Peek <em>(returns the last item in the stack)</em>
+			 - Size <em>(returns the count of items in the stack)</em>
+		 - Indexed Stack (implements **Standard Stack**)
+			 - get item at given index [] <em>(throws appropriate exception if the index is invalid)</em>
+		 - Permanent Stack
+			 - Has fixed capacity <em>(throws appropriate exception if capacity is exceeded)</em>
+
  - **Set**
-	 - One-Way Linked Set 
-		 - Add
+	 - Set Base
+		 - One-Way Linked Set 
+			 - Add
+
+ - **Injectors**
+	 - Indexer
+
+----------
 
 <!--## Download
 * [Version 0.2](https://github.com/svetlozarkirkov/csharp6-libraries/archive/master.zip)

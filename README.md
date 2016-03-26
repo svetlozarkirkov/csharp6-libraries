@@ -6,33 +6,56 @@ C# 6.0 - Libraries
 ###<sub>Target framework: .NET 4.5</sub>
 
 
-----------
-### <sub>About ###
+---
+### **About**
 Implementing various libraries for C# from scratch using C# 6.0 syntax where possible.
+
+---
+### **Goals**
+- SOLID
+- High Performance
+- Complete unit-tests
+- Full, correct and useful documentation
+
 
 ----------
 <h4>List of libraries (constantly updated) :</h4>
 <sub><em>Name of collection -> Abstraction -> Concrete Implementation -> Public Interface and/or Specifics</em>
 ###<sub>**Collections**</sub>###
+
  - **Stack**
-	 - Stack Base
+	 - Base Stack
 		 - Standard Stack
-			 - Push <em>(adds an item at the end of the stack)</em>
-			 - Pop <em>(removes the last item in the stack)</em>
-			 - Peek <em>(returns the last item in the stack)</em>
+			 - Push <em>(adds an item at the top of the stack)</em>
+			 - Pop <em>(returns the top item in the stack  and removes it)</em>
+			 - Peek <em>(returns the top item in the stack)</em>
 			 - Size <em>(returns the count of items in the stack)</em>
-		 - Indexed Stack (implements **Standard Stack**)
-			 - get item at given index [] <em>(throws appropriate exception if the index is invalid)</em>
-		 - Permanent Stack
+		 - Indexed Stack (implements **Standard Stack** and **IIndexer**)
+			 - gets an item from the stack by [index] <em>(throws appropriate exception if the index is invalid)</em>
+		 - Permanent Stack (implements **Standard Stack**)
 			 - Has fixed capacity <em>(throws appropriate exception if capacity is exceeded)</em>
 
+
+---
+
+
  - **Set**
-	 - Set Base
-		 - One-Way Linked Set 
-			 - Add
+	 - Base Set
+		 - Single-Linked Set 
+			 - Add <em>(adds a **Node** to the set)</em>
+ - **Node**
+	 - ISetNode
+		 - Single-Linked Node
+			 - <em>holds an item and a pointer to a previous **Node**</em>
+			 -  <em>currently deeply coupled to **Single-Linked Set**</em>
+
+
+---
+
 
  - **Injectors**
 	 - Indexer
+		 - IIndexer <em>(basic indexing support)</em>
 
 ----------
 

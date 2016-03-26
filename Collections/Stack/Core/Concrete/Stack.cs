@@ -43,7 +43,7 @@ namespace Collections.Stack.Core.Concrete
         }
 
         /// <summary>
-        /// Multicore method for increasing stack capacity.
+        /// Parallel method for increasing stack capacity.
         /// </summary>
         private void ResizeStack()
         {

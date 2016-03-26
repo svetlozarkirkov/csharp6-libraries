@@ -1,9 +1,9 @@
 ﻿namespace Collections.Set.Core.Interface
 {
     /// <summary>
-    /// Interface ILinkedSet
+    /// Interface ISingleLinkSet
     /// </summary>
-    public interface ILinkedSet<T>
+    public interface ISingleLinkSet<in T> : ISet<T>
     {
     }
 }

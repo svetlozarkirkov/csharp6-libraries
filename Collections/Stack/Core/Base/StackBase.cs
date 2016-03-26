@@ -108,12 +108,5 @@ namespace Collections.Stack.Core.Base
         /// Handles the behaviour when the stack is full.
         /// </summary>
         protected abstract void HandleFullStack();
-
-        /// <summary>
-        /// Returns a string representation of the stack.
-        /// </summary>
-        /// <returns>String representation of the stack.</returns>
-        /// <exception cref="ArgumentNullException">Stack is null.</exception>
-        public override string ToString() => $"[ {string.Join(", ", this._stack.Take(this._currentPosition))} ]";
     }
 }

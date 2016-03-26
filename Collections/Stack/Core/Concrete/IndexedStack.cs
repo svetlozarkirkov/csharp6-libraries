@@ -8,8 +8,8 @@
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <seealso cref="Collections.Stack.Core.Concrete.Stack{T}" />
-    /// <seealso cref="Collections.Injectors.Indexer.IIndexable{T}" />
-    public class IndexedStack<T> : Stack<T>, IIndexable<T>
+    /// <seealso cref="Collections.Injectors.Indexer.IIndexer{T}" />
+    public class IndexedStack<T> : Stack<T>, IIndexer<T>
     {
         /// <summary>
         /// Gets the item at the specified index.

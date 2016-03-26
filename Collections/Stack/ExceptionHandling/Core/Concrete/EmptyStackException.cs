@@ -12,7 +12,7 @@
         /// <summary>
         /// Empty constructor.
         /// </summary>
-        public EmptyStackException()
+        internal EmptyStackException()
         {
         }
 
@@ -20,7 +20,7 @@
         /// Constructor with message.
         /// </summary>
         /// <param name="message"></param>
-        public EmptyStackException(string message)
+        internal EmptyStackException(string message)
         {
         }
 
@@ -29,7 +29,7 @@
         /// </summary>
         /// <param name="message">Exception message</param>
         /// <param name="innerException">Inner Exception</param>
-        public EmptyStackException(string message, Exception innerException)
+        internal EmptyStackException(string message, Exception innerException)
         {
         }
 

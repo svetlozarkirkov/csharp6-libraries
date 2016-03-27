@@ -10,7 +10,7 @@ C# 6.0 - Libraries
 ### **About**
 Implementing various libraries for C# from scratch using C# 6.0 syntax where possible.
 
----
+
 ### **Goals**
 - SOLID
 - High Performance
@@ -36,9 +36,6 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 			 - Has fixed capacity <em>(throws appropriate exception if capacity is exceeded)</em>
 
 
----
-
-
  - **Set**
 	 - Base Set
 		 - Single-Linked Set 
@@ -48,9 +45,6 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 		 - Single-Linked Node
 			 - <em>holds an item and a pointer to a previous **Node**</em>
 			 -  <em>currently deeply coupled to **Single-Linked Set**</em>
-
-
----
 
 
  - **Injectors**

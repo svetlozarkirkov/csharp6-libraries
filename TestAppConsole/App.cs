@@ -1,6 +1,7 @@
 namespace TestAppConsole
 {
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.IO;
     using System.Runtime.Serialization.Formatters.Binary;
@@ -18,11 +19,17 @@ namespace TestAppConsole
             var watch = new Stopwatch();
             var testObject = new object();
 
-            var anonymousNode = new SingleLinkedSetAnonymousNode<object>();
-            watch.Start();
-            Parallel.For(0, 20000000, i => anonymousNode.Add(testObject));
+            var defaultList = new List<object>(20000000);
+            watch.Restart();
+            Parallel.For(0, 20000000, i => defaultList.Add(testObject));
             watch.Stop();
-            var anonymousNodeTime = watch.ElapsedMilliseconds;
+            var defaultListTime = watch.ElapsedMilliseconds;
+
+            var linkedList = new LinkedList<object>();
+            watch.Restart();
+            Parallel.For(0, 20000000, i => linkedList.AddLast(testObject));
+            watch.Stop();
+            var linkedListTime = watch.ElapsedMilliseconds;
 
             var nestedNode = new SingleLinkedSetNestedNode<object>();
             watch.Restart();
@@ -30,8 +37,16 @@ namespace TestAppConsole
             watch.Stop();
             var nestedNodeTime = watch.ElapsedMilliseconds;
 
-            PrintObjectBenchData(anonymousNode, anonymousNodeTime);
+            var standardStack = new StandardStack<object>(20000000);
+            watch.Restart();
+            Parallel.For(0, 20000000, i => standardStack.Push(testObject));
+            watch.Stop();
+            var standardStackTime = watch.ElapsedMilliseconds;
+
+            PrintObjectBenchData(defaultList, defaultListTime);
+            PrintObjectBenchData(linkedList, linkedListTime);
             PrintObjectBenchData(nestedNode, nestedNodeTime);
+            PrintObjectBenchData(standardStack, standardStackTime);
         }
 
         private static void PrintObjectBenchData(object item, long time)

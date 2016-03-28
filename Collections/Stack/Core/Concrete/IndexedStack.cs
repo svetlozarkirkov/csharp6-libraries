@@ -8,10 +8,10 @@
     /// Class IndexedStack.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    /// <seealso cref="Collections.Stack.Core.Concrete.Stack{T}" />
+    /// <seealso cref="Collections.Stack.Core.Concrete.StandardStack{T}" />
     /// <seealso cref="Collections.Injectors.Indexer.IIndexer{T}" />
     [Serializable]
-    public class IndexedStack<T> : Stack<T>, IIndexer<T>
+    public class IndexedStack<T> : StandardStack<T>, IIndexer<T>
     {
         /// <summary>
         /// Gets the item at the specified index.

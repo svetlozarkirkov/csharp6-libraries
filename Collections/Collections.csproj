@@ -42,8 +42,6 @@
     <Compile Include="Injectors\Indexer\IIndexer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Set\Core\Base\SingleLinkedSetNestedNodeBase.cs" />
-    <Compile Include="Set\Core\Base\SingleLinkedSetAnonymousNodeBase.cs" />
-    <Compile Include="Set\Core\Concrete\SingleLinkedSetAnonymousNode.cs" />
     <Compile Include="Set\Core\Concrete\SingleLinkedSetNestedNode.cs" />
     <Compile Include="Set\Core\Interface\ISingleLinkSet.cs" />
     <Compile Include="Set\Core\Interface\ISet.cs" />
@@ -54,7 +52,7 @@
     <Compile Include="Stack\Core\Base\StackBase.cs" />
     <Compile Include="Stack\Core\Concrete\IndexedStack.cs" />
     <Compile Include="Stack\Core\Concrete\PermanentStack.cs" />
-    <Compile Include="Stack\Core\Concrete\Stack.cs" />
+    <Compile Include="Stack\Core\Concrete\StandardStack.cs" />
     <Compile Include="Stack\Core\Interface\IStack.cs" />
     <Compile Include="Stack\ExceptionHandling\Core\Concrete\EmptyStackException.cs" />
     <Compile Include="Stack\ExceptionHandling\Core\Concrete\FullStackException.cs" />

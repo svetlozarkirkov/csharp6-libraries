@@ -10,20 +10,20 @@ namespace Collections.Stack.Core.Concrete
     /// </summary>
     /// <typeparam name="T">The type of items in the stack.</typeparam>
     [Serializable]
-    public class Stack<T> : StackBase<T>
+    public class StandardStack<T> : StackBase<T>
     {
         /// <summary>
         /// Creates a new stack with a given initial capacity.
         /// </summary>
         /// <param name="capacity">Initial capacity of the stack.</param>
-        public Stack(int capacity) : base(capacity)
+        public StandardStack(int capacity) : base(capacity)
         {
         }
 
         /// <summary>
         /// Creates a new stack with the default capacity.
         /// </summary>
-        public Stack()
+        public StandardStack()
         {
         }
 

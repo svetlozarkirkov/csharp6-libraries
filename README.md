@@ -16,7 +16,7 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 - High Performance
 - Complete unit-tests
 - Full, correct and useful documentation
-
+- Ports to other languages
 
 ----------
 <h4>List of libraries (constantly updated) :</h4>
@@ -44,7 +44,8 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 	 - ISetNode
 		 - Single-Linked Node
 			 - <em>holds an item and a pointer to a previous **Node**</em>
-			 -  <em>currently deeply coupled to **Single-Linked Set**</em>
+			 - <em>currently deeply coupled to **Single-Linked Set**</em>
+			 - <em>temporary solution: nested private **Node** class in each corresponding set</em>
 
 
  - **Injectors**

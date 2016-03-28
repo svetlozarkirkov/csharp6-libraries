@@ -1,5 +1,6 @@
 ﻿namespace Collections.Set.Node.Base
 {
+    using System;
     using Collections.Set.Node.Interface;
 
     /// <summary>
@@ -7,6 +8,7 @@
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <seealso cref="Collections.Set.Node.Interface.ISingleLinkNode{T}" />
+    [Serializable]
     internal abstract class SingleLinkNodeBase<T> : ISingleLinkNode<T>
     {
         /// <summary>
@@ -20,14 +22,17 @@
         protected ISingleLinkNode<T> PreviousNode;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SingleLinkNodeBase{T}"/> class.
+        /// Initializes a new instance of the <see cref="SingleLinkNodeBase{T}" /> class.
         /// </summary>
         protected SingleLinkNodeBase()
         {
-            this.Item = default(T);
-            this.PreviousNode = null;
         }
 
+        /// <summary>
+        /// Updates the node.
+        /// </summary>
+        /// <param name="previousNode">The previousNode.</param>
+        /// <param name="item">The item.</param>
         public void Update(ISingleLinkNode<T> previousNode, T item)
         {
             this.PreviousNode = previousNode;

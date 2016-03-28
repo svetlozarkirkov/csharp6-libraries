@@ -1,5 +1,6 @@
 namespace Collections.Stack.Core.Concrete
 {
+    using System;
     using System.Threading.Tasks;
     using Collections.Stack.Core.Base;
     using Collections.Stack.ExceptionHandling.Core.Concrete;
@@ -8,6 +9,7 @@ namespace Collections.Stack.Core.Concrete
     /// Default implementation of the Stack.
     /// </summary>
     /// <typeparam name="T">The type of items in the stack.</typeparam>
+    [Serializable]
     public class Stack<T> : StackBase<T>
     {
         /// <summary>

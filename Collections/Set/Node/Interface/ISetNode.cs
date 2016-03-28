@@ -4,7 +4,7 @@
     /// Interface ISetNode
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    internal interface ISetNode<T>
+    public interface ISetNode<T>
     {
     }
 }

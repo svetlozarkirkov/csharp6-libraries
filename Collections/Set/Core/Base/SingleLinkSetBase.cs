@@ -1,37 +1,79 @@
 ﻿namespace Collections.Set.Core.Base
 {
+    using System;
     using Collections.Set.Core.Interface;
-    using Collections.Set.Node.Concrete;
-    using Collections.Set.Node.Interface;
 
     /// <summary>
     /// Class SingleLinkSetBase.
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <seealso cref="Collections.Set.Core.Interface.ISingleLinkSet{T}" />
+    [Serializable]
     public abstract class SingleLinkSetBase<T> : ISingleLinkSet<T>
     {
         /// <summary>
         /// The _last node
         /// </summary>
-        private readonly ISingleLinkNode<T> _lastNode;
+        private SingleLinkSetNode _lastSingleLinkSetNode;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SingleLinkSetBase{T}" /> class.
         /// </summary>
         protected SingleLinkSetBase()
         {
-            this._lastNode = new SingleLinkNode<T>();
         }
 
         /// <summary>
         /// Adds the specified item.
         /// </summary>
         /// <param name="item">The item.</param>
-        //  TODO: Avoid instantiation of concrete single link node.
         public void Add(T item)
         {
-            this._lastNode.Update(this._lastNode, item);
+            if (this._lastSingleLinkSetNode == null)
+            {
+                this._lastSingleLinkSetNode = new SingleLinkSetNode(item);
+            }
+            else
+            {
+                this._lastSingleLinkSetNode.Update(this._lastSingleLinkSetNode, item);
+            }
+        }
+
+        /// <summary>
+        /// Private SingleLinkSetNode class
+        /// </summary>
+        [Serializable]
+        private class SingleLinkSetNode
+        {
+            /// <summary>
+            /// The _previous node
+            /// </summary>
+            private SingleLinkSetNode _previousSingleLinkSetNode;
+            /// <summary>
+            /// The _item
+            /// </summary>
+            private T _item;
+
+            /// <summary>
+            /// Initializes a new instance of the <see cref="SingleLinkSetNode"/> class.
+            /// </summary>
+            /// <param name="item">The item.</param>
+            internal SingleLinkSetNode(T item)
+            {
+                this._previousSingleLinkSetNode = null;
+                this._item = item;
+            }
+
+            /// <summary>
+            /// Updates the specified previous node.
+            /// </summary>
+            /// <param name="previousSingleLinkSetNode">The previous node.</param>
+            /// <param name="item">The item.</param>
+            internal void Update(SingleLinkSetNode previousSingleLinkSetNode, T item)
+            {
+                this._previousSingleLinkSetNode = previousSingleLinkSetNode;
+                this._item = item;
+            }
         }
     }
 }

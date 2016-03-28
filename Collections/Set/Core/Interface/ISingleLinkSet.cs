@@ -3,7 +3,7 @@
     /// <summary>
     /// Interface ISingleLinkSet
     /// </summary>
-    public interface ISingleLinkSet<in T> : ISet<T>
+    internal interface ISingleLinkSet<in T> : ISet<T>
     {
     }
 }

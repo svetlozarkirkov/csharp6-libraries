@@ -3,7 +3,7 @@
     /// <summary>
     /// Interface IIndexer
     /// </summary>
-    public interface IIndexer<out T>
+    internal interface IIndexer<out T>
     {
         /// <summary>
         /// Gets the <see cref="System.Int32"/> at the specified index.

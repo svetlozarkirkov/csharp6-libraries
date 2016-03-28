@@ -1,5 +1,6 @@
 ﻿namespace Collections.Stack.Core.Concrete
 {
+    using System;
     using Collections.Stack.Core.Base;
     using Collections.Stack.ExceptionHandling.Core.Concrete;
 
@@ -7,7 +8,7 @@
     /// Non-resizable stack.
     /// </summary>
     /// <typeparam name="T">Type of the items in the stack.</typeparam>
-    //[Serializable]
+    [Serializable]
     public class PermanentStack<T> : StackBase<T>
     {
         /// <summary>

@@ -4,7 +4,7 @@
     /// Interface ISet
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface ISet<in T>
+    internal interface ISet<in T>
     {
         /// <summary>
         /// Adds the specified item.

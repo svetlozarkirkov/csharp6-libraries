@@ -2,14 +2,13 @@ namespace Collections.Stack.Core.Base
 {
     using System;
     using System.Diagnostics.Contracts;
-    using System.Linq;
     using Collections.Stack.Core.Interface;
 
     /// <summary>
     /// The base abstraction for IStack.
     /// </summary>
     /// <typeparam name="T">Type of the items contained in the stack.</typeparam>
-    //[Serializable]
+    [Serializable]
     public abstract class StackBase<T> : IStack<T>
     {
         /// <summary>

@@ -1,5 +1,6 @@
 ﻿namespace Collections.Stack.Core.Concrete
 {
+    using System;
     using Collections.Injectors.Indexer;
     using Collections.Stack.ExceptionHandling.Core.Concrete;
 
@@ -9,6 +10,7 @@
     /// <typeparam name="T"></typeparam>
     /// <seealso cref="Collections.Stack.Core.Concrete.Stack{T}" />
     /// <seealso cref="Collections.Injectors.Indexer.IIndexer{T}" />
+    [Serializable]
     public class IndexedStack<T> : Stack<T>, IIndexer<T>
     {
         /// <summary>

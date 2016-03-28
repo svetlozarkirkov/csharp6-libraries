@@ -4,6 +4,7 @@ namespace TestAppConsole
     using System.Diagnostics;
     using System.IO;
     using System.Runtime.Serialization.Formatters.Binary;
+    using System.Threading.Tasks;
     using Collections.Set.Core.Concrete;
     using Collections.Stack.Core.Concrete;
 
@@ -14,58 +15,30 @@ namespace TestAppConsole
         /// <exception cref="FormatException">The format specification in <paramref name="format" /> is invalid. </exception>
         private static void Main()
         {
+            var watch = new Stopwatch();
             var testObject = new object();
 
-            var defaultStack = new Stack<object>();
-            var watch = new Stopwatch();
+            var anonymousNode = new SingleLinkedSetAnonymousNode<object>();
             watch.Start();
-            for (var i = 0; i < 100000000; i++)
-            {
-                defaultStack.Push(testObject);
-            }
+            Parallel.For(0, 20000000, i => anonymousNode.Add(testObject));
             watch.Stop();
-            var defaultStackTime = watch.ElapsedMilliseconds;
+            var anonymousNodeTime = watch.ElapsedMilliseconds;
 
-            var permanentStack = new PermanentStack<object>(100000000);
+            var nestedNode = new SingleLinkedSetNestedNode<object>();
             watch.Restart();
-            for (var i = 0; i < 100000000; i++)
-            {
-                permanentStack.Push(testObject);
-            }
+            Parallel.For(0, 20000000, i => nestedNode.Add(testObject));
             watch.Stop();
-            var permanentStackTime = watch.ElapsedMilliseconds;
+            var nestedNodeTime = watch.ElapsedMilliseconds;
 
-            var singleLinkedSet = new SingleLinkSet<object>();
-            watch.Restart();
-            for (var i = 0; i < 100000000; i++)
-            {
-                singleLinkedSet.Add(testObject);
-            }
-            watch.Stop();
-            var singleLinkedSetTime = watch.ElapsedMilliseconds;
-
-            PrintObjectBenchData(
-                defaultStack,
-                defaultStackTime,
-                GetObjectSize(defaultStack));
-
-            PrintObjectBenchData(
-                permanentStack,
-                permanentStackTime,
-                GetObjectSize(permanentStack));
-
-            PrintObjectBenchData(
-                singleLinkedSet,
-                singleLinkedSetTime,
-                GetObjectSize(singleLinkedSet));
+            PrintObjectBenchData(anonymousNode, anonymousNodeTime);
+            PrintObjectBenchData(nestedNode, nestedNodeTime);
         }
 
-        private static void PrintObjectBenchData(object item, long time, long memory)
+        private static void PrintObjectBenchData(object item, long time)
         {
-            Console.WriteLine("{0} = [ Time: {1}ms ] [ Object size: {2} ]",
+            Console.WriteLine("{0} = [ Time: {1}ms ]",
                 item.GetType().Name,
-                time,
-                memory);
+                time);
         }
 
         private static long GetObjectSize(object item)

@@ -44,8 +44,8 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 	 - ISetNode
 		 - Single-Linked Node
 			 - <em>holds an item and a pointer to a previous **Node**</em>
-			 - <em>currently deeply coupled to **Single-Linked Set**</em>
-			 - <em>temporary solution: nested private **Node** class in each corresponding set</em>
+			 - "Anonymous Node" -> every node is instantiated as an anonymous type
+			 - "Nested Node" -> nested private node class (superior performance than "Anonymous Node")
 
 
  - **Injectors**

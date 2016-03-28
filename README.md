@@ -42,7 +42,7 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 		     - has private nested "Node" class which holds "Previous Node" pointer and an "Item" which is the object.
 		     
 		     Public interface:
-			 - Add <em>(adds a **Node** to the set)</em>
+			     - Add <em>(adds a **Node** to the set)</em>
 
  - **Node**
 	 - ISetNode

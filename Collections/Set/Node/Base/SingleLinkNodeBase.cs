@@ -9,18 +9,8 @@
     /// <typeparam name="T"></typeparam>
     /// <seealso cref="Collections.Set.Node.Interface.ISingleLinkNode{T}" />
     [Serializable]
-    internal abstract class SingleLinkNodeBase<T> : ISingleLinkNode<T>
+    public abstract class SingleLinkNodeBase<T> : ISingleLinkNode<T>
     {
-        /// <summary>
-        /// The _node item
-        /// </summary>
-        protected T Item;
-
-        /// <summary>
-        /// The _previous item
-        /// </summary>
-        protected ISingleLinkNode<T> PreviousNode;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="SingleLinkNodeBase{T}" /> class.
         /// </summary>
@@ -29,15 +19,16 @@
         }
 
         /// <summary>
-        /// Updates the node.
+        /// Gets the previous node.
         /// </summary>
-        /// <param name="previousNode">The previousNode.</param>
-        /// <param name="item">The item.</param>
-        public void Update(ISingleLinkNode<T> previousNode, T item)
-        {
-            this.PreviousNode = previousNode;
-            this.Item = item;
-        }
+        /// <value>The previous node.</value>
+        public ISingleLinkNode<T> PreviousNode { get; set; }
+
+        /// <summary>
+        /// Gets the item.
+        /// </summary>
+        /// <value>The item.</value>
+        public T Item { get; set; }
 
         /// <summary>
         /// Returns a <see cref="System.String" /> that represents this instance.

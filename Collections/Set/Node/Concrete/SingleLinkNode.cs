@@ -9,7 +9,7 @@
     /// <typeparam name="T"></typeparam>
     /// <seealso cref="Collections.Set.Node.Base.SingleLinkNodeBase{T}" />
     [Serializable]
-    internal class SingleLinkNode<T> : SingleLinkNodeBase<T>
+    public class SingleLinkNode<T> : SingleLinkNodeBase<T>
     {
     }
 }

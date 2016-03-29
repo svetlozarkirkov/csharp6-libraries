@@ -41,8 +41,10 @@
   <ItemGroup>
     <Compile Include="Injectors\Indexer\IIndexer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Set\Core\Base\SingleLinkedSetNestedNodeBase.cs" />
-    <Compile Include="Set\Core\Concrete\SingleLinkedSetNestedNode.cs" />
+    <Compile Include="Set\Core\Base\SingleLinkSetExtNodeBase.cs" />
+    <Compile Include="Set\Core\Base\SingleLinkSetPrivateNodeBase.cs" />
+    <Compile Include="Set\Core\Concrete\SingleLinkSetExtNode.cs" />
+    <Compile Include="Set\Core\Concrete\SingleLinkSetPrivateNode.cs" />
     <Compile Include="Set\Core\Interface\ISingleLinkSet.cs" />
     <Compile Include="Set\Core\Interface\ISet.cs" />
     <Compile Include="Set\Node\Base\SingleLinkNodeBase.cs" />

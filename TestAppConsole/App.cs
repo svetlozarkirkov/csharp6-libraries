@@ -7,6 +7,7 @@ namespace TestAppConsole
     using System.Runtime.Serialization.Formatters.Binary;
     using System.Threading.Tasks;
     using Collections.Set.Core.Concrete;
+    using Collections.Set.Node.Concrete;
     using Collections.Stack.Core.Concrete;
 
     internal class App
@@ -31,11 +32,17 @@ namespace TestAppConsole
             watch.Stop();
             var linkedListTime = watch.ElapsedMilliseconds;
 
-            var nestedNode = new SingleLinkedSetNestedNode<object>();
+            var externalNode = new SingleLinkSetExtNode<object>(new SingleLinkNode<object>());
             watch.Restart();
-            Parallel.For(0, 20000000, i => nestedNode.Add(testObject));
+            Parallel.For(0, 20000000, i => externalNode.Add(testObject));
             watch.Stop();
-            var nestedNodeTime = watch.ElapsedMilliseconds;
+            var externalNodeTime = watch.ElapsedMilliseconds;
+
+            var privateNode = new SingleLinkSetPrivateNode<object>();
+            watch.Restart();
+            Parallel.For(0, 20000000, i => privateNode.Add(testObject));
+            watch.Stop();
+            var privateNodeTime = watch.ElapsedMilliseconds;
 
             var standardStack = new StandardStack<object>(20000000);
             watch.Restart();
@@ -45,7 +52,8 @@ namespace TestAppConsole
 
             PrintObjectBenchData(defaultList, defaultListTime);
             PrintObjectBenchData(linkedList, linkedListTime);
-            PrintObjectBenchData(nestedNode, nestedNodeTime);
+            PrintObjectBenchData(privateNode, privateNodeTime);
+            PrintObjectBenchData(externalNode, externalNodeTime);
             PrintObjectBenchData(standardStack, standardStackTime);
         }
 

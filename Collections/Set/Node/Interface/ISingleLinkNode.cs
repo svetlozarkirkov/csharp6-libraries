@@ -5,13 +5,18 @@
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <seealso cref="Collections.Set.Node.Interface.ISetNode{T}" />
-    internal interface ISingleLinkNode<T> : ISetNode<T>
+    public interface ISingleLinkNode<T> : ISetNode<T>
     {
         /// <summary>
-        /// Updates the node.
+        /// Gets the previous node.
         /// </summary>
-        /// <param name="previousNode">The previousNode.</param>
-        /// <param name="item">The item.</param>
-        void Update(ISingleLinkNode<T> previousNode, T item);
+        /// <value>The previous node.</value>
+        ISingleLinkNode<T> PreviousNode { get; set; }
+
+        /// <summary>
+        /// Gets the item.
+        /// </summary>
+        /// <value>The item.</value>
+        T Item { get; set; }
     }
 }

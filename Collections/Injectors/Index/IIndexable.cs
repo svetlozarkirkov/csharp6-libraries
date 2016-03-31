@@ -1,9 +1,9 @@
-﻿namespace Collections.Injectors.Indexer
+﻿namespace Collections.Injectors.Index
 {
     /// <summary>
-    /// Interface IIndexer
+    /// Interface IIndexable
     /// </summary>
-    internal interface IIndexer<out T>
+    internal interface IIndexable<out T>
     {
         /// <summary>
         /// Gets the <see cref="System.Int32"/> at the specified index.

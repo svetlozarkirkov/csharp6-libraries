@@ -7,22 +7,22 @@
     /// <summary>
     /// </summary>
     [TestFixture]
-    public class StackBaseTests
+    public class StandardStackBaseTests
     {
         [Test]
         public void WhenItemIsPushedIntoStack_SizeMustIncrementByOne()
         {
             // Arrange
-            var stackBaseMock = new Mock<StackBase<object>> {CallBase = true};
-            var sizeBefore = stackBaseMock.Object.Size();
+            var standardStackBaseMock = new Mock<StandardStackBase<object>>();
+            var sizeBefore = standardStackBaseMock.Object.Size();
 
             // Act
-            stackBaseMock.Object.Push(It.IsAny<object>());
+            standardStackBaseMock.Object.Push(It.IsAny<object>());
 
             // Assert
             Assert.AreEqual(
                 sizeBefore + 1,
-                stackBaseMock.Object.Size(),
+                standardStackBaseMock.Object.Size(),
                 "Stack size did not increment by 1 when an item was pushed inside.");
         }
     }

@@ -9,12 +9,13 @@
     /// </summary>
     /// <typeparam name="T">Type of the items in the stack.</typeparam>
     [Serializable]
-    public class PermanentStack<T> : StackBase<T>
+    public class PermanentStack<T> : StandardStackBase<T>
     {
         /// <summary>
         /// Creates a stack with permanent capacity.
         /// </summary>
         /// <param name="capacity">Capacity size.</param>
+        /// <exception cref="InvalidStackCapacityGivenException">Invalid capacity assigned to the stack.</exception>
         public PermanentStack(int capacity) : base(capacity)
         {
         }

@@ -6,16 +6,17 @@ namespace Collections.Stack.Core.Concrete
     using Collections.Stack.ExceptionHandling.Core.Concrete;
 
     /// <summary>
-    /// Default implementation of the Stack.
+    /// Default implementation of StandardStackBase.
     /// </summary>
     /// <typeparam name="T">The type of items in the stack.</typeparam>
     [Serializable]
-    public class StandardStack<T> : StackBase<T>
+    public class StandardStack<T> : StandardStackBase<T>
     {
         /// <summary>
         /// Creates a new stack with a given initial capacity.
         /// </summary>
         /// <param name="capacity">Initial capacity of the stack.</param>
+        /// <exception cref="InvalidStackCapacityGivenException">Invalid capacity assigned to the stack.</exception>
         public StandardStack(int capacity) : base(capacity)
         {
         }
@@ -23,6 +24,7 @@ namespace Collections.Stack.Core.Concrete
         /// <summary>
         /// Creates a new stack with the default capacity.
         /// </summary>
+        /// <exception cref="InvalidStackCapacityGivenException">Capacity is less than zero.</exception>
         public StandardStack()
         {
         }
@@ -49,12 +51,12 @@ namespace Collections.Stack.Core.Concrete
         /// </summary>
         private void ResizeStack()
         {
-            var resizedStack = new T[this._stack.Length * 2];
+            var resizedStack = new T[this.Stack.Length * 2];
 
-            Parallel.ForEach(this._stack, (item, state, index)
-                => resizedStack[index] = this._stack[index]);
+            Parallel.ForEach(this.Stack, (item, state, index)
+                => resizedStack[index] = this.Stack[index]);
 
-            this._stack = resizedStack;
+            this.Stack = resizedStack;
         }
     }
 }

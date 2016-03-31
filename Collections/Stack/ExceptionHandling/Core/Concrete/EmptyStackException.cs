@@ -6,6 +6,7 @@
     /// <summary>
     /// Exception class for empty Stack.
     /// </summary>
+    /// <seealso cref="System.Exception" />
     [Serializable]
     internal class EmptyStackException : Exception
     {
@@ -19,7 +20,7 @@
         /// <summary>
         /// Constructor with message.
         /// </summary>
-        /// <param name="message"></param>
+        /// <param name="message">The message that describes the error.</param>
         internal EmptyStackException(string message)
         {
         }
@@ -38,8 +39,8 @@
         /// </summary>
         /// <param name="info">SerializationInfo</param>
         /// <param name="context">StreamingContext</param>
-        /// <exception cref="SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        /// <exception cref="ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
+        /// <exception cref="SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0).</exception>
+        /// <exception cref="ArgumentNullException">The <paramref name="info" /> parameter is null.</exception>
         protected EmptyStackException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {

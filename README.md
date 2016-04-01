@@ -24,7 +24,9 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 
 - **Stack**
     - Standard Stack Base sub-class
-        - Standard Stack
+        - Standard Stack (default implementation)
+        - Permanent Stack (implements **Standard Stack**)
+        	- has fixed capacity (throws exception if exceeded) 
         
             | Method | Description |
             |:--------:|:-------------:|
@@ -35,19 +37,17 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
             | Clear | Reinitializes the stack |
             | [ ] | Access items in the stack by index |
 
-        - Permanent Stack (implements **Standard Stack**)
-            - Has fixed capacity (throws appropriate exception if capacity is exceeded)
-
 
 - **Set**
     - Single-Link Set Base sub-class
         - Single-Link Set with **Private Node**
         - Single-Link Set with **External Node**
         
-		| Method | Description |
-		|:--------:|:-------------:|
-		| Add | Adds a node link to the set |
-		| Remove (index) | Removes the node link at the given index |
+	| Method | Description |
+	|:--------:|:-------------:|
+	| Add | Adds a node link to the set |
+	| Remove (index) | Removes the node link at the given index |
+
 
 ----------
 

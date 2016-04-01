@@ -18,32 +18,44 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 - Ports to other languages
 
 ----------
-**List of libraries (constantly updated):**
+###**List of libraries (constantly updated):**###
 
-### **Collections** ###
+#### **Collections** ####
 
 - **Stack**
-    - Standard Stack Base sub-class
-        - Standard Stack (default implementation)
-        - Permanent Stack (implements **Standard Stack**)
-        
-            | Method | Description |
-            |:--------:|:-------------:|
-            | Push | Adds an item at the top of the stack |
-            | Pop | Returns and removes the top item in the stack |
-            | Peek | Returns the top item in the stack |
-            | Size | Returns the count of elements in the stack |
-            | Clear | Reinitializes the stack |
-            | [ ] | Access items in the stack by index |
+    - **Standard Stack** sub-class
+		- Injectors
+			| Injector | Description |
+			|---|---|
+			| IIndexable | Access index of the collection |
+			| IClearable | Empties the collection |
+
+		- Implementations
+		
+			| Class | Description |
+			|-----|-----|
+			| Standard Stack | Default implementation |
+			| Permanent Stack | Has fixed capacity |
+
+		- Public interface
+		        
+			| Method | Description |
+			|---|---|
+			| Push | Adds an item at the top of the stack |
+			| Pop | Returns and removes the top item in the stack |
+			| Peek | Returns the top item in the stack |
+			| Size | Returns the count of elements in the stack |
+			| Clear | Reinitializes the stack |
+			| [ ] | Access items in the stack by index |
 
 
 - **Set**
-    - Single-Link Set Base sub-class
+    - **Single-Link Set** sub-class
         - Single-Link Set with **Private Node**
         - Single-Link Set with **External Node**
         
 			| Method | Description |
-			|:--------:|:-------------:|
+			|---|---|
 			| Add | Adds a node link to the set |
 			| Remove (index) | Removes the node link at the given index |
 
@@ -86,3 +98,4 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 * other communication/social media
 
 [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=svetlozarkirkov&url=https://github.com/svetlozarkirkov/csharp6-libraries&title=csharp6-libraries&language=&tags=github&category=software)
+

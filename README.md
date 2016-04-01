@@ -25,6 +25,7 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 - **Stack**
     - **Standard Stack** sub-class
 		- Injectors
+			
 			| Injector | Description |
 			|---|---|
 			| IIndexable | Access index of the collection |

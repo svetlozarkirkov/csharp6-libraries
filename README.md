@@ -3,10 +3,9 @@ C# 6.0 - Libraries
 
 [![Build Status](https://travis-ci.org/svetlozarkirkov/csharp6-libraries.svg?branch=master)](https://travis-ci.org/svetlozarkirkov/csharp6-libraries)
 
-###<sub>Target framework: .NET 4.5</sub>
+**Target framework: .NET 4.5**
 
 
----
 ### **About**
 Implementing various libraries for C# from scratch using C# 6.0 syntax where possible.
 
@@ -19,40 +18,36 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 - Ports to other languages
 
 ----------
-<h4>List of libraries (constantly updated) :</h4>
-<sub><em>Name of collection -> Abstraction -> Concrete Implementation -> Public Interface and/or Specifics</em>
-###<sub>**Collections**</sub>###
+**List of libraries (constantly updated):**
 
- - **Stack**
-	 - Base Stack
-		 - Standard Stack
-			 - Push <em>(adds an item at the top of the stack)</em>
-			 - Pop <em>(returns the top item in the stack  and removes it)</em>
-			 - Peek <em>(returns the top item in the stack)</em>
-			 - Size <em>(returns the count of items in the stack)</em>
-		 - Indexed Stack (implements **Standard Stack** and **IIndexer**)
-			 - gets an item from the stack by [index] <em>(throws appropriate exception if the index is invalid)</em>
-		 - Permanent Stack (implements **Standard Stack**)
-			 - Has fixed capacity <em>(throws appropriate exception if capacity is exceeded)</em>
+### **Collections** ###
 
+- **Stack**
+    - Standard Stack Base sub-class
+        - Standard Stack
+        
+            | Method | Description |
+            |:--------:|:-------------:|
+            | Push | Adds an item at the top of the stack |
+            | Pop | Returns and removes the top item in the stack |
+            | Peek | Returns the top item in the stack |
+            | Size | Returns the count of elements in the stack |
+            | Clear | Reinitializes the stack |
+            | [ ] | Access items in the stack by index |
 
- - **Set**
-	 - Base Set
-		 - Single-Linked Set
-		     - has private nested "Node" class which holds "Previous Node" pointer and an "Item" which is the object.
-		     
-		     Public interface:
-			     - Add <em>(adds a **Node** to the set)</em>
-
- - **Node**
-	 - ISetNode
-		 - Single-Linked Node
-			 - <em>holds an item and a pointer to a previous **Node**</em>
+        - Permanent Stack (implements **Standard Stack**)
+            - Has fixed capacity (throws appropriate exception if capacity is exceeded)
 
 
- - **Injectors**
-	 - Indexer
-		 - IIndexer <em>(basic indexing support)</em>
+- **Set**
+    - Single-Link Set Base sub-class
+        - Single-Link Set with **Private Node**
+        - Single-Link Set with **External Node**
+        
+		| Method | Description |
+		|:--------:|:-------------:|
+		| Add | Adds a node link to the set |
+		| Remove (index) | Removes the node link at the given index |
 
 ----------
 

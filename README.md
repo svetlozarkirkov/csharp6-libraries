@@ -1,28 +1,38 @@
+![C#](http://i.imgur.com/kdypyA7.png?1) 
+
 C# 6.0 - Libraries
-======
+===
 
 [![Build Status](https://travis-ci.org/svetlozarkirkov/csharp6-libraries.svg?branch=master)](https://travis-ci.org/svetlozarkirkov/csharp6-libraries)
 
 **Target framework: .NET 4.5**
 
-
 ### **About**
+===
 Implementing various libraries for C# from scratch using C# 6.0 syntax where possible.
 
 
 ### **Goals**
-- SOLID
-- High Performance
-- Complete unit-tests
-- Full, correct and useful documentation
-- Ports to other languages
+===
+- :muscle: **SOLID**
+- :runner: **High Performance**
+- :cop: **Complete unit-tests**
+- :books: **Full, correct and useful documentation**
+- :link: **Ports to other languages**
 
-----------
-###**List of libraries (constantly updated):**###
+---
 
+### **Ports**
+===
+[![Java](http://i.imgur.com/cgTQwFc.png?2)](https://github.com/svetlozarkirkov/java-libraries)
+
+---
+
+### **List of libraries (constantly updated):** ###
+===
 #### **Collections** ####
 
-- **Stack**
+- **Stack** ![Stack](http://i.imgur.com/qGOr4Gj.png?2)
     - **Standard Stack** sub-class
 		- Injectors
 			

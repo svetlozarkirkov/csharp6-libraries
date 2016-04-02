@@ -1,5 +1,3 @@
-![C#](http://i.imgur.com/kdypyA7.png?1) 
-
 C# 6.0 - Libraries
 ===
 
@@ -22,7 +20,7 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 
 <h2>Ports</h2>
 
-[![Java](http://i.imgur.com/cgTQwFc.png?2)](https://github.com/svetlozarkirkov/java-libraries)
+[![Java](http://i.imgur.com/rDnhhLq.png?1)](https://github.com/svetlozarkirkov/java-libraries) ![JavaScript](http://i.imgur.com/ByuZPKe.png?1)
 
 ---
 

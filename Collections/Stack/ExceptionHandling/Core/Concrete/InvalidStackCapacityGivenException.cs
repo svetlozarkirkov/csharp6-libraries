@@ -8,7 +8,7 @@
     /// </summary>
     /// <seealso cref="System.ArgumentOutOfRangeException" />
     [Serializable]
-    internal class InvalidStackCapacityGivenException : ArgumentOutOfRangeException
+    public class InvalidStackCapacityGivenException : ArgumentOutOfRangeException
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InvalidStackCapacityGivenException"/> class.

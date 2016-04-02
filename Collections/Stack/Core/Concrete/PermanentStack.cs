@@ -5,35 +5,26 @@
     using Collections.Stack.ExceptionHandling.Core.Concrete;
 
     /// <summary>
-    /// Non-resizable stack.
+    /// Stack with permanent capacity.
     /// </summary>
     /// <typeparam name="T">Type of the items in the stack.</typeparam>
     [Serializable]
     public class PermanentStack<T> : StandardStackBase<T>
     {
         /// <summary>
-        /// Creates a stack with permanent capacity.
+        /// Initializes a new instance of the <see cref="PermanentStack{T}"/> class.
         /// </summary>
-        /// <param name="capacity">Capacity size.</param>
-        /// <exception cref="InvalidStackCapacityGivenException">Invalid capacity assigned to the stack.</exception>
+        /// <param name="capacity">The initial capacity.</param>
+        /// <exception cref="InvalidStackCapacityGivenException">Capacity is less than or equal to zero.</exception>
         public PermanentStack(int capacity) : base(capacity)
         {
-        }
-
-        /// <summary>
-        /// Handles the behaviour when the stack has no items.
-        /// </summary>
-        /// <exception cref="EmptyStackException">Condition.</exception>
-        protected override void HandleEmptyStack()
-        {
-            throw new EmptyStackException("Stack is empty."); // Not L10N
         }
 
         /// <summary>
         /// Handles the behaviour when the stack is full.
         /// </summary>
         /// <exception cref="FullStackException">Condition.</exception>
-        protected override void HandleFullStack()
+        protected override void FullStackHandler()
         {
             throw new FullStackException("Stack is full."); // Not L10N
         }

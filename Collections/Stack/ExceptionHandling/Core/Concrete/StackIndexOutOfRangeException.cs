@@ -8,7 +8,7 @@
     /// </summary>
     /// <seealso cref="System.ArgumentOutOfRangeException" />
     [Serializable]
-    internal class StackIndexOutOfRangeException : ArgumentOutOfRangeException
+    public class StackIndexOutOfRangeException : ArgumentOutOfRangeException
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StackIndexOutOfRangeException"/> class.

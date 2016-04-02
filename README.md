@@ -7,29 +7,27 @@ C# 6.0 - Libraries
 
 **Target framework: .NET 4.5**
 
-### **About**
-===
+<h2>About</h2>
+
 Implementing various libraries for C# from scratch using C# 6.0 syntax where possible.
 
 
-### **Goals**
-===
+<h2>Goals</h2>
+
 - :muscle: **SOLID**
 - :runner: **High Performance**
 - :cop: **Complete unit-tests**
 - :books: **Full, correct and useful documentation**
 - :link: **Ports to other languages**
 
----
+<h2>Ports</h2>
 
-### **Ports**
-===
 [![Java](http://i.imgur.com/cgTQwFc.png?2)](https://github.com/svetlozarkirkov/java-libraries)
 
 ---
 
-### **List of libraries (constantly updated):** ###
-===
+<h3>List of libraries (constantly updated):</h3>
+
 #### **Collections** ####
 
 - **Stack** ![Stack](http://i.imgur.com/qGOr4Gj.png?2)

@@ -14,13 +14,14 @@
         /// <summary>
         /// The last node
         /// </summary>
-        protected IMapNode<TKey, TValue> LastNode;
+        protected MapNode LastNode;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MapBase{TKey, TValue}"/> class.
         /// </summary>
         protected MapBase()
         {
+            this.LastNode = new MapNode();
         }
 
         /// <summary>
@@ -30,13 +31,10 @@
         /// <param name="value">The value.</param>
         public void Store(TKey key, TValue value)
         {
-            this.LastNode = new MapNode
-            {
-                PreviousNode = this.LastNode,
-                NextNode = null,
-                Key = key,
-                Value = value
-            };
+            this.LastNode.PreviousNode = this.LastNode;
+            this.LastNode.Key = key;
+            this.LastNode.Value = value;
+            this.LastNode.PreviousNode.NextNode = this.LastNode;
         }
 
         /// <summary>
@@ -53,20 +51,20 @@
         /// <summary>
         /// Class MapNode.
         /// </summary>
-        /// <seealso cref="Collections.Map.Core.Interface.IMapNode{TKey, TValue}" />
+        /// <seealso cref="Interface.IMapNode{TKey, TValue}" />
         protected class MapNode : IMapNode<TKey, TValue>
         {
             /// <summary>
             /// Gets or sets the previous node.
             /// </summary>
             /// <value>The previous node.</value>
-            public INode PreviousNode { get; set; }
+            public IDoubleLinkNode PreviousNode { get; set; }
 
             /// <summary>
             /// Gets or sets the next node.
             /// </summary>
             /// <value>The next node.</value>
-            public INode NextNode { get; set; }
+            public IDoubleLinkNode NextNode { get; set; }
 
             /// <summary>
             /// Gets or sets the key.

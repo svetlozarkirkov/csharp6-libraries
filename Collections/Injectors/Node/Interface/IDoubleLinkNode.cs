@@ -10,12 +10,12 @@
         /// Gets or sets the previous node.
         /// </summary>
         /// <value>The previous node.</value>
-        INode PreviousNode { get; set; }
+        IDoubleLinkNode PreviousNode { get; set; }
 
         /// <summary>
         /// Gets or sets the next node.
         /// </summary>
         /// <value>The next node.</value>
-        INode NextNode { get; set; }
+        IDoubleLinkNode NextNode { get; set; }
     }
 }

@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Collections\Collections.csproj">
@@ -51,6 +52,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="ConsoleDump, Version=0.6.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ConsoleDump.0.6.0.1\lib\net40-Client\ConsoleDump.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,17 +1,17 @@
-﻿namespace Collections.Set.Node.Interface
+﻿namespace Collections.Injectors.Node.Interface
 {
     /// <summary>
     /// Interface ISingleLinkNode
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    /// <seealso cref="Collections.Set.Node.Interface.ISetNode{T}" />
-    public interface ISingleLinkNode<T> : ISetNode<T>
+    /// <seealso cref="INode" />
+    public interface ISingleLinkNode<T> : INode
     {
         /// <summary>
         /// Gets the previous node.
         /// </summary>
         /// <value>The previous node.</value>
-        ISingleLinkNode<T> PreviousNode { get; set; }
+        INode PreviousNode { get; set; }
 
         /// <summary>
         /// Gets the item.

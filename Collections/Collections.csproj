@@ -41,6 +41,8 @@
   <ItemGroup>
     <Compile Include="Injectors\Clear\IClearable.cs" />
     <Compile Include="Injectors\Index\IIndexable.cs" />
+    <Compile Include="Map\Core\Base\MapBase.cs" />
+    <Compile Include="Map\Core\Interface\IMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Set\Core\Base\SingleLinkSetExtNodeBase.cs" />
     <Compile Include="Set\Core\Base\SingleLinkSetPrivateNodeBase.cs" />
@@ -52,6 +54,7 @@
     <Compile Include="Set\Node\Concrete\SingleLinkNode.cs" />
     <Compile Include="Set\Node\Interface\ISingleLinkNode.cs" />
     <Compile Include="Set\Node\Interface\ISetNode.cs" />
+    <Compile Include="Stack\Core\Base\StackBase.cs" />
     <Compile Include="Stack\Core\Base\StandardStackBase.cs" />
     <Compile Include="Stack\Core\Concrete\PermanentStack.cs" />
     <Compile Include="Stack\Core\Concrete\StandardStack.cs" />

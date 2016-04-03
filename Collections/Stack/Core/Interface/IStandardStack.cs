@@ -7,10 +7,10 @@
     /// Interface IStandardStack
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    /// <seealso cref="Collections.Stack.Core.Interface.IStack{T}" />
-    /// <seealso cref="Collections.Injectors.Index.IIndexable{T}" />
-    /// <seealso cref="Collections.Injectors.Clear.IClearable" />
-    internal interface IStandardStack<T> : IStack<T>, IIndexable<T>, IClearable
+    /// <seealso cref="Interface.IStack{T}" />
+    /// <seealso cref="Injectors.Index.IIndexable{T}" />
+    /// <seealso cref="IClearable" />
+    public interface IStandardStack<T> : IStack<T>, IIndexable<T>, IClearable
     {
     }
 }

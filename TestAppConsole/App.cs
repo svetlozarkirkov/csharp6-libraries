@@ -4,7 +4,6 @@ namespace TestAppConsole
     {
         private static void Main()
         {
-            
         }
     }
 }

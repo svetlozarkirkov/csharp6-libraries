@@ -1,6 +1,5 @@
 ﻿namespace Collections.Stack.Core.Concrete
 {
-    using System;
     using Collections.Stack.Core.Base;
     using Collections.Stack.ExceptionHandling.Core.Concrete;
 
@@ -8,7 +7,6 @@
     /// Stack with permanent capacity.
     /// </summary>
     /// <typeparam name="T">Type of the items in the stack.</typeparam>
-    [Serializable]
     public class PermanentStack<T> : StandardStackBase<T>
     {
         /// <summary>
@@ -26,7 +24,7 @@
         /// <exception cref="FullStackException">Condition.</exception>
         protected override void FullStackHandler()
         {
-            throw new FullStackException("Stack is full."); // Not L10N
+            throw new FullStackException("The stack is full."); // Not L10N
         }
     }
 }

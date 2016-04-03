@@ -5,7 +5,7 @@ namespace Collections.Stack.Core.Interface
     /// Has four basic stack methods.
     /// </summary>
     /// <typeparam name="T">The type which is stored in the stack.</typeparam>
-    internal interface IStack<T>
+    public interface IStack<T>
     {
         /// <summary>
         /// Inserts an item at the top of the stack.

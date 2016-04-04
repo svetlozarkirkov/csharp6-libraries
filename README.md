@@ -18,29 +18,25 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 - :books: **Full, correct and useful documentation**
 - :link: **Ports to other languages**
 
+## Version 
+* **Alpha**
+
 <h2>Ports</h2>
 
 [![Java](http://i.imgur.com/rDnhhLq.png?1)](https://github.com/svetlozarkirkov/java-libraries) ![JavaScript](http://i.imgur.com/ByuZPKe.png?1)
 
 ---
 
-<h3>List of libraries (constantly updated):</h3>
+<h3>List of libraries (constantly updated ; work in progress):</h3>
 
 #### **Collections** ####
 
 - **Stack** ![Stack](http://i.imgur.com/qGOr4Gj.png?2)
     - **Standard Stack** sub-class
-		- Injectors
-			
-			| Injector | Description |
-			|---|---|
-			| IIndexable | Access index of the collection |
-			| IClearable | Empties the collection |
-
 		- Implementations
 		
 			| Class | Description |
-			|-----|-----|
+			|---|---|
 			| Standard Stack | Default implementation |
 			| Permanent Stack | Has fixed capacity |
 
@@ -57,15 +53,22 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 
 
 - **Set**
-    - **Single-Link Set** sub-class
-        - Single-Link Set with **Private Node**
-        - Single-Link Set with **External Node**
-        
+    - **Node Set** sub-class
+		- Implementations
+		
+			| Class | Description |
+			|---|---|
+			| Single-Link Set | Default implementation |
+	
+		- Public interface
+		
 			| Method | Description |
 			|---|---|
 			| Add | Adds a node link to the set |
 			| Remove (index) | Removes the node link at the given index |
 
+- **Map**
+   - **Node Map** sub-class
 
 ----------
 
@@ -90,9 +93,6 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 
 ## License 
 * see [LICENSE](https://github.com/svetlozarkirkov/csharp6-libraries/blob/master/LICENSE.md) file
-
-## Version 
-* Version: alpha
 
 ## How-to use this code
 * see [INSTRUCTIONS](https://github.com/svetlozarkirkov/csharp6-libraries/blob/master/INSTRUCTIONS.md) file

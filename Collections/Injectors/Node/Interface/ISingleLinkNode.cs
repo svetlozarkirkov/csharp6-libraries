@@ -3,20 +3,13 @@
     /// <summary>
     /// Interface ISingleLinkNode
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <seealso cref="INode" />
-    public interface ISingleLinkNode<T> : INode
+    /// <seealso cref="Interface.INode" />
+    public interface ISingleLinkNode : INode
     {
         /// <summary>
-        /// Gets the previous node.
+        /// Gets or sets the previous node.
         /// </summary>
         /// <value>The previous node.</value>
         INode PreviousNode { get; set; }
-
-        /// <summary>
-        /// Gets the item.
-        /// </summary>
-        /// <value>The item.</value>
-        T Item { get; set; }
     }
 }

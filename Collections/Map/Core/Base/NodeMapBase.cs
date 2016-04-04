@@ -1,27 +1,25 @@
 ﻿namespace Collections.Map.Core.Base
 {
-    using Collections.Injectors.Node.Interface;
     using Collections.Map.Core.Interface;
 
     /// <summary>
-    /// Class MapBase.
+    /// Class NodeMapBase.
     /// </summary>
     /// <typeparam name="TKey">The type of the key.</typeparam>
     /// <typeparam name="TValue">The type of the value.</typeparam>
     /// <seealso cref="Interface.IMap{TKey, TValue}" />
-    public abstract class MapBase<TKey, TValue> : IMap<TKey, TValue>
+    public abstract class NodeMapBase<TKey, TValue> : IMap<TKey, TValue>
     {
         /// <summary>
         /// The last node
         /// </summary>
-        protected MapNode LastNode;
+        public IMapNode<TKey, TValue> CurrentNode;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MapBase{TKey, TValue}"/> class.
+        /// Initializes a new instance of the <see cref="NodeMapBase{TKey, TValue}"/> class.
         /// </summary>
-        protected MapBase()
+        protected NodeMapBase()
         {
-            this.LastNode = new MapNode();
         }
 
         /// <summary>
@@ -31,10 +29,7 @@
         /// <param name="value">The value.</param>
         public void Store(TKey key, TValue value)
         {
-            this.LastNode.PreviousNode = this.LastNode;
-            this.LastNode.Key = key;
-            this.LastNode.Value = value;
-            this.LastNode.PreviousNode.NextNode = this.LastNode;
+            // TODO: Rethink
         }
 
         /// <summary>
@@ -43,7 +38,7 @@
         /// <param name="key">The key.</param>
         /// <returns>TValue.</returns>
         /// <exception cref="System.NotImplementedException"></exception>
-        public TValue GetValue(TKey key)
+        public TValue Retrieve(TKey key)
         {
             throw new System.NotImplementedException();
         }
@@ -52,19 +47,19 @@
         /// Class MapNode.
         /// </summary>
         /// <seealso cref="Interface.IMapNode{TKey, TValue}" />
-        protected class MapNode : IMapNode<TKey, TValue>
+        public class MapNode : IMapNode<TKey, TValue>
         {
             /// <summary>
             /// Gets or sets the previous node.
             /// </summary>
             /// <value>The previous node.</value>
-            public IDoubleLinkNode PreviousNode { get; set; }
+            public IMapNode<TKey, TValue> PreviousNode { get; set; }
 
             /// <summary>
             /// Gets or sets the next node.
             /// </summary>
             /// <value>The next node.</value>
-            public IDoubleLinkNode NextNode { get; set; }
+            public IMapNode<TKey, TValue> NextNode { get; set; }
 
             /// <summary>
             /// Gets or sets the key.

@@ -19,6 +19,6 @@
         /// </summary>
         /// <param name="key">The key.</param>
         /// <returns>TValue.</returns>
-        TValue GetValue(TKey key);
+        TValue Retrieve(TKey key);
     }
 }

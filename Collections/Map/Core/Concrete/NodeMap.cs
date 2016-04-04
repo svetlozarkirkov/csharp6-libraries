@@ -3,12 +3,12 @@
     using Collections.Map.Core.Base;
 
     /// <summary>
-    /// Class Map.
+    /// Class NodeMap.
     /// </summary>
     /// <typeparam name="TKey">The type of the key.</typeparam>
     /// <typeparam name="TValue">The type of the value.</typeparam>
-    /// <seealso cref="Base.MapBase{TKey, TValue}" />
-    public class Map<TKey, TValue> : MapBase<TKey, TValue>
+    /// <seealso cref="Base.NodeMapBase{TKey, TValue}" />
+    public class NodeMap<TKey, TValue> : NodeMapBase<TKey, TValue>
     {
     }
 }

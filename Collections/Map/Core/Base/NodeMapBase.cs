@@ -13,7 +13,7 @@
         /// <summary>
         /// The last node
         /// </summary>
-        public IMapNode<TKey, TValue> CurrentNode;
+        public MapNode LastNode;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NodeMapBase{TKey, TValue}"/> class.
@@ -23,13 +23,31 @@
         }
 
         /// <summary>
+        /// Gets the size of the Map.
+        /// </summary>
+        /// <value>The count of items in the Map.</value>
+        public int Size { get; private set; }
+
+        /// <summary>
         /// Stores the specified key.
         /// </summary>
         /// <param name="key">The key.</param>
         /// <param name="value">The value.</param>
         public void Store(TKey key, TValue value)
         {
-            // TODO: Rethink
+            this.LastNode = new MapNode
+            {
+                Key = key,
+                Value = value,
+                PreviousNode = this.LastNode
+            };
+
+            if (this.LastNode.PreviousNode != null)
+            {
+                this.LastNode.PreviousNode.NextNode = this.LastNode;
+            }
+
+            this.Size++;
         }
 
         /// <summary>

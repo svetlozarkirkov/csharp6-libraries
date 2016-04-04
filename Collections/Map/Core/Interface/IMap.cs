@@ -8,6 +8,12 @@
     public interface IMap<TKey, TValue>
     {
         /// <summary>
+        /// Gets the size of the Map.
+        /// </summary>
+        /// <value>The count of items in the Map.</value>
+        int Size { get; }
+
+        /// <summary>
         /// Stores the specified key.
         /// </summary>
         /// <param name="key">The key.</param>

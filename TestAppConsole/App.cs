@@ -12,7 +12,7 @@ namespace TestAppConsole
     {
         private static void Main()
         {
-            const int itemsToInsert = 10000000;
+            const int itemsToInsert = 100;
             var watch = new Stopwatch();
 
             var dictionary = new Dictionary<object, object>(itemsToInsert);
@@ -34,9 +34,11 @@ namespace TestAppConsole
             watch.Stop();
             Console.WriteLine(watch.Elapsed);
 
-            //foreach (IMapItem<object, object> item in map)
+            //Console.ReadKey();
+
+            //foreach (var item in map)
             //{
-            //    Console.WriteLine("{0} => {1}", item.Key, item.Value);
+            //    Console.WriteLine("{0} -> {1}", item, item.GetType());
             //}
         }
     }

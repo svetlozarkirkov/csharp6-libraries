@@ -1,11 +1,11 @@
 ﻿namespace Collections.Set.Core.Interface
 {
     /// <summary>
-    /// Interface ISingleLinkSet
+    /// Interface ISingleLinNodekSet
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <seealso cref="Interface.ISet{T}" />
-    public interface ISingleLinkSet<T> : ISet<T>
+    public interface ISingleLinkNodeSet<T> : ISet<T>
     {
     }
 }

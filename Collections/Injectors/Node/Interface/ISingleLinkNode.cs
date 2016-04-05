@@ -7,9 +7,9 @@
     public interface ISingleLinkNode : INode
     {
         /// <summary>
-        /// Gets or sets the previous node.
+        /// Gets or sets the next node.
         /// </summary>
-        /// <value>The previous node.</value>
-        INode PreviousNode { get; set; }
+        /// <value>The next node.</value>
+        INode NextNode { get; set; }
     }
 }

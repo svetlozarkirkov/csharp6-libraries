@@ -3,6 +3,7 @@
     using System;
     using System.Collections;
     using System.Linq;
+    using System.Threading.Tasks;
     using Collections.Map.Core.Interface;
 
     /// <summary>
@@ -16,12 +17,12 @@
         /// <summary>
         /// The first node
         /// </summary>
-        protected MapNode FirstNode;
+        protected IMapNode<TKey, TValue> FirstNode;
 
         /// <summary>
         /// The last node
         /// </summary>
-        protected MapNode LastNode;
+        protected IMapNode<TKey, TValue> LastNode;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NodeMapBase{TKey, TValue}"/> class.
@@ -44,14 +45,13 @@
         /// <param name="value">The value.</param>
         public void Store(TKey key, TValue value)
         {
-            this.LastNode = new MapNode
+            this.LastNode.NextNode = new MapNode
             {
-                PreviousNode = this.LastNode,
                 Key = key,
                 Value = value
             };
 
-            this.LastNode.PreviousNode.NextNode = this.LastNode;
+            this.LastNode = this.LastNode.NextNode;
             this.Size++;
         }
 
@@ -63,7 +63,7 @@
         /// <exception cref="ArgumentException">Key not found.</exception>
         public TValue Retrieve(TKey key)
         {
-            foreach (var item in this.Cast<IMapItem<TKey, TValue>>())
+            foreach (IMapNode<TKey, TValue> item in this)
             {
                 if (item.Key.Equals(key))
                 {
@@ -91,15 +91,8 @@
         /// <summary>
         /// Class MapNodeSeparate.
         /// </summary>
-        /// <seealso cref="Interface.IMapNode{TKey, TValue}" />
         protected class MapNode : IMapNode<TKey, TValue>
         {
-            /// <summary>
-            /// Gets or sets the previous node.
-            /// </summary>
-            /// <value>The previous node.</value>
-            public IMapNode<TKey, TValue> PreviousNode { get; set; }
-
             /// <summary>
             /// Gets or sets the next node.
             /// </summary>

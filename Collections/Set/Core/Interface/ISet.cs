@@ -11,5 +11,11 @@
         /// </summary>
         /// <param name="item">The item.</param>
         void Add(T item);
+
+        /// <summary>
+        /// Removes the specified item.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        void Remove(T item);
     }
 }

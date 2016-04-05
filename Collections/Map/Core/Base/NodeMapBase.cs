@@ -1,9 +1,9 @@
-﻿namespace Collections.Map.Core.Base
+﻿using System.Linq;
+
+namespace Collections.Map.Core.Base
 {
     using System;
     using System.Collections;
-    using System.Linq;
-    using System.Threading.Tasks;
     using Collections.Map.Core.Interface;
 
     /// <summary>
@@ -45,13 +45,13 @@
         /// <param name="value">The value.</param>
         public void Store(TKey key, TValue value)
         {
-            this.LastNode.NextNode = new MapNode
+            this.LastNode = this.LastNode.NextNode = new MapNode
             {
                 Key = key,
                 Value = value
             };
 
-            this.LastNode = this.LastNode.NextNode;
+            //this.LastNode = this.LastNode.NextNode;
             this.Size++;
         }
 
@@ -63,16 +63,20 @@
         /// <exception cref="ArgumentException">Key not found.</exception>
         public TValue Retrieve(TKey key)
         {
-            foreach (IMapNode<TKey, TValue> item in this)
+            foreach (MapItem item in this.Cast<MapItem>().Where(item => item.Key.Equals(key)))
             {
-                if (item.Key.Equals(key))
-                {
-                    return item.Value;
-                }
+                return item.Value;
             }
 
-            throw new ArgumentException("Key not found.");
+            throw new ArgumentException("Invalid key.");
         }
+
+        /// <summary>
+        /// Determines whether the specified key has key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns><c>true</c> if the specified key has key; otherwise, <c>false</c>.</returns>
+        public bool HasKey(TKey key) => this.Cast<MapItem>().Any(item => item.Key.Equals(key));
 
         /// <summary>
         /// Returns an enumerator that iterates through a collection.
@@ -83,7 +87,12 @@
             var currentNode = this.FirstNode.NextNode;
             while (currentNode != null)
             {
-                yield return new {currentNode.Key, currentNode.Value};
+                yield return new MapItem
+                {
+                    Key = currentNode.Key,
+                    Value = currentNode.Value
+                };
+
                 currentNode = currentNode.NextNode;
             }
         }
@@ -107,6 +116,25 @@
 
             /// <summary>
             /// Gets or sets the value.
+            /// </summary>
+            /// <value>The value.</value>
+            public TValue Value { get; set; }
+        }
+
+        /// <summary>
+        /// Class MapItem.
+        /// </summary>
+        /// <seealso cref="Interface.IMapItem{TKey, TValue}" />
+        protected class MapItem : IMapItem<TKey, TValue>
+        {
+            /// <summary>
+            /// Gets the key.
+            /// </summary>
+            /// <value>The key.</value>
+            public TKey Key { get; set; }
+
+            /// <summary>
+            /// Gets the value.
             /// </summary>
             /// <value>The value.</value>
             public TValue Value { get; set; }

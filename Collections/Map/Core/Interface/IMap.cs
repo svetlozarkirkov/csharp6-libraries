@@ -26,5 +26,12 @@
         /// <param name="key">The key.</param>
         /// <returns>TValue.</returns>
         TValue Retrieve(TKey key);
+
+        /// <summary>
+        /// Determines whether the specified key has key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns><c>true</c> if the specified key has key; otherwise, <c>false</c>.</returns>
+        bool HasKey(TKey key);
     }
 }

@@ -23,7 +23,8 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 
 <h2>Ports</h2>
 
-[![Java](http://i.imgur.com/rDnhhLq.png?1)](https://github.com/svetlozarkirkov/java-libraries) ![JavaScript](http://i.imgur.com/ByuZPKe.png?1)
+![Java](http://i.imgur.com/rDnhhLq.png?2)
+![JavaScript](http://i.imgur.com/jtpavhh.png?2)
 
 ---
 

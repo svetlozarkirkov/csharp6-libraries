@@ -1,15 +1,17 @@
 ﻿namespace Collections.Stack.Core.Base
 {
+    using System;
     using System.Diagnostics.Contracts;
+    using System.Threading.Tasks;
     using Collections.Stack.Core.Interface;
     using Collections.Stack.ExceptionHandling.Core.Concrete;
 
     /// <summary>
-    /// Class StackBase.
+    /// Class ArrayStackBase.
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <seealso cref="Interface.IStack{T}" />
-    public abstract class StackBase<T> : IStack<T>
+    public abstract class ArrayStackBase<T> : IStack<T>
     {
         /// <summary>
         /// The underlying array.
@@ -32,11 +34,11 @@
         protected const int DefaultStackCapacity = 8;
 
         /// <summary>
-        /// Creates a new instance of the <see cref="StackBase{T}" /> class with the given capacity.
+        /// Creates a new instance of the <see cref="ArrayStackBase{T}" /> class with the given capacity.
         /// </summary>
         /// <param name="capacity">The initial capacity.</param>
         /// <exception cref="InvalidStackCapacityGivenException">Capacity is less than or equal to zero.</exception>
-        protected StackBase(int capacity)
+        protected ArrayStackBase(int capacity)
         {
             if (capacity <= 0)
             {
@@ -52,10 +54,10 @@
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="StackBase{T}" /> class with the default capacity.
+        /// Creates a new instance of the <see cref="ArrayStackBase{T}" /> class with the default capacity.
         /// </summary>
         /// <exception cref="InvalidStackCapacityGivenException">Capacity is less than zero.</exception>
-        protected StackBase() : this(DefaultStackCapacity)
+        protected ArrayStackBase() : this(DefaultStackCapacity)
         {
         }
 
@@ -63,7 +65,10 @@
         /// Inserts an element at the top of the stack.
         /// </summary>
         /// <param name="item">The item to be inserted.</param>
-        public void Push(T item)
+        /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
+        /// <exception cref="ArgumentNullException">The argument is null.</exception>
+        /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
+        public virtual void Push(T item)
         {
             Contract.Requires(item != null);
 
@@ -80,7 +85,8 @@
         /// Returns and removes the top element in the stack.
         /// </summary>
         /// <returns>The tpp element in the stack.</returns>
-        public T Pop()
+        /// <exception cref="EmptyStackException">The stack is empty.</exception>
+        public virtual T Pop()
         {
             if (this.TopPosition == 0)
             {
@@ -95,7 +101,8 @@
         /// Returns the top element in the stack.
         /// </summary>
         /// <returns>The top element in the stack.</returns>
-        public T Peek()
+        /// <exception cref="EmptyStackException">The stack is empty.</exception>
+        public virtual T Peek()
         {
             if (this.TopPosition == 0)
             {
@@ -109,16 +116,39 @@
         /// Gets the count of elements in the stack.
         /// </summary>
         /// <returns>The count of elements in the stack.</returns>
-        public int Size() => this.TopPosition;
+        public virtual int Size() => this.TopPosition;
 
         /// <summary>
         /// Handles the behavior when the stack is empty.
         /// </summary>
-        protected abstract void EmptyStackHandler();
+        /// <exception cref="EmptyStackException">The stack is empty.</exception>
+        protected virtual void EmptyStackHandler()
+        {
+            throw new EmptyStackException("The stack is empty."); // Not L10N
+        }
 
         /// <summary>
         /// Handles the behavior when the stack is full.
         /// </summary>
-        protected abstract void FullStackHandler();
+        /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
+        /// <exception cref="ArgumentNullException">The argument is null.</exception>
+        /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
+        protected virtual void FullStackHandler()
+        {
+            this.ResizeStack();
+        }
+
+        /// <summary>
+        /// Resizes the stack.
+        /// </summary>
+        /// <exception cref="ArgumentNullException">The argument is null.</exception>
+        /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
+        /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
+        protected virtual void ResizeStack()
+        {
+            var updatedStack = new T[this.Stack.Length * 2];
+            Parallel.For(0, this.TopPosition, i => updatedStack[i] = this.Stack[i]);
+            this.Stack = updatedStack;
+        }
     }
 }

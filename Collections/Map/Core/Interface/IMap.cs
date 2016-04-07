@@ -14,24 +14,31 @@
         int Size { get; }
 
         /// <summary>
-        /// Stores the specified key.
+        /// Stores the specified key and associated value.
         /// </summary>
         /// <param name="key">The key.</param>
         /// <param name="value">The value.</param>
         void Store(TKey key, TValue value);
 
         /// <summary>
-        /// Gets the value.
+        /// Gets the value associated with the specified key.
         /// </summary>
         /// <param name="key">The key.</param>
         /// <returns>TValue.</returns>
         TValue Retrieve(TKey key);
 
         /// <summary>
-        /// Determines whether the specified key has key.
+        /// Determines whether the map contains the specified key.
         /// </summary>
         /// <param name="key">The key.</param>
-        /// <returns><c>true</c> if the specified key has key; otherwise, <c>false</c>.</returns>
+        /// <returns><c>true</c> if the map contains the key; otherwise, <c>false</c>.</returns>
         bool HasKey(TKey key);
+
+        /// <summary>
+        /// Determines whether the map contains the specified value.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns><c>true</c> if the map contains the value; otherwise, <c>false</c>.</returns>
+        bool HasValue(TValue value);
     }
 }

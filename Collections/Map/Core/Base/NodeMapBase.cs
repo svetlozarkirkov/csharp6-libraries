@@ -1,9 +1,8 @@
-﻿using System.Linq;
-
-namespace Collections.Map.Core.Base
+﻿namespace Collections.Map.Core.Base
 {
     using System;
     using System.Collections;
+    using System.Linq;
     using Collections.Map.Core.Interface;
 
     /// <summary>
@@ -17,7 +16,7 @@ namespace Collections.Map.Core.Base
         /// <summary>
         /// The first node
         /// </summary>
-        protected IMapNode<TKey, TValue> FirstNode;
+        protected IMapNode<TKey, TValue> StartNode;
 
         /// <summary>
         /// The last node
@@ -29,7 +28,7 @@ namespace Collections.Map.Core.Base
         /// </summary>
         protected NodeMapBase()
         {
-            this.FirstNode = this.LastNode = new MapNode();
+            this.StartNode = this.LastNode = new MapNode();
         }
 
         /// <summary>
@@ -39,7 +38,7 @@ namespace Collections.Map.Core.Base
         public int Size { get; private set; }
 
         /// <summary>
-        /// Stores the specified key.
+        /// Stores the specified key and associated value.
         /// </summary>
         /// <param name="key">The key.</param>
         /// <param name="value">The value.</param>
@@ -51,19 +50,18 @@ namespace Collections.Map.Core.Base
                 Value = value
             };
 
-            //this.LastNode = this.LastNode.NextNode;
             this.Size++;
         }
 
         /// <summary>
-        /// Gets the value.
+        /// Gets the value associated with the specified key.
         /// </summary>
         /// <param name="key">The key.</param>
         /// <returns>TValue.</returns>
-        /// <exception cref="ArgumentException">Key not found.</exception>
+        /// <exception cref="ArgumentException">Invalid key.</exception>
         public TValue Retrieve(TKey key)
         {
-            foreach (MapItem item in this.Cast<MapItem>().Where(item => item.Key.Equals(key)))
+            foreach (var item in this.Cast<MapItem>().Where(item => item.Key.Equals(key)))
             {
                 return item.Value;
             }
@@ -72,11 +70,20 @@ namespace Collections.Map.Core.Base
         }
 
         /// <summary>
-        /// Determines whether the specified key has key.
+        /// Determines whether the map contains the specified key.
         /// </summary>
         /// <param name="key">The key.</param>
-        /// <returns><c>true</c> if the specified key has key; otherwise, <c>false</c>.</returns>
-        public bool HasKey(TKey key) => this.Cast<MapItem>().Any(item => item.Key.Equals(key));
+        /// <returns><c>true</c> if the map contains the key; otherwise, <c>false</c>.</returns>
+        public bool HasKey(TKey key)
+            => this.Cast<MapItem>().Any(item => item.Key.Equals(key));
+
+        /// <summary>
+        /// Determines whether the map contains the specified value.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns><c>true</c> if the map contains the value; otherwise, <c>false</c>.</returns>
+        public bool HasValue(TValue value)
+            => this.Cast<MapItem>().Any(item => item.Value.Equals(value));
 
         /// <summary>
         /// Returns an enumerator that iterates through a collection.
@@ -84,21 +91,22 @@ namespace Collections.Map.Core.Base
         /// <returns>An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.</returns>
         public IEnumerator GetEnumerator()
         {
-            var currentNode = this.FirstNode.NextNode;
+            var currentNode = this.StartNode.NextNode;
+            var output = new MapItem();
+
             while (currentNode != null)
             {
-                yield return new MapItem
-                {
-                    Key = currentNode.Key,
-                    Value = currentNode.Value
-                };
+                output.Key = currentNode.Key;
+                output.Value = currentNode.Value;
+
+                yield return output;
 
                 currentNode = currentNode.NextNode;
             }
         }
 
         /// <summary>
-        /// Class MapNodeSeparate.
+        /// Class MapNode.
         /// </summary>
         protected class MapNode : IMapNode<TKey, TValue>
         {

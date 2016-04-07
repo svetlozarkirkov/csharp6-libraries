@@ -7,14 +7,14 @@
     /// Stack with permanent capacity.
     /// </summary>
     /// <typeparam name="T">Type of the items in the stack.</typeparam>
-    public class PermanentStack<T> : StandardStackBase<T>
+    public class PermanentArrayStack<T> : ArrayStack<T>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PermanentStack{T}"/> class.
+        /// Initializes a new instance of the <see cref="PermanentArrayStack{T}"/> class.
         /// </summary>
         /// <param name="capacity">The initial capacity.</param>
         /// <exception cref="InvalidStackCapacityGivenException">Capacity is less than or equal to zero.</exception>
-        public PermanentStack(int capacity) : base(capacity)
+        public PermanentArrayStack(int capacity) : base(capacity)
         {
         }
 

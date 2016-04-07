@@ -16,7 +16,7 @@ namespace Collections.Stack.Core.Concrete
         /// </summary>
         /// <param name="capacity">The initial capacity.</param>
         /// <exception cref="InvalidStackCapacityGivenException">Capacity is less than or equal to zero.</exception>
-        protected ArrayStack(int capacity) : base(capacity)
+        public ArrayStack(int capacity) : base(capacity)
         {
         }
 
@@ -24,7 +24,7 @@ namespace Collections.Stack.Core.Concrete
         /// Initializes a new instance of the <see cref="ArrayStack{T}"/> class.
         /// </summary>
         /// <exception cref="InvalidStackCapacityGivenException">Capacity is less than zero.</exception>
-        protected ArrayStack()
+        public ArrayStack()
         {
         }
 

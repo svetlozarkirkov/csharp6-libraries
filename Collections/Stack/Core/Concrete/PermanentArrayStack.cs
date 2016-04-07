@@ -1,6 +1,5 @@
 ﻿namespace Collections.Stack.Core.Concrete
 {
-    using Collections.Stack.Core.Base;
     using Collections.Stack.ExceptionHandling.Core.Concrete;
 
     /// <summary>

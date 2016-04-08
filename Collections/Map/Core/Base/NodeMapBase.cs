@@ -66,7 +66,7 @@
                 return item.Value;
             }
 
-            throw new ArgumentException("Invalid key.");
+            throw new ArgumentException("Invalid key given.");
         }
 
         /// <summary>

@@ -40,6 +40,7 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Core\Interface\ICollection.cs" />
     <Compile Include="Injectors\Clear\IClearable.cs" />
     <Compile Include="Injectors\Index\IIndexable.cs" />
     <Compile Include="Injectors\Node\Interface\IDoubleLinkNode.cs" />
@@ -51,7 +52,8 @@
     <Compile Include="Map\Core\Interface\IMapItem.cs" />
     <Compile Include="Map\Core\Interface\IMapNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Set\Core\Interface\ISingleLinkNodeSet.cs" />
+    <Compile Include="Set\Core\Base\NodeSetBase.cs" />
+    <Compile Include="Set\Core\Concrete\NodeSet.cs" />
     <Compile Include="Set\Core\Interface\ISet.cs" />
     <Compile Include="Stack\Core\Base\ArrayStackBase.cs" />
     <Compile Include="Stack\Core\Concrete\PermanentArrayStack.cs" />
@@ -73,10 +75,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Core\ExtensionMethods\" />
     <Folder Include="Injectors\Node\Base\" />
     <Folder Include="Injectors\Node\Concrete\" />
-    <Folder Include="Set\Core\Base\" />
-    <Folder Include="Set\Core\Concrete\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ImpromptuInterface, Version=6.2.2.0, Culture=neutral, PublicKeyToken=0b1781c923b2975b, processorArchitecture=MSIL">

@@ -1,5 +1,7 @@
 ﻿namespace Collections.Set.Core.Interface
 {
+    using Collections.Core.Interface;
+
     /// <summary>
     /// Interface ISet
     /// </summary>
@@ -17,5 +19,12 @@
         /// </summary>
         /// <param name="item">The item.</param>
         void Remove(T item);
+
+        /// <summary>
+        /// Determines whether the set contains the specified item.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns><c>true</c> if the set contains the specified item; otherwise, <c>false</c>.</returns>
+        bool Contains(T item);
     }
 }

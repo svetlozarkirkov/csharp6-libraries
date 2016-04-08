@@ -1,5 +1,3 @@
-using Collections.Stack.Core.Concrete;
-
 namespace TestAppConsole
 {
     using System;
@@ -8,6 +6,7 @@ namespace TestAppConsole
     using System.Linq;
     using Collections.Map.Core.Concrete;
     using Collections.Map.Core.Interface;
+    using Collections.Stack.Core.Concrete;
 
     internal class App
     {
@@ -21,11 +20,9 @@ namespace TestAppConsole
             for (var index = 0; index < 100; index++)
             {
                 var watch = new Stopwatch();
-                var dictionary = new Dictionary<int, int>(itemsToInsert);
-                var map = new NodeMap<int, int>();
-                var stack = new ArrayStack<int>();
 
                 watch.Start();
+                var dictionary = new Dictionary<int, int>(itemsToInsert);
                 for (var i = 0; i < itemsToInsert; i++)
                 {
                     dictionary.Add(i, i);
@@ -34,6 +31,7 @@ namespace TestAppConsole
                 dictionaryTicks.Add(watch.ElapsedTicks);
 
                 watch.Restart();
+                var map = new NodeMap<int, int>();
                 for (var i = 0; i < itemsToInsert; i++)
                 {
                     map.Store(i, i);
@@ -42,6 +40,7 @@ namespace TestAppConsole
                 nodeMapTicks.Add(watch.ElapsedTicks);
 
                 watch.Restart();
+                var stack = new ArrayStack<int>();
                 for (var i = 0; i < itemsToInsert; i++)
                 {
                     stack.Push(i);
@@ -57,17 +56,14 @@ namespace TestAppConsole
             Console.ReadKey();
 
             var nodeMap = new NodeMap<int, int>();
-            for (var i = 0; i < 20; i++)
+            for (var i = 0; i < 10; i++)
             {
                 nodeMap.Store(i, i);
             }
 
             foreach (IMapItem<int, int> item in nodeMap)
             {
-                Console.WriteLine("{0} : {1} => {2}",
-                    item.GetType().Name,
-                    item.Key,
-                    item.Value);
+                Console.WriteLine("{0} => {1}", item.Key, item.Value);
             }
         }
     }

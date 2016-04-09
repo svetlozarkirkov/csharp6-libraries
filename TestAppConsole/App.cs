@@ -12,7 +12,7 @@ namespace TestAppConsole
     {
         private static void Main()
         {
-            const int itemsToInsert = 1000000;
+            const int ItemsToInsert = 1000000;
             var dictionaryTicks = new List<long>();
             var nodeMapTicks = new List<long>();
             var arrayStackTicks = new List<long>();
@@ -22,8 +22,8 @@ namespace TestAppConsole
                 var watch = new Stopwatch();
 
                 watch.Start();
-                var dictionary = new Dictionary<int, int>(itemsToInsert);
-                for (var i = 0; i < itemsToInsert; i++)
+                var dictionary = new Dictionary<int, int>(ItemsToInsert);
+                for (var i = 0; i < ItemsToInsert; i++)
                 {
                     dictionary.Add(i, i);
                 }
@@ -32,7 +32,7 @@ namespace TestAppConsole
 
                 watch.Restart();
                 var map = new NodeMap<int, int>();
-                for (var i = 0; i < itemsToInsert; i++)
+                for (var i = 0; i < ItemsToInsert; i++)
                 {
                     map.Store(i, i);
                 }
@@ -41,7 +41,7 @@ namespace TestAppConsole
 
                 watch.Restart();
                 var stack = new ArrayStack<int>();
-                for (var i = 0; i < itemsToInsert; i++)
+                for (var i = 0; i < ItemsToInsert; i++)
                 {
                     stack.Push(i);
                 }

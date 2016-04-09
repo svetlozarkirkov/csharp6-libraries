@@ -14,6 +14,16 @@
     public abstract class ArrayStackBase<T> : IStack<T>
     {
         /// <summary>
+        /// The default capacity of the Standard Stack.
+        /// </summary>
+        protected const int DefaultStackCapacity = 8;
+
+        /// <summary>
+        /// The capacity with which the stack was initialized.
+        /// </summary>
+        protected readonly int InitializedCapacity;
+
+        /// <summary>
         /// The underlying array.
         /// </summary>
         protected T[] Stack;
@@ -22,16 +32,6 @@
         /// The top position of the stack.
         /// </summary>
         protected int TopPosition;
-
-        /// <summary>
-        /// The capacity with which the stack was initialized.
-        /// </summary>
-        protected readonly int InitializedCapacity;
-
-        /// <summary>
-        /// The default capacity of the Standard Stack.
-        /// </summary>
-        protected const int DefaultStackCapacity = 8;
 
         /// <summary>
         /// Creates a new instance of the <see cref="ArrayStackBase{T}" /> class with the given capacity.

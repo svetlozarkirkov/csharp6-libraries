@@ -75,7 +75,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Core\ExtensionMethods\" />
     <Folder Include="Injectors\Node\Base\" />
     <Folder Include="Injectors\Node\Concrete\" />
   </ItemGroup>

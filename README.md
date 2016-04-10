@@ -18,28 +18,40 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 - :books: **Full, correct and useful documentation**
 - :link: **Ports to other languages**
 
-## Version 
-* **Alpha**
+## Version
+* **Pre-Alpha**
 
 <h2>Ports</h2>
 
 ![Java](http://i.imgur.com/rDnhhLq.png?2)
 ![JavaScript](http://i.imgur.com/jtpavhh.png?2)
 
----
 
-<h3>List of libraries (constantly updated ; work in progress):</h3>
+<h2>Dependencies</h2>
+
+|Name|
+|---|
+|Impromptu Interface|
+|Console Dump|
+|NLog|
+|Fluent Assertions|
+|NUnit|
+|Moq|
+|SpecFlow|
+
+
+<h2>List of libraries (constantly updated ; work in progress):</h2>
 
 #### **Collections** ####
 
 - **Stack** ![Stack](http://i.imgur.com/qGOr4Gj.png?2)
-    - **Standard Stack** sub-class
+    - **ArrayStack** sub-class
 		- Implementations
 		
 			| Class | Description |
 			|---|---|
-			| Standard Stack | Default implementation |
-			| Permanent Stack | Has fixed capacity |
+			| ArrayStack | Default implementation |
+			| Permanent ArrayStack | Has fixed capacity |
 
 		- Public interface
 		        
@@ -49,8 +61,7 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 			| Pop | Returns and removes the top item in the stack |
 			| Peek | Returns the top item in the stack |
 			| Size | Returns the count of elements in the stack |
-			| Clear | Reinitializes the stack |
-			| [ ] | Access items in the stack by index |
+			
 
 
 - **Set**

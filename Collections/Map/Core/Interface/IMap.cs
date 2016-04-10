@@ -1,11 +1,13 @@
 ﻿namespace Collections.Map.Core.Interface
 {
+    using Collections.Core.Interface;
+
     /// <summary>
     /// Interface IMap
     /// </summary>
     /// <typeparam name="TKey">The type of the key.</typeparam>
     /// <typeparam name="TValue">The type of the value.</typeparam>
-    public interface IMap<in TKey, TValue>
+    public interface IMap<in TKey, TValue> : ICollection
     {
         /// <summary>
         /// Gets the size of the Map.

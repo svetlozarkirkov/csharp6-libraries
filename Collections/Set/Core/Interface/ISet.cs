@@ -6,7 +6,7 @@
     /// Interface ISet
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface ISet<in T>
+    public interface ISet<in T> : ICollection
     {
         /// <summary>
         /// Adds the specified item.

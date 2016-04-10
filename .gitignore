@@ -425,3 +425,5 @@ $RECYCLE.BIN/
 
 codecoveragegenerate.txt
 Collections_coverage.xml
+
+StyleCop.Cache

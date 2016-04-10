@@ -1,4 +1,4 @@
-﻿namespace Utilities
+﻿namespace Common.Utilities.Reflection
 {
     using System;
     using System.Collections.Generic;

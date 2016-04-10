@@ -46,10 +46,6 @@
       <Project>{3d5df065-36dd-4e6b-9194-49f3672196fe}</Project>
       <Name>Collections</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Utilities\Utilities.csproj">
-      <Project>{9539cefa-e8bc-4c7b-a141-d933fea76703}</Project>
-      <Name>Utilities</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ConsoleDump, Version=0.6.0.1, Culture=neutral, processorArchitecture=MSIL">

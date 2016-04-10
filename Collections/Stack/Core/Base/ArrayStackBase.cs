@@ -66,7 +66,6 @@
         /// </summary>
         /// <param name="item">The item to be inserted.</param>
         /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
-        /// <exception cref="ArgumentNullException">The argument is null.</exception>
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
         public virtual void Push(T item)
         {
@@ -131,22 +130,21 @@
         /// Handles the behavior when the stack is full.
         /// </summary>
         /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
-        /// <exception cref="ArgumentNullException">The argument is null.</exception>
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
         protected virtual void FullStackHandler()
         {
-            this.ResizeStack();
+            this.ResizeStack(2);
         }
 
         /// <summary>
         /// Resizes the stack.
         /// </summary>
-        /// <exception cref="ArgumentNullException">The argument is null.</exception>
+        /// <param name="multiplier">The current capacity will be multiplied by this.</param>
         /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
-        protected virtual void ResizeStack()
+        protected virtual void ResizeStack(int multiplier)
         {
-            var updatedStack = new T[this.Stack.Length * 2];
+            var updatedStack = new T[this.Stack.Length * multiplier];
             Parallel.For(0, this.TopPosition, i => updatedStack[i] = this.Stack[i]);
             this.Stack = updatedStack;
         }

@@ -1,11 +1,13 @@
 namespace Collections.Stack.Core.Interface
 {
+    using Collections.Core.Interface;
+
     /// <summary>
     /// The official interface of the Stack sub-class.
     /// Has four basic stack methods.
     /// </summary>
     /// <typeparam name="T">The type which is stored in the stack.</typeparam>
-    public interface IStack<T>
+    public interface IStack<T> : ICollection
     {
         /// <summary>
         /// Inserts an item at the top of the stack.

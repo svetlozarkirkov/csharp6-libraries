@@ -40,7 +40,7 @@ namespace TestAppConsole
                 nodeMapTicks.Add(watch.ElapsedTicks);
 
                 watch.Restart();
-                var stack = new ArrayStack<int>();
+                var stack = new ArrayStack<int>(ItemsToInsert);
                 for (var i = 0; i < ItemsToInsert; i++)
                 {
                     stack.Push(i);

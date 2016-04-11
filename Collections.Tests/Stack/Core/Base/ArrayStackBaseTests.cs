@@ -14,10 +14,10 @@
         /// When the stack is initialized with an invalid capacity
         /// Should throw "InvalidCapacityGivenException"
         /// </summary>
-        /// <exception cref="Exception">A delegate callback throws an exception.</exception>
         [Test]
         public void StackIsInitialized_InvalidCapacityGiven_ShouldThrowException()
         {
+            // TODO
         }
 
         /// <summary>
@@ -27,10 +27,10 @@
         [Test]
         public void WhenEmptyStack_SizeMustBeZero()
         {
-            // Act
+            // Arrange
             var mock = new Mock<ArrayStackBase<object>> { CallBase = true };
 
-            // Assert
+            // Act Assert
             mock.Object.Size().Should().Be(0);
         }
 
@@ -80,6 +80,107 @@
             mock.Object.Push(It.IsAny<object>());
 
             // Assert
+            mock.Object.Size().Should().Be(1);
+        }
+
+        /// <summary>
+        /// When the stack is at full capacity and an item is pushed
+        /// There should be no FullStackException thrown
+        /// </summary>
+        /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
+        /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
+        [Test]
+        public void StackAtFullCapacity_WhenItemIsPushed_ShouldNotThrowException()
+        {
+            // Arrange
+            var mock = new Mock<ArrayStackBase<object>>(1) { CallBase = true };
+            mock.Object.Push(It.IsAny<object>());
+
+            // Act Assert
+            mock.Object
+                .Invoking(s => s.Push(It.IsAny<object>()))
+                .ShouldNotThrow<FullStackException>();
+        }
+
+        /// <summary>
+        /// When the stack is empty and an item is pushed
+        /// The item returned with "Pop" should be the same as the pushed one
+        /// </summary>
+        /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
+        /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
+        /// <exception cref="EmptyStackException">The stack is empty.</exception>
+        [Test]
+        public void EmptyStack_ItemIsPushed_PopShouldReturnTheSameItem()
+        {
+            // Arrange
+            var mock = new Mock<ArrayStackBase<string>> { CallBase = true };
+            const string Item = "Pop test string";
+            mock.Object.Push(Item);
+
+            // Act
+            var poppedItem = mock.Object.Pop();
+
+            // Assert
+            Assert.AreSame(Item, poppedItem, "The popped item was not the same.");
+        }
+
+        /// <summary>
+        /// When the stack is empty, an item is pushed and then "Pop" is invoked
+        /// The size of the stack must be zero;
+        /// </summary>
+        /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
+        /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
+        /// <exception cref="EmptyStackException">The stack is empty.</exception>
+        [Test]
+        public void EmptyStack_ItemIsPushed_PopInvoked_SizeMustBeZero()
+        {
+            // Arrange
+            var mock = new Mock<ArrayStackBase<object>> { CallBase = true };
+            mock.Object.Push(It.IsAny<object>());
+            mock.Object.Pop();
+
+            // Act Assert
+            mock.Object.Size().Should().Be(0);
+        }
+
+        /// <summary>
+        /// When the stack is empty, an item is pushed and "Peek" is invoked
+        /// The returned item must be the same as the pushed one
+        /// </summary>
+        /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
+        /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
+        /// <exception cref="EmptyStackException">The stack is empty.</exception>
+        [Test]
+        public void EmptyStack_ItemIsPushed_PeekInvoked_ShouldReturnTheSameItem()
+        {
+            // Arrange
+            var mock = new Mock<ArrayStackBase<string>> { CallBase = true };
+            const string Item = "Peek test string";
+            mock.Object.Push(Item);
+
+            // Act
+            var peekedItem = mock.Object.Peek();
+
+            // Assert
+            Assert.AreSame(Item, peekedItem, "The peeked item was not the same.");
+        }
+
+        /// <summary>
+        /// When the stack is empty, item is pushed and "Peek" is invoked
+        /// The size of the stack must be one.
+        /// </summary>
+        /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
+        /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
+        /// <exception cref="EmptyStackException">The stack is empty.</exception>
+        [Test]
+        public void EmptyStack_ItemIsPushed_PeekInvoked_SizeMustBeOne()
+        {
+            // Arrange
+            var mock = new Mock<ArrayStackBase<object>> { CallBase = true };
+            mock.Object.Push(It.IsAny<object>());
+            mock.Object.Peek();
+
+            // Act Assert
             mock.Object.Size().Should().Be(1);
         }
     }

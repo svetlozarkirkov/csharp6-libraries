@@ -11,13 +11,48 @@
     public class ArrayStackBaseTests
     {
         /// <summary>
-        /// When the stack is initialized with an invalid capacity
+        /// Stub used to test the constructors.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <seealso cref="Collections.Stack.Core.Base.ArrayStackBase{T}" />
+        private class ArrayStackBaseStub<T> : ArrayStackBase<T>
+        {
+            /// <exception cref="InvalidStackCapacityGivenException">Capacity is less than zero.</exception>
+            internal ArrayStackBaseStub() { }
+
+            /// <exception cref="InvalidStackCapacityGivenException">Capacity is less than or equal to zero.</exception>
+            internal ArrayStackBaseStub(int capacity) : base(capacity) { }
+        }
+
+        /// <summary>
+        /// When the stack is initialized using the default parameterless constructor
+        /// There should be no "InvalidStackCapacityGivenException" thrown
+        /// </summary>
+        /// <exception cref="Exception">A delegate callback throws an exception.</exception>
+        [Test]
+        public void StackIsInitialized_UsingDefaultConstructor_ShouldNotThrowException()
+        {
+            // Arrange
+            Action act = () => new ArrayStackBaseStub<object>();
+
+            // Act Assert
+            act.ShouldNotThrow<InvalidStackCapacityGivenException>();
+        }
+
+        /// <summary>
+        /// When the stack is initialized with an invalid capacity (0)
         /// Should throw "InvalidCapacityGivenException"
         /// </summary>
+        /// <exception cref="InvalidStackCapacityGivenException">Capacity is less than or equal to zero.</exception>
+        /// <exception cref="Exception">A delegate callback throws an exception.</exception>
         [Test]
         public void StackIsInitialized_InvalidCapacityGiven_ShouldThrowException()
         {
-            // TODO
+            // Arrange
+            Action act = () => new ArrayStackBaseStub<object>(0);
+
+            // Act Assert
+            act.ShouldThrowExactly<InvalidStackCapacityGivenException>();
         }
 
         /// <summary>

@@ -87,10 +87,7 @@
         /// <exception cref="EmptyStackException">The stack is empty.</exception>
         public virtual T Pop()
         {
-            if (this.TopPosition == 0)
-            {
-                this.EmptyStackHandler();
-            }
+            if (this.TopPosition == 0) this.EmptyStackHandler();
 
             this.TopPosition--;
             return this.Stack[this.TopPosition];
@@ -103,10 +100,7 @@
         /// <exception cref="EmptyStackException">The stack is empty.</exception>
         public virtual T Peek()
         {
-            if (this.TopPosition == 0)
-            {
-                this.EmptyStackHandler();
-            }
+            if (this.TopPosition == 0) this.EmptyStackHandler();
 
             return this.Stack[this.TopPosition - 1];
         }

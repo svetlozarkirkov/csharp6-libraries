@@ -41,6 +41,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Core\Base\ArrayCollectionBase.cs" />
+    <Compile Include="Core\ExceptionHandling\Concrete\InvalidCollectionCapacityException.cs" />
     <Compile Include="Core\Interface\ICollection.cs" />
     <Compile Include="Injectors\Clear\IClearable.cs" />
     <Compile Include="Injectors\Index\IIndexable.cs" />
@@ -77,7 +78,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Core\ExceptionHandling\" />
     <Folder Include="Injectors\Node\Base\" />
     <Folder Include="Injectors\Node\Concrete\" />
   </ItemGroup>

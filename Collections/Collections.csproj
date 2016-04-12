@@ -40,12 +40,14 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Core\Base\ArrayCollectionBase.cs" />
     <Compile Include="Core\Interface\ICollection.cs" />
     <Compile Include="Injectors\Clear\IClearable.cs" />
     <Compile Include="Injectors\Index\IIndexable.cs" />
     <Compile Include="Injectors\Node\Interface\IDoubleLinkNode.cs" />
     <Compile Include="Injectors\Node\Interface\INode.cs" />
     <Compile Include="Injectors\Node\Interface\ISingleLinkNode.cs" />
+    <Compile Include="Map\Core\Base\ArrayMapBase.cs" />
     <Compile Include="Map\Core\Base\NodeMapBase.cs" />
     <Compile Include="Map\Core\Concrete\NodeMap.cs" />
     <Compile Include="Map\Core\Interface\IMap.cs" />
@@ -75,6 +77,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Core\ExceptionHandling\" />
     <Folder Include="Injectors\Node\Base\" />
     <Folder Include="Injectors\Node\Concrete\" />
   </ItemGroup>

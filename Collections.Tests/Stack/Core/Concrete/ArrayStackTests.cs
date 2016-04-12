@@ -1,29 +1,14 @@
 ﻿namespace Collections.Tests.Stack.Core.Concrete
 {
     using System;
-
+    using FluentAssertions;
     using NUnit.Framework;
     using Collections.Stack.Core.Concrete;
     using Collections.Stack.ExceptionHandling.Core.Concrete;
 
-    using FluentAssertions;
-
     [TestFixture]
     public class ArrayStackTests
     {
-        private class ArrayStackStub<T> : ArrayStack<T>
-        {
-            /// <exception cref="!:InvalidStackCapacityGivenException">Capacity is less than zero.</exception>
-            public ArrayStackStub()
-            {
-            }
-
-            /// <exception cref="InvalidStackCapacityGivenException">Capacity is less than or equal to zero.</exception>
-            public ArrayStackStub(int capacity) : base(capacity)
-            {
-            }
-        }
-
         /// <summary>
         /// The default parameterless constructor should not throw the specific exception.
         /// </summary>
@@ -32,7 +17,7 @@
         public void DefaultParameterlessConstructor_ShouldNotThrowException()
         {
             // Arrange
-            Action act = () => new ArrayStackStub<object>();
+            Action act = () => new ArrayStack<object>();
 
             // Act Assert
             act.ShouldNotThrow<InvalidStackCapacityGivenException>();
@@ -47,7 +32,7 @@
         public void ConstructorWithCapacity_InvalidCapacity_ShouldThrowException()
         {
             // Arrange
-            Action act = () => new ArrayStackStub<object>(0);
+            Action act = () => new ArrayStack<object>(0);
 
             // Act Assert
             act.ShouldThrowExactly<InvalidStackCapacityGivenException>();
@@ -62,7 +47,7 @@
         public void ConstructorWithCapacity_ValidCapacity_ShouldNotThrowException()
         {
             // Arrange
-            Action act = () => new ArrayStackStub<object>(1);
+            Action act = () => new ArrayStack<object>(1);
 
             // Act Assert
             act.ShouldNotThrow<InvalidStackCapacityGivenException>();

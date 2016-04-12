@@ -1,31 +1,15 @@
 ﻿namespace Collections.Tests.Stack.Core.Concrete
 {
     using System;
-
+    using FluentAssertions;
+    using Moq;
     using NUnit.Framework;
     using Collections.Stack.Core.Concrete;
     using Collections.Stack.ExceptionHandling.Core.Concrete;
 
-    using FluentAssertions;
-
-    using Moq;
-
     [TestFixture]
     public class PermanentArrayStackTests
     {
-        /// <summary>
-        /// Stub class
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <seealso cref="Collections.Stack.Core.Concrete.PermanentArrayStack{T}" />
-        private class PermanentArrayStackStub<T> : PermanentArrayStack<T>
-        {
-            /// <exception cref="InvalidStackCapacityGivenException">The given capacity is less than or equal to zero.</exception>
-            public PermanentArrayStackStub(int capacity) : base(capacity)
-            {
-            }
-        }
-
         /// <summary>
         /// The stack is initialized with capacity (1), if second item is pushed - throw the specific exception
         /// </summary>
@@ -36,11 +20,11 @@
         public void StackIsInitialized_FullCapacityIsReached_IfPush_ThrowException()
         {
             // Arrange
-            var stub = new PermanentArrayStackStub<object>(1);
-            stub.Push(It.IsAny<object>());
+            var stack = new PermanentArrayStack<object>(1);
+            stack.Push(It.IsAny<object>());
 
             // Act Assert
-            stub.Invoking(s => s.Push(It.IsAny<object>()))
+            stack.Invoking(s => s.Push(It.IsAny<object>()))
                 .ShouldThrowExactly<FullStackException>();
         }
     }

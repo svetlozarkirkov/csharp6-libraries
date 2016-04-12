@@ -14,26 +14,6 @@
     public abstract class ArrayStackBase<T> : IStack<T>
     {
         /// <summary>
-        /// The default capacity of the Standard Stack.
-        /// </summary>
-        protected const int DefaultStackCapacity = 8;
-
-        /// <summary>
-        /// The capacity with which the stack was initialized.
-        /// </summary>
-        protected readonly int InitializedCapacity;
-
-        /// <summary>
-        /// The underlying array.
-        /// </summary>
-        protected T[] Stack;
-
-        /// <summary>
-        /// The top position of the stack.
-        /// </summary>
-        protected int TopPosition;
-
-        /// <summary>
         /// Creates a new instance of the <see cref="ArrayStackBase{T}" /> class with the given capacity.
         /// </summary>
         /// <param name="capacity">The initial capacity.</param>
@@ -41,12 +21,10 @@
         protected ArrayStackBase(int capacity)
         {
             if (capacity <= 0)
-            {
                 throw new InvalidStackCapacityGivenException(
                     nameof(capacity),
                     capacity,
                     "Invalid capacity assigned to the stack."); // Not L10N
-            }
 
             this.Stack = new T[capacity];
             this.InitializedCapacity = capacity;
@@ -62,6 +40,26 @@
         }
 
         /// <summary>
+        /// The default capacity.
+        /// </summary>
+        protected static int DefaultStackCapacity => 8;
+
+        /// <summary>
+        /// The capacity with which the stack was initialized.
+        /// </summary>
+        protected int InitializedCapacity { get; }
+
+        /// <summary>
+        /// The underlying array.
+        /// </summary>
+        protected T[] Stack { get; set; }
+
+        /// <summary>
+        /// The top position of the stack.
+        /// </summary>
+        protected int TopPosition { get; set; }
+
+        /// <summary>
         /// Inserts an element at the top of the stack.
         /// </summary>
         /// <param name="item">The item to be inserted.</param>
@@ -71,10 +69,7 @@
         {
             Contract.Requires(item != null);
 
-            if (this.TopPosition == this.Stack.Length)
-            {
-                this.FullStackHandler();
-            }
+            if (this.TopPosition == this.Stack.Length) this.FullStackHandler();
 
             this.Stack[this.TopPosition] = item;
             this.TopPosition++;

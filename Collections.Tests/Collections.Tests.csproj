@@ -65,6 +65,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Map\Core\Base\NodeMapBaseTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stack\Core\Base\ArrayStackBaseTests.cs" />
     <Compile Include="Stack\Core\Concrete\ArrayStackTests.cs" />
@@ -79,9 +80,7 @@
       <Name>Collections</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Stack\Core\Concrete\NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

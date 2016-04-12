@@ -3,6 +3,8 @@
     using System;
     using System.Diagnostics.Contracts;
     using System.Threading.Tasks;
+    using Collections.Core.Base;
+    using Collections.Core.ExceptionHandling.Concrete;
     using Collections.Stack.Core.Interface;
     using Collections.Stack.ExceptionHandling.Core.Concrete;
 
@@ -11,53 +13,24 @@
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <seealso cref="Interface.IStack{T}" />
-    public abstract class ArrayStackBase<T> : IStack<T>
+    public abstract class ArrayStackBase<T> : ArrayCollectionBase<T>, IStack<T>
     {
         /// <summary>
-        /// Creates a new instance of the <see cref="ArrayStackBase{T}" /> class with the given capacity.
+        /// Initializes a new instance of the <see cref="ArrayStackBase{T}"/> class.
         /// </summary>
-        /// <param name="capacity">The initial capacity.</param>
-        /// <exception cref="InvalidStackCapacityGivenException">Capacity is less than or equal to zero.</exception>
-        protected ArrayStackBase(int capacity)
-        {
-            if (capacity <= 0)
-                throw new InvalidStackCapacityGivenException(
-                    nameof(capacity),
-                    capacity,
-                    "Invalid capacity assigned to the stack."); // Not L10N
-
-            this.Stack = new T[capacity];
-            this.InitializedCapacity = capacity;
-            this.TopPosition = 0;
-        }
-
-        /// <summary>
-        /// Creates a new instance of the <see cref="ArrayStackBase{T}" /> class with the default capacity.
-        /// </summary>
-        /// <exception cref="InvalidStackCapacityGivenException">Capacity is less than zero.</exception>
-        protected ArrayStackBase() : this(DefaultStackCapacity)
+        /// <param name="capacity">The capacity.</param>
+        /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
+        protected ArrayStackBase(int capacity) : base(capacity)
         {
         }
 
         /// <summary>
-        /// The default capacity.
+        /// Initializes a new instance of the <see cref="ArrayStackBase{T}"/> class.
         /// </summary>
-        protected static int DefaultStackCapacity => 8;
-
-        /// <summary>
-        /// The capacity with which the stack was initialized.
-        /// </summary>
-        protected int InitializedCapacity { get; }
-
-        /// <summary>
-        /// The underlying array.
-        /// </summary>
-        protected T[] Stack { get; set; }
-
-        /// <summary>
-        /// The top position of the stack.
-        /// </summary>
-        protected int TopPosition { get; set; }
+        /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
+        protected ArrayStackBase()
+        {
+        }
 
         /// <summary>
         /// Inserts an element at the top of the stack.
@@ -69,10 +42,10 @@
         {
             Contract.Requires(item != null);
 
-            if (this.TopPosition == this.Stack.Length) this.FullStackHandler();
+            if (this.CurrentPosition == this.Collection.Length) this.FullStackHandler();
 
-            this.Stack[this.TopPosition] = item;
-            this.TopPosition++;
+            this.Collection[this.CurrentPosition] = item;
+            this.CurrentPosition++;
         }
 
         /// <summary>
@@ -82,10 +55,10 @@
         /// <exception cref="EmptyStackException">The stack is empty.</exception>
         public virtual T Pop()
         {
-            if (this.TopPosition == 0) this.EmptyStackHandler();
+            if (this.CurrentPosition == 0) this.EmptyStackHandler();
 
-            this.TopPosition--;
-            return this.Stack[this.TopPosition];
+            this.CurrentPosition--;
+            return this.Collection[this.CurrentPosition];
         }
 
         /// <summary>
@@ -95,16 +68,16 @@
         /// <exception cref="EmptyStackException">The stack is empty.</exception>
         public virtual T Peek()
         {
-            if (this.TopPosition == 0) this.EmptyStackHandler();
+            if (this.CurrentPosition == 0) this.EmptyStackHandler();
 
-            return this.Stack[this.TopPosition - 1];
+            return this.Collection[this.CurrentPosition - 1];
         }
 
         /// <summary>
         /// Gets the count of elements in the stack.
         /// </summary>
         /// <returns>The count of elements in the stack.</returns>
-        public virtual int Size() => this.TopPosition;
+        public virtual int Size() => this.CurrentPosition;
 
         /// <summary>
         /// Handles the behavior when the stack is empty.
@@ -133,9 +106,9 @@
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
         protected virtual void ResizeStack(int multiplier)
         {
-            var updatedStack = new T[this.Stack.Length * multiplier];
-            Parallel.For(0, this.TopPosition, i => updatedStack[i] = this.Stack[i]);
-            this.Stack = updatedStack;
+            var updatedStack = new T[this.Collection.Length * multiplier];
+            Parallel.For(0, this.CurrentPosition, i => updatedStack[i] = this.Collection[i]);
+            this.Collection = updatedStack;
         }
     }
 }

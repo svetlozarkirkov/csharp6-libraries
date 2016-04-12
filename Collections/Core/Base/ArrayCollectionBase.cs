@@ -2,13 +2,15 @@
 {
     using Collections.Core.ExceptionHandling.Concrete;
     using Collections.Core.Interface;
+    using Collections.Injectors.Clear;
+    using Collections.Injectors.Index;
 
     /// <summary>
     /// Class ArrayCollectionBase.
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <seealso cref="ICollection" />
-    public abstract class ArrayCollectionBase<T> : ICollection
+    public abstract class ArrayCollectionBase<T> : ICollection, IIndexable<T>, IClearable
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ArrayCollectionBase{T}"/> class.
@@ -19,7 +21,10 @@
         {
             if (capacity <= 0)
             {
-                throw new InvalidCollectionCapacityException();
+                throw new InvalidCollectionCapacityException(
+                    nameof(capacity),
+                    capacity,
+                    "Invalid capacity supplied.");
             }
 
             this.Collection = new T[capacity];
@@ -39,7 +44,7 @@
         /// Gets the default capacity.
         /// </summary>
         /// <value>The default capacity.</value>
-        protected static int DefaultCapacity => 8;
+        protected static int DefaultCapacity => 16;
 
         /// <summary>
         /// Gets or sets the collection.
@@ -54,9 +59,39 @@
         protected int InitializedCapacity { get; }
 
         /// <summary>
-        /// Gets or sets the current position.
+        /// Gets or sets the current position (index).
         /// </summary>
         /// <value>The current position.</value>
         protected int CurrentPosition { get; set; }
+
+        /// <summary>
+        /// Gets the item at the specified index.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <returns>T.</returns>
+        /// <exception cref="InvalidCollectionIndexException" accessor="get">The index is a negative number.</exception>
+        public T this[int index]
+        {
+            get
+            {
+                if (index >= 0)
+                {
+                    return this.Collection[index];
+                }
+
+                throw new InvalidCollectionIndexException(
+                    nameof(index),
+                    index,
+                    "Invalid index.");
+            }
+        }
+
+        /// <summary>
+        /// Clears all items in the collection.
+        /// </summary>
+        public void Clear()
+        {
+            this.Collection = new T[this.InitializedCapacity];
+        }
     }
 }

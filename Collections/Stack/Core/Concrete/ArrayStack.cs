@@ -1,7 +1,7 @@
 namespace Collections.Stack.Core.Concrete
 {
+    using Collections.Core.ExceptionHandling.Concrete;
     using Collections.Stack.Core.Base;
-    using Collections.Stack.ExceptionHandling.Core.Concrete;
 
     /// <summary>
     /// Default implementation of ArrayStackBase.
@@ -12,7 +12,7 @@ namespace Collections.Stack.Core.Concrete
         /// <summary>
         /// Initializes a new instance of the <see cref="ArrayStack{T}"/> class.
         /// </summary>
-        /// <exception cref="InvalidStackCapacityGivenException">Capacity is less than zero.</exception>
+        /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         public ArrayStack()
         {
         }
@@ -21,7 +21,7 @@ namespace Collections.Stack.Core.Concrete
         /// Initializes a new instance of the <see cref="ArrayStack{T}"/> class.
         /// </summary>
         /// <param name="capacity">The initial capacity.</param>
-        /// <exception cref="InvalidStackCapacityGivenException">Capacity is less than or equal to zero.</exception>
+        /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         public ArrayStack(int capacity) : base(capacity)
         {
         }

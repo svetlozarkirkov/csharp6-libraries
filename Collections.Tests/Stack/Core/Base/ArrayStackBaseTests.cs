@@ -1,6 +1,9 @@
 ﻿namespace Collections.Tests.Stack.Core.Base
 {
     using System;
+
+    using Collections.Core.ExceptionHandling.Concrete;
+
     using FluentAssertions;
     using Moq;
     using NUnit.Framework;
@@ -52,7 +55,7 @@
             Action act = () => new ArrayStackBaseStub<object>(0);
 
             // Act Assert
-            act.ShouldThrowExactly<InvalidStackCapacityGivenException>();
+            act.ShouldThrowExactly<InvalidCollectionCapacityException>();
         }
 
         /// <summary>

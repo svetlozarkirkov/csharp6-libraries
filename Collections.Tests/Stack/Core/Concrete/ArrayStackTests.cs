@@ -1,6 +1,9 @@
 ﻿namespace Collections.Tests.Stack.Core.Concrete
 {
     using System;
+
+    using Collections.Core.ExceptionHandling.Concrete;
+
     using FluentAssertions;
     using NUnit.Framework;
     using Collections.Stack.Core.Concrete;
@@ -35,7 +38,7 @@
             Action act = () => new ArrayStack<object>(0);
 
             // Act Assert
-            act.ShouldThrowExactly<InvalidStackCapacityGivenException>();
+            act.ShouldThrowExactly<InvalidCollectionCapacityException>();
         }
 
         /// <summary>

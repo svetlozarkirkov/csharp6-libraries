@@ -4,7 +4,6 @@
     using FluentAssertions;
     using Moq;
     using NUnit.Framework;
-    using Collections.Core.ExceptionHandling.Concrete;
     using Collections.Stack.Core.Base;
     using Collections.Stack.ExceptionHandling.Core.Concrete;
 
@@ -12,32 +11,17 @@
     public class ArrayStackBaseTests
     {
         /// <summary>
-        /// Stub used for testing.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <seealso cref="Collections.Stack.Core.Base.ArrayStackBase{T}" />
-        private class ArrayStackBaseStub<T> : ArrayStackBase<T>
-        {
-            /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
-            internal ArrayStackBaseStub() { }
-
-            /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
-            internal ArrayStackBaseStub(int capacity) : base(capacity) { }
-        }
-
-        /// <summary>
         /// When the stack is initialized
         /// The size must be '0'
         /// </summary>
-        /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         [Test]
         public void WhenEmptyStack_SizeMustBeZero()
         {
             // Arrange
-            var stub = new ArrayStackBaseStub<object>();
+            var mock = new Mock<ArrayStackBase<object>>() { CallBase = true };
 
             // Act Assert
-            stub.Size().Should().Be(0);
+            mock.Object.Size().Should().Be(0);
         }
 
         /// <summary>
@@ -45,15 +29,14 @@
         /// "Pop" method should throw "EmptyStackException"
         /// </summary>
         /// <exception cref="EmptyStackException">The stack is empty.</exception>
-        /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         [Test]
         public void EmptyStack_Pop_ShouldThrowException()
         {
             // Arrange
-            var stub = new ArrayStackBaseStub<object>();
+            var mock = new Mock<ArrayStackBase<object>>() {CallBase = true};
 
             // Act Assert
-            stub.Invoking(s => s.Pop()).ShouldThrow<EmptyStackException>();
+            mock.Invoking(s => s.Object.Pop()).ShouldThrowExactly<EmptyStackException>();
         }
 
         /// <summary>
@@ -61,15 +44,14 @@
         /// "Peek" method should throw "EmptyStackException"
         /// </summary>
         /// <exception cref="EmptyStackException">The stack is empty.</exception>
-        /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         [Test]
         public void EmptyStack_Peek_ShouldThrowException()
         {
             // Arrange
-            var stub = new ArrayStackBaseStub<object>();
+            var mock = new Mock<ArrayStackBase<object>>() { CallBase = true };
 
             // Act Assert
-            stub.Invoking(s => s.Peek()).ShouldThrow<EmptyStackException>();
+            mock.Invoking(s => s.Object.Peek()).ShouldThrowExactly<EmptyStackException>();
         }
 
         /// <summary>
@@ -78,18 +60,17 @@
         /// </summary>
         /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
-        /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         [Test]
         public void EmptyStack_WhenItemIsPushed_SizeMustBeOne()
         {
             // Arrange
-            var stub = new ArrayStackBaseStub<object>();
+            var mock = new Mock<ArrayStackBase<object>>() {CallBase = true};
 
             // Act
-            stub.Push(It.IsAny<object>());
+            mock.Object.Push(It.IsAny<object>());
 
             // Assert
-            stub.Size().Should().Be(1);
+            mock.Object.Size().Should().Be(1);
         }
 
         /// <summary>
@@ -98,17 +79,16 @@
         /// </summary>
         /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
-        /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         [Test]
         public void StackAtFullCapacity_WhenItemIsPushed_ShouldNotThrowException()
         {
             // Arrange
-            var stub = new ArrayStackBaseStub<object>(1);
-            stub.Push(It.IsAny<object>());
+            var mock = new Mock<ArrayStackBase<object>>(1) { CallBase = true };
+            mock.Object.Push(It.IsAny<object>());
 
             // Act Assert
-            stub
-                .Invoking(s => s.Push(It.IsAny<object>()))
+            mock
+                .Invoking(s => s.Object.Push(It.IsAny<object>()))
                 .ShouldNotThrow<FullStackException>();
         }
 
@@ -116,7 +96,6 @@
         /// When the stack is empty and an item is pushed
         /// The item returned with "Pop" should be the same as the pushed one
         /// </summary>
-        /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         /// <exception cref="EmptyStackException">The stack is empty.</exception>
         /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
@@ -124,12 +103,12 @@
         public void EmptyStack_ItemIsPushed_PopShouldReturnTheSameItem()
         {
             // Arrange
-            var stub = new ArrayStackBaseStub<object>();
+            var mock = new Mock<ArrayStackBase<object>>() { CallBase = true };
             var item = It.IsAny<object>();
-            stub.Push(item);
+            mock.Object.Push(item);
 
             // Act
-            var poppedItem = stub.Pop();
+            var poppedItem = mock.Object.Pop();
 
             // Assert
             Assert.AreSame(item, poppedItem, "The popped item was not the same.");
@@ -142,17 +121,16 @@
         /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
         /// <exception cref="EmptyStackException">The stack is empty.</exception>
-        /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         [Test]
         public void EmptyStack_ItemIsPushed_PopInvoked_SizeMustBeZero()
         {
             // Arrange
-            var stub = new ArrayStackBaseStub<object>();
-            stub.Push(It.IsAny<object>());
-            stub.Pop();
+            var mock = new Mock<ArrayStackBase<object>>() { CallBase = true };
+            mock.Object.Push(It.IsAny<object>());
+            mock.Object.Pop();
 
             // Act Assert
-            stub.Size().Should().Be(0);
+            mock.Object.Size().Should().Be(0);
         }
 
         /// <summary>
@@ -162,17 +140,16 @@
         /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
         /// <exception cref="EmptyStackException">The stack is empty.</exception>
-        /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         [Test]
         public void EmptyStack_ItemIsPushed_PeekInvoked_ShouldReturnTheSameItem()
         {
             // Arrange
-            var stub = new ArrayStackBaseStub<object>();
+            var mock = new Mock<ArrayStackBase<object>>() { CallBase = true };
             var item = It.IsAny<object>();
-            stub.Push(item);
+            mock.Object.Push(item);
 
             // Act
-            var peekedItem = stub.Peek();
+            var peekedItem = mock.Object.Peek();
 
             // Assert
             Assert.AreSame(item, peekedItem, "The peeked item was not the same.");
@@ -185,17 +162,16 @@
         /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
         /// <exception cref="EmptyStackException">The stack is empty.</exception>
-        /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         [Test]
         public void EmptyStack_ItemIsPushed_PeekInvoked_SizeMustBeOne()
         {
             // Arrange
-            var stub = new ArrayStackBaseStub<object>();
-            stub.Push(It.IsAny<object>());
-            stub.Peek();
+            var mock = new Mock<ArrayStackBase<object>>() { CallBase = true };
+            mock.Object.Push(It.IsAny<object>());
+            mock.Object.Peek();
 
             // Act Assert
-            stub.Size().Should().Be(1);
+            mock.Object.Size().Should().Be(1);
         }
     }
 }

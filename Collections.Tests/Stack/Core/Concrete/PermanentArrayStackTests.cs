@@ -4,7 +4,6 @@
     using FluentAssertions;
     using Moq;
     using NUnit.Framework;
-    using Collections.Core.ExceptionHandling.Concrete;
     using Collections.Stack.Core.Concrete;
     using Collections.Stack.ExceptionHandling.Core.Concrete;
 
@@ -12,24 +11,23 @@
     public class PermanentArrayStackTests
     {
         /// <summary>
-        /// The stack is initialized with capacity (1), if second item is pushed - throw the specific exception
+        /// If the stack is at full capacity - "pushing" should throw specific exception
         /// </summary>
         /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
-        /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         [Test]
         public void StackIsInitialized_FullCapacityIsReached_IfPush_ThrowException(
             [Values(1, 100, 1000)] int capacity)
         {
             // Arrange
-            var stack = new PermanentArrayStack<object>(capacity);
+            var mock = new Mock<PermanentArrayStack<object>>(capacity) {CallBase = true};
             for (var i = 0; i < capacity; i++)
             {
-                stack.Push(It.IsAny<object>());
+                mock.Object.Push(It.IsAny<object>());
             }
 
             // Act Assert
-            stack.Invoking(s => s.Push(It.IsAny<object>()))
+            mock.Invoking(s => s.Object.Push(It.IsAny<object>()))
                 .ShouldThrowExactly<FullStackException>();
         }
     }

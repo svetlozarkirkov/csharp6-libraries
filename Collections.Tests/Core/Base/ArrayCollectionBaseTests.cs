@@ -50,16 +50,17 @@
         }
 
         /// <summary>
-        /// When the collection is initialized with an invalid capacity (0)
+        /// When the collection is initialized with an invalid capacity
         /// Should throw "Invalid Collection Capacity Exception"
         /// </summary>
         /// <exception cref="Exception">A delegate callback throws an exception.</exception>
         /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         [Test]
-        public void CollectionIsInitialized_InvalidCapacityGiven_ShouldThrowException()
+        public void CollectionIsInitialized_InvalidCapacityGiven_ShouldThrowException(
+            [Values(0, -1, -10, -100, -1000, int.MinValue)] int capacity)
         {
             // Arrange
-            Action act = () => new ArrayCollectionBaseStub<object>(0);
+            Action act = () => new ArrayCollectionBaseStub<object>(capacity);
 
             // Act Assert
             act.ShouldThrowExactly<InvalidCollectionCapacityException>();

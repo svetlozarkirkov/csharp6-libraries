@@ -18,11 +18,15 @@
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
         /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         [Test]
-        public void StackIsInitialized_FullCapacityIsReached_IfPush_ThrowException()
+        public void StackIsInitialized_FullCapacityIsReached_IfPush_ThrowException(
+            [Values(1, 100, 1000)] int capacity)
         {
             // Arrange
-            var stack = new PermanentArrayStack<object>(1);
-            stack.Push(It.IsAny<object>());
+            var stack = new PermanentArrayStack<object>(capacity);
+            for (var i = 0; i < capacity; i++)
+            {
+                stack.Push(It.IsAny<object>());
+            }
 
             // Act Assert
             stack.Invoking(s => s.Push(It.IsAny<object>()))

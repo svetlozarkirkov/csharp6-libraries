@@ -124,15 +124,15 @@
         public void EmptyStack_ItemIsPushed_PopShouldReturnTheSameItem()
         {
             // Arrange
-            var stub = new ArrayStackBaseStub<string>();
-            const string Item = "Pop test string";
-            stub.Push(Item);
+            var stub = new ArrayStackBaseStub<object>();
+            var item = It.IsAny<object>();
+            stub.Push(item);
 
             // Act
             var poppedItem = stub.Pop();
 
             // Assert
-            Assert.AreSame(Item, poppedItem, "The popped item was not the same.");
+            Assert.AreSame(item, poppedItem, "The popped item was not the same.");
         }
 
         /// <summary>
@@ -167,15 +167,15 @@
         public void EmptyStack_ItemIsPushed_PeekInvoked_ShouldReturnTheSameItem()
         {
             // Arrange
-            var stub = new ArrayStackBaseStub<string>();
-            const string Item = "Peek test string";
-            stub.Push(Item);
+            var stub = new ArrayStackBaseStub<object>();
+            var item = It.IsAny<object>();
+            stub.Push(item);
 
             // Act
             var peekedItem = stub.Peek();
 
             // Assert
-            Assert.AreSame(Item, peekedItem, "The peeked item was not the same.");
+            Assert.AreSame(item, peekedItem, "The peeked item was not the same.");
         }
 
         /// <summary>

@@ -25,30 +25,32 @@
         }
 
         /// <summary>
-        /// Constructor with capacity - if invalid capacity is given (0) - throw exception
+        /// Constructor with capacity - if invalid capacity is given - throw exception
         /// </summary>
         /// <exception cref="Exception">A delegate callback throws an exception.</exception>
         /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         [Test]
-        public void ConstructorWithCapacity_InvalidCapacity_ShouldThrowException()
+        public void ConstructorWithCapacity_InvalidCapacity_ShouldThrowException(
+            [Values(0, -1, -100, -1000, int.MinValue)] int capacity)
         {
             // Arrange
-            Action act = () => new ArrayStack<object>(0);
+            Action act = () => new ArrayStack<object>(capacity);
 
             // Act Assert
             act.ShouldThrowExactly<InvalidCollectionCapacityException>();
         }
 
         /// <summary>
-        /// Constructor with capacity - if valid capacity is given (1) - exception should not be thrown
+        /// Constructor with capacity - if valid capacity is given - exception should not be thrown
         /// </summary>
         /// <exception cref="Exception">A delegate callback throws an exception.</exception>
         /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         [Test]
-        public void ConstructorWithCapacity_ValidCapacity_ShouldNotThrowException()
+        public void ConstructorWithCapacity_ValidCapacity_ShouldNotThrowException(
+            [Values(1, 100, 1000, 100000, int.MaxValue)] int capacity)
         {
             // Arrange
-            Action act = () => new ArrayStack<object>(1);
+            Action act = () => new ArrayStack<object>(capacity);
 
             // Act Assert
             act.ShouldNotThrow<InvalidCollectionCapacityException>();

@@ -3,14 +3,13 @@
     using Collections.Core.ExceptionHandling.Concrete;
     using Collections.Core.Interface;
     using Collections.Injectors.Clear;
-    using Collections.Injectors.Index;
 
     /// <summary>
     /// Class ArrayCollectionBase.
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <seealso cref="ICollection" />
-    public abstract class ArrayCollectionBase<T> : ICollection, IIndexable<T>, IClearable
+    public abstract class ArrayCollectionBase<T> : ICollection, IClearable
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ArrayCollectionBase{T}"/> class.
@@ -63,28 +62,6 @@
         /// </summary>
         /// <value>The current position.</value>
         protected int CurrentPosition { get; set; }
-
-        /// <summary>
-        /// Gets the item at the specified index.
-        /// </summary>
-        /// <param name="index">The index.</param>
-        /// <returns>T.</returns>
-        /// <exception cref="InvalidCollectionIndexException" accessor="get">The index is a negative number.</exception>
-        public T this[int index]
-        {
-            get
-            {
-                if (index >= 0)
-                {
-                    return this.Collection[index];
-                }
-
-                throw new InvalidCollectionIndexException(
-                    nameof(index),
-                    index,
-                    "Invalid index.");
-            }
-        }
 
         /// <summary>
         /// Clears all items in the collection.

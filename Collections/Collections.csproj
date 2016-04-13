@@ -41,6 +41,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Core\Base\ArrayCollectionBase.cs" />
+    <Compile Include="Core\ExceptionHandling\Concrete\EmptyCollectionException.cs" />
     <Compile Include="Core\ExceptionHandling\Concrete\InvalidCollectionCapacityException.cs" />
     <Compile Include="Core\ExceptionHandling\Concrete\InvalidCollectionIndexException.cs" />
     <Compile Include="Core\Interface\ICollection.cs" />

@@ -56,7 +56,7 @@
         /// <exception cref="Exception">A delegate callback throws an exception.</exception>
         /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         [Test]
-        public void StackIsInitialized_InvalidCapacityGiven_ShouldThrowException()
+        public void CollectionIsInitialized_InvalidCapacityGiven_ShouldThrowException()
         {
             // Arrange
             Action act = () => new ArrayCollectionBaseStub<object>(0);

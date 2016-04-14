@@ -31,9 +31,6 @@ Implementing various libraries for C# from scratch using C# 6.0 syntax where pos
 
 |Name|
 |---|
-|Impromptu Interface|
-|Console Dump|
-|NLog|
 |Fluent Assertions|
 |NUnit|
 |Moq|

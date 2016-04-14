@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Serialization.Specs")]
+[assembly: AssemblyTitle("Logging")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Serialization.Specs")]
+[assembly: AssemblyProduct("Logging")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("bd473e8a-06f6-4ddf-9485-ad850c0b6d40")]
+[assembly: Guid("c98bbd07-ff0e-4c37-a7f0-f3fef291f0b2")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.5949.2016.2")]
-[assembly: AssemblyFileVersion("1.5949.2016.2")]
+[assembly: AssemblyVersion("1.5949.2016.1")]
+[assembly: AssemblyFileVersion("1.5949.2016.1")]

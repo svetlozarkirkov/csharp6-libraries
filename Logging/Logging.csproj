@@ -34,7 +34,21 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Base\LoggerBase.cs" />
+    <Compile Include="Core\Interface\ILogger.cs" />
+    <Compile Include="LogLevel\Base\LogLevelBase.cs" />
+    <Compile Include="LogLevel\Interface\ILogLevel.cs" />
+    <Compile Include="LogOutput\Base\LoggerOutputBase.cs" />
+    <Compile Include="LogOutput\Interface\ILoggerOutput.cs" />
+    <Compile Include="LogSchema\Base\LoggerSchemaBase.cs" />
+    <Compile Include="LogSchema\Interface\ILoggerSchema.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\Concrete\" />
+    <Folder Include="LogLevel\Concrete\" />
+    <Folder Include="LogOutput\Concrete\" />
+    <Folder Include="LogSchema\Concrete\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

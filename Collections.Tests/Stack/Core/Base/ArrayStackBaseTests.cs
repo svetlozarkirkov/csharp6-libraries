@@ -4,6 +4,7 @@
     using FluentAssertions;
     using Moq;
     using NUnit.Framework;
+    using Collections.Core.ExceptionHandling.Concrete;
     using Collections.Stack.Core.Base;
     using Collections.Stack.ExceptionHandling.Core.Concrete;
 
@@ -26,9 +27,9 @@
 
         /// <summary>
         /// When the stack is initialized
-        /// "Pop" method should throw "EmptyStackException"
+        /// "Pop" method should throw "Empty Collection Exception"
         /// </summary>
-        /// <exception cref="EmptyStackException">The stack is empty.</exception>
+        /// <exception cref="EmptyCollectionException">The collection is empty.</exception>
         [Test]
         public void EmptyStack_Pop_ShouldThrowException()
         {
@@ -36,14 +37,14 @@
             var mock = new Mock<ArrayStackBase<object>>() {CallBase = true};
 
             // Act Assert
-            mock.Invoking(s => s.Object.Pop()).ShouldThrowExactly<EmptyStackException>();
+            mock.Invoking(s => s.Object.Pop()).ShouldThrowExactly<EmptyCollectionException>();
         }
 
         /// <summary>
         /// When the stack is initialized
         /// "Peek" method should throw "EmptyStackException"
         /// </summary>
-        /// <exception cref="EmptyStackException">The stack is empty.</exception>
+        /// <exception cref="EmptyCollectionException">The collection is empty.</exception>
         [Test]
         public void EmptyStack_Peek_ShouldThrowException()
         {
@@ -51,7 +52,7 @@
             var mock = new Mock<ArrayStackBase<object>>() { CallBase = true };
 
             // Act Assert
-            mock.Invoking(s => s.Object.Peek()).ShouldThrowExactly<EmptyStackException>();
+            mock.Invoking(s => s.Object.Peek()).ShouldThrowExactly<EmptyCollectionException>();
         }
 
         /// <summary>

@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections;
+    using System.Diagnostics.Contracts;
     using System.Linq;
     using Collections.Map.Core.Interface;
 
@@ -44,6 +45,9 @@
         /// <param name="value">The value.</param>
         public void Store(TKey key, TValue value)
         {
+            Contract.Requires(key != null);
+            Contract.Requires(value != null);
+
             this.LastNode = this.LastNode.NextNode = new MapNode
             {
                 Key = key,
@@ -61,6 +65,8 @@
         /// <exception cref="ArgumentException">Invalid key.</exception>
         public TValue Retrieve(TKey key)
         {
+            Contract.Requires(key != null);
+
             foreach (var item in this.Cast<MapItem>().Where(item => item.Key.Equals(key)))
             {
                 return item.Value;

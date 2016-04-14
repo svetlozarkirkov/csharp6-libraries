@@ -1,5 +1,7 @@
 ﻿namespace Collections.Core.Base
 {
+    using System;
+    using System.Threading.Tasks;
     using Collections.Core.ExceptionHandling.Concrete;
     using Collections.Core.Interface;
     using Collections.Injectors.Clear;
@@ -69,6 +71,44 @@
         public void Clear()
         {
             this.Collection = new T[this.InitializedCapacity];
+        }
+
+        /// <summary>
+        /// Empties the collection handler.
+        /// </summary>
+        /// <exception cref="EmptyCollectionException">The collection is empty.</exception>
+        protected virtual void EmptyCollectionHandler()
+        {
+            throw new EmptyCollectionException("The collection is empty.");
+        }
+
+        /// <summary>
+        /// Fulls the capacity handler.
+        /// </summary>
+        /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
+        /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
+        protected virtual void FullCapacityHandler()
+        {
+            this.ResizeCollection(2);
+        }
+
+        /// <summary>
+        /// Resizes the collection.
+        /// </summary>
+        /// <param name="multiplier">The multiplier.</param>
+        /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
+        /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
+        protected virtual void ResizeCollection(int multiplier)
+        {
+            var updatedCollection = new T[this.Collection.Length * multiplier];
+
+            Parallel.For(0, this.CurrentPosition,
+                i =>
+                    {
+                        updatedCollection[i] = this.Collection[i];
+                    });
+
+            this.Collection = updatedCollection;
         }
     }
 }

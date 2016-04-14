@@ -23,7 +23,7 @@
         /// Handles the behaviour when the stack is full.
         /// </summary>
         /// <exception cref="FullStackException">If the stack is full.</exception>
-        protected override void FullStackHandler()
+        protected override void FullCapacityHandler()
         {
             throw new FullStackException("Permanent stack cannot exceed its capacity.");
         }

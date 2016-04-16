@@ -90,4 +90,12 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(AutomaticVersions) = postSolution
+		UpdateAssemblyVersion = True
+		UpdateAssemblyFileVersion = True
+		UpdateAssemblyInfoVersion = True
+		AssemblyVersionSettings = IncrementOnDemand.YearStamp.MonthStamp.DeltaDayStamp
+		AssemblyFileVersionSettings = IncrementOnDemand.YearStamp.MonthStamp.DeltaDayStamp
+		AssemblyInfoVersionSettings = IncrementOnDemand.YearStamp.MonthStamp.DeltaDayStamp
+	EndGlobalSection
 EndGlobal

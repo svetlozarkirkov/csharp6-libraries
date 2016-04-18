@@ -1,12 +1,12 @@
 ﻿namespace Collections.Set.Core.Base
 {
-    using Collections.Set.Core.Interface;
+    using Collections.Set.Core.Contracts;
 
     /// <summary>
     /// Class NodeSetBase.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    /// <seealso cref="Interface.ISet{T}" />
+    /// <seealso cref="Contracts.ISet{T}" />
     public abstract class NodeSetBase<T> : ISet<T>
     {
         /// <summary>

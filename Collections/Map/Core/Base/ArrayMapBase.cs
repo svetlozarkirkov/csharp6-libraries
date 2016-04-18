@@ -4,14 +4,14 @@
     using System.Diagnostics.Contracts;
     using Collections.Core.Base;
     using Collections.Core.ExceptionHandling.Concrete;
-    using Collections.Map.Core.Interface;
+    using Collections.Map.Core.Contracts;
 
     /// <summary>
     /// Class ArrayMapBase.
     /// </summary>
     /// <typeparam name="TKey">The type of the key.</typeparam>
     /// <typeparam name="TValue">The type of the value.</typeparam>
-    /// <seealso cref="Interface.IMap{TKey, TValue}" />
+    /// <seealso cref="Contracts.IMap{TKey, TValue}" />
     public abstract class ArrayMapBase<TKey, TValue>
         : ArrayCollectionBase<IMapItem<TKey, TValue>>, IMap<TKey, TValue>
     {

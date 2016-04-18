@@ -1,6 +1,6 @@
-﻿namespace Collections.Map.Core.Interface
+﻿namespace Collections.Map.Core.Contracts
 {
-    using Collections.Core.Interface;
+    using Collections.Core.Contracts;
 
     /// <summary>
     /// Interface IMap

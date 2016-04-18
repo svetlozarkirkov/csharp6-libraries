@@ -1,4 +1,4 @@
-﻿namespace Logging.LogLevel.Interface
+﻿namespace Logging.LogLevel.Contracts
 {
     /// <summary>
     /// Interface ILogLevel

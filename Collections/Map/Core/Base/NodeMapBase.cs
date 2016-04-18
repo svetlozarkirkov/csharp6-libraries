@@ -4,14 +4,14 @@
     using System.Collections;
     using System.Diagnostics.Contracts;
     using System.Linq;
-    using Collections.Map.Core.Interface;
+    using Collections.Map.Core.Contracts;
 
     /// <summary>
     /// Class NodeMapBase.
     /// </summary>
     /// <typeparam name="TKey">The type of the key.</typeparam>
     /// <typeparam name="TValue">The type of the value.</typeparam>
-    /// <seealso cref="Interface.IMap{TKey, TValue}" />
+    /// <seealso cref="Contracts.IMap{TKey, TValue}" />
     public abstract class NodeMapBase<TKey, TValue> : IMap<TKey, TValue>, IEnumerable
     {
         /// <summary>
@@ -138,7 +138,7 @@
         /// <summary>
         /// Class MapItem.
         /// </summary>
-        /// <seealso cref="Interface.IMapItem{TKey, TValue}" />
+        /// <seealso cref="Contracts.IMapItem{TKey, TValue}" />
         protected class MapItem : IMapItem<TKey, TValue>
         {
             /// <summary>

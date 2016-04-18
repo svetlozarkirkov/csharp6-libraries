@@ -4,13 +4,13 @@
     using System.Diagnostics.Contracts;
     using Collections.Core.Base;
     using Collections.Core.ExceptionHandling.Concrete;
-    using Collections.Stack.Core.Interface;
+    using Collections.Stack.Core.Contracts;
 
     /// <summary>
     /// Class ArrayStackBase.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    /// <seealso cref="Interface.IStack{T}" />
+    /// <seealso cref="Contracts.IStack{T}" />
     public abstract class ArrayStackBase<T> : ArrayCollectionBase<T>, IStack<T>
     {
         /// <summary>

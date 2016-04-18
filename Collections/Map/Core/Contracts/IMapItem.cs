@@ -1,4 +1,4 @@
-﻿namespace Collections.Map.Core.Interface
+﻿namespace Collections.Map.Core.Contracts
 {
     /// <summary>
     /// Interface IMapItem

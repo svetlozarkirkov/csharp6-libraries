@@ -1,4 +1,4 @@
-﻿namespace Logging.LogOutput.Interface
+﻿namespace Logging.LogOutput.Contracts
 {
     /// <summary>
     /// Interface ILoggerOutput

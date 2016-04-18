@@ -3,7 +3,7 @@
     using System;
     using System.Threading.Tasks;
     using Collections.Core.ExceptionHandling.Concrete;
-    using Collections.Core.Interface;
+    using Collections.Core.Contracts;
     using Collections.Injectors.Clear;
 
     /// <summary>
@@ -74,7 +74,7 @@
         }
 
         /// <summary>
-        /// Empties the collection handler.
+        /// Handles the behaviour when the collection is empty.
         /// </summary>
         /// <exception cref="EmptyCollectionException">The collection is empty.</exception>
         protected virtual void EmptyCollectionHandler()
@@ -83,7 +83,7 @@
         }
 
         /// <summary>
-        /// Fulls the capacity handler.
+        /// Handles the behaviour when the collection's max capacity is reached.
         /// </summary>
         /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>

@@ -1,6 +1,6 @@
-﻿namespace Collections.Set.Core.Interface
+﻿namespace Collections.Set.Core.Contracts
 {
-    using Collections.Core.Interface;
+    using Collections.Core.Contracts;
 
     /// <summary>
     /// Interface ISet

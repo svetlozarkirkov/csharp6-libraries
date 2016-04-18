@@ -1,4 +1,4 @@
-﻿namespace Collections.Core.Interface
+﻿namespace Collections.Core.Contracts
 {
     /// <summary>
     /// Interface ICollection

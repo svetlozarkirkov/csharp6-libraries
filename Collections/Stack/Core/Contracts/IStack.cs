@@ -1,6 +1,6 @@
-namespace Collections.Stack.Core.Interface
+namespace Collections.Stack.Core.Contracts
 {
-    using Collections.Core.Interface;
+    using Collections.Core.Contracts;
 
     /// <summary>
     /// The official interface of the Stack sub-class.

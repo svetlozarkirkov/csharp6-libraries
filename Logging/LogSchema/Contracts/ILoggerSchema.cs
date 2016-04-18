@@ -1,4 +1,4 @@
-﻿namespace Logging.LogSchema.Interface
+﻿namespace Logging.LogSchema.Contracts
 {
     /// <summary>
     /// Interface ILoggerSchema

@@ -1,9 +1,9 @@
 ﻿namespace Logging.Core.Base
 {
-    using Logging.Core.Interface;
-    using Logging.LogLevel.Interface;
-    using Logging.LogOutput.Interface;
-    using Logging.LogSchema.Interface;
+    using Logging.Core.Contracts;
+    using Logging.LogLevel.Contracts;
+    using Logging.LogOutput.Contracts;
+    using Logging.LogSchema.Contracts;
 
     /// <summary>
     /// Class LoggerBase.

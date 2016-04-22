@@ -1,9 +1,9 @@
 ﻿namespace Logging.LogSchema.Contracts
 {
     /// <summary>
-    /// Interface ILoggerSchema
+    /// Interface ILogSchema
     /// </summary>
-    public interface ILoggerSchema
+    public interface ILogSchema
     {
     }
 }

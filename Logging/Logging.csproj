@@ -34,14 +34,18 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Base\LoggerBase.cs" />
-    <Compile Include="Core\Contracts\ILogger.cs" />
+    <Compile Include="Core\Base\LogBase.cs" />
+    <Compile Include="Core\Contracts\ILog.cs" />
     <Compile Include="LogLevel\Base\LogLevelBase.cs" />
+    <Compile Include="LogLevel\Concrete\LogLevelError.cs" />
+    <Compile Include="LogLevel\Concrete\LogLevelFatal.cs" />
+    <Compile Include="LogLevel\Concrete\LogLevelInfo.cs" />
+    <Compile Include="LogLevel\Concrete\LogLevelWarn.cs" />
     <Compile Include="LogLevel\Contracts\ILogLevel.cs" />
-    <Compile Include="LogOutput\Base\LoggerOutputBase.cs" />
-    <Compile Include="LogOutput\Contracts\ILoggerOutput.cs" />
-    <Compile Include="LogSchema\Base\LoggerSchemaBase.cs" />
-    <Compile Include="LogSchema\Contracts\ILoggerSchema.cs" />
+    <Compile Include="LogOutput\Base\LogOutputBase.cs" />
+    <Compile Include="LogOutput\Contracts\ILogOutput.cs" />
+    <Compile Include="LogSchema\Base\LogSchemaBase.cs" />
+    <Compile Include="LogSchema\Contracts\ILogSchema.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

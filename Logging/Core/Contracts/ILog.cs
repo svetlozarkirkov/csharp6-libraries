@@ -5,9 +5,9 @@
     using Logging.LogSchema.Contracts;
 
     /// <summary>
-    /// Interface ILogger
+    /// Interface ILog
     /// </summary>
-    public interface ILogger
+    public interface ILog
     {
         /// <summary>
         /// Gets the log level.
@@ -19,12 +19,12 @@
         /// Gets the logger output.
         /// </summary>
         /// <value>The logger output.</value>
-        ILoggerOutput LoggerOutput { get; }
+        ILogOutput LoggerOutput { get; }
 
         /// <summary>
         /// Gets the logger schema.
         /// </summary>
         /// <value>The logger schema.</value>
-        ILoggerSchema LoggerSchema { get; }
+        ILogSchema LoggerSchema { get; }
     }
 }

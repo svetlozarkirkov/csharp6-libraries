@@ -6,10 +6,10 @@
     using Logging.LogSchema.Contracts;
 
     /// <summary>
-    /// Class LoggerBase.
+    /// Class LogBase.
     /// </summary>
-    /// <seealso cref="ILogger" />
-    public abstract class LoggerBase : ILogger
+    /// <seealso cref="ILog" />
+    public abstract class LogBase : ILog
     {
         /// <summary>
         /// Gets the log level.
@@ -21,12 +21,12 @@
         /// Gets the logger output.
         /// </summary>
         /// <value>The logger output.</value>
-        public ILoggerOutput LoggerOutput { get; }
+        public ILogOutput LoggerOutput { get; }
 
         /// <summary>
         /// Gets the logger schema.
         /// </summary>
         /// <value>The logger schema.</value>
-        public ILoggerSchema LoggerSchema { get; }
+        public ILogSchema LoggerSchema { get; }
     }
 }

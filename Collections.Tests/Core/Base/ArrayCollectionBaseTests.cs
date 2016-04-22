@@ -8,6 +8,10 @@
     using Collections.Core.Base;
     using Collections.Core.ExceptionHandling.Concrete;
 
+    /// <summary>
+    /// Class ArrayCollectionBaseTests.
+    /// </summary>
+    /// TODO Edit XML Comment Template for ArrayCollectionBaseTests
     [TestFixture]
     public class ArrayCollectionBaseTests
     {

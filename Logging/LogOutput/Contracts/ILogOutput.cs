@@ -1,9 +1,9 @@
 ﻿namespace Logging.LogOutput.Contracts
 {
     /// <summary>
-    /// Interface ILoggerOutput
+    /// Interface ILogOutput
     /// </summary>
-    public interface ILoggerOutput
+    public interface ILogOutput
     {
 
     }

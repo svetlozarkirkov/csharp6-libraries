@@ -2,31 +2,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections", "Collections\Collections.csproj", "{3D5DF065-36DD-4E6B-9194-49F3672196FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections", "src\Collections\Collections.csproj", "{3D5DF065-36DD-4E6B-9194-49F3672196FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAppConsole", "TestAppConsole\TestAppConsole.csproj", "{CB59F6E2-79CF-498C-B066-021672CA1425}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAppConsole", "samples\TestAppConsole\TestAppConsole.csproj", "{CB59F6E2-79CF-498C-B066-021672CA1425}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections.Tests", "Collections.Tests\Collections.Tests.csproj", "{4379EC5F-7D35-4B4E-B73F-51DBFBD4110C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections.Tests", "tests\Collections.Tests\Collections.Tests.csproj", "{4379EC5F-7D35-4B4E-B73F-51DBFBD4110C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{13182F21-D0BE-4944-BF59-AD7558458E97}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "src\Common\Common.csproj", "{13182F21-D0BE-4944-BF59-AD7558458E97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization", "Serialization\Serialization.csproj", "{67961EBA-7C62-4A8B-881F-4C7F6679D3BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization", "src\Serialization\Serialization.csproj", "{67961EBA-7C62-4A8B-881F-4C7F6679D3BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections.Specs", "Collections.Specs\Collections.Specs.csproj", "{39621D59-8677-4858-8CA5-7E3185464790}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections.Specs", "tests\Collections.Specs\Collections.Specs.csproj", "{39621D59-8677-4858-8CA5-7E3185464790}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Tests", "Common.Tests\Common.Tests.csproj", "{89FEEA52-E239-4855-85AB-D1FC919347BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Tests", "tests\Common.Tests\Common.Tests.csproj", "{89FEEA52-E239-4855-85AB-D1FC919347BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Specs", "Common.Specs\Common.Specs.csproj", "{C53D90B4-DCB8-4E23-A72E-6F0D59760EB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Specs", "tests\Common.Specs\Common.Specs.csproj", "{C53D90B4-DCB8-4E23-A72E-6F0D59760EB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization.Tests", "Serialization.Tests\Serialization.Tests.csproj", "{CD5B0491-D3B0-46B1-85E7-20E98713D29A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization.Tests", "tests\Serialization.Tests\Serialization.Tests.csproj", "{CD5B0491-D3B0-46B1-85E7-20E98713D29A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization.Specs", "Serialization.Specs\Serialization.Specs.csproj", "{BD473E8A-06F6-4DDF-9485-AD850C0B6D40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization.Specs", "tests\Serialization.Specs\Serialization.Specs.csproj", "{BD473E8A-06F6-4DDF-9485-AD850C0B6D40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{C98BBD07-FF0E-4C37-A7F0-F3FEF291F0B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "src\Logging\Logging.csproj", "{C98BBD07-FF0E-4C37-A7F0-F3FEF291F0B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Tests", "Logging.Tests\Logging.Tests.csproj", "{E9984108-30F1-43FB-A593-9203EF9FCE23}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Tests", "tests\Logging.Tests\Logging.Tests.csproj", "{E9984108-30F1-43FB-A593-9203EF9FCE23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Specs", "Logging.Specs\Logging.Specs.csproj", "{E5482CF9-E494-4169-A3E9-C9F0472FB224}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Specs", "tests\Logging.Specs\Logging.Specs.csproj", "{E5482CF9-E494-4169-A3E9-C9F0472FB224}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B0049115-BA3C-4DFB-A30A-96DBB2BA400F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E4A2ED48-10FC-4D8E-98C1-287BD73065ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{562D45C3-9F0B-4037-8DA4-880A834AA6B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -90,12 +96,19 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(AutomaticVersions) = postSolution
-		UpdateAssemblyVersion = True
-		UpdateAssemblyFileVersion = True
-		UpdateAssemblyInfoVersion = True
-		AssemblyVersionSettings = IncrementOnDemand.YearStamp.MonthStamp.DeltaDayStamp
-		AssemblyFileVersionSettings = IncrementOnDemand.YearStamp.MonthStamp.DeltaDayStamp
-		AssemblyInfoVersionSettings = IncrementOnDemand.YearStamp.MonthStamp.DeltaDayStamp
+	GlobalSection(NestedProjects) = preSolution
+		{3D5DF065-36DD-4E6B-9194-49F3672196FE} = {B0049115-BA3C-4DFB-A30A-96DBB2BA400F}
+		{CB59F6E2-79CF-498C-B066-021672CA1425} = {562D45C3-9F0B-4037-8DA4-880A834AA6B4}
+		{4379EC5F-7D35-4B4E-B73F-51DBFBD4110C} = {E4A2ED48-10FC-4D8E-98C1-287BD73065ED}
+		{13182F21-D0BE-4944-BF59-AD7558458E97} = {B0049115-BA3C-4DFB-A30A-96DBB2BA400F}
+		{67961EBA-7C62-4A8B-881F-4C7F6679D3BA} = {B0049115-BA3C-4DFB-A30A-96DBB2BA400F}
+		{39621D59-8677-4858-8CA5-7E3185464790} = {E4A2ED48-10FC-4D8E-98C1-287BD73065ED}
+		{89FEEA52-E239-4855-85AB-D1FC919347BE} = {E4A2ED48-10FC-4D8E-98C1-287BD73065ED}
+		{C53D90B4-DCB8-4E23-A72E-6F0D59760EB7} = {E4A2ED48-10FC-4D8E-98C1-287BD73065ED}
+		{CD5B0491-D3B0-46B1-85E7-20E98713D29A} = {E4A2ED48-10FC-4D8E-98C1-287BD73065ED}
+		{BD473E8A-06F6-4DDF-9485-AD850C0B6D40} = {E4A2ED48-10FC-4D8E-98C1-287BD73065ED}
+		{C98BBD07-FF0E-4C37-A7F0-F3FEF291F0B2} = {B0049115-BA3C-4DFB-A30A-96DBB2BA400F}
+		{E9984108-30F1-43FB-A593-9203EF9FCE23} = {E4A2ED48-10FC-4D8E-98C1-287BD73065ED}
+		{E5482CF9-E494-4169-A3E9-C9F0472FB224} = {E4A2ED48-10FC-4D8E-98C1-287BD73065ED}
 	EndGlobalSection
 EndGlobal

@@ -10,4 +10,7 @@ before_script:
   - nuget restore csharp6-libraries.sln
 
 after_script:
-  - nunit-console Collections.Tests/bin/Debug/Collections.Tests.dll
+  - nunit-console tests/Collections.Tests/bin/Debug/Collections.Tests.dll
+  - nunit-console tests/Common.Tests/bin/Debug/Common.Tests.dll
+  - nunit-console tests/Logging.Tests/bin/Debug/Logging.Tests.dll
+  - nunit-console tests/Serialization.Tests/bin/Debug/Serialization.Tests.dll

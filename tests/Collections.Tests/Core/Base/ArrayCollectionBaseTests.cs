@@ -6,7 +6,7 @@
     using Moq;
     using NUnit.Framework;
     using Collections.Core.Base;
-    using Collections.Core.ExceptionHandling.Concrete;
+    using Collections.Core.Exceptions;
 
     /// <summary>
     /// Class ArrayCollectionBaseTests.

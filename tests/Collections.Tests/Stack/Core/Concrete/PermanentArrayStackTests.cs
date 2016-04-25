@@ -5,7 +5,7 @@
     using Moq;
     using NUnit.Framework;
     using Collections.Stack.Core.Concrete;
-    using Collections.Stack.ExceptionHandling.Core.Concrete;
+    using Collections.Stack.Exceptions;
 
     [TestFixture]
     public class PermanentArrayStackTests

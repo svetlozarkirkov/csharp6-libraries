@@ -1,12 +1,15 @@
 ﻿namespace Collections.Tests.Stack.Core.Base
 {
     using System;
+
+    using Collections.Core.Exceptions;
+
     using FluentAssertions;
     using Moq;
     using NUnit.Framework;
-    using Collections.Core.ExceptionHandling.Concrete;
+
     using Collections.Stack.Core.Base;
-    using Collections.Stack.ExceptionHandling.Core.Concrete;
+    using Collections.Stack.Exceptions;
 
     [TestFixture]
     public class ArrayStackBaseTests

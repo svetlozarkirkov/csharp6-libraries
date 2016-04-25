@@ -7,7 +7,7 @@ namespace Collections.Stack.Core.Contracts
     /// Has four basic stack methods.
     /// </summary>
     /// <typeparam name="T">The type which is stored in the stack.</typeparam>
-    public interface IStack<T> : ICollection
+    public interface IStack<T> : ICollection<T>
     {
         /// <summary>
         /// Inserts an item at the top of the stack.

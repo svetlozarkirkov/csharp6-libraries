@@ -2,10 +2,13 @@
 {
     using System;
     using System.Reflection;
+
+    using Collections.Core.Exceptions;
+
     using FluentAssertions;
     using Moq;
     using NUnit.Framework;
-    using Collections.Core.ExceptionHandling.Concrete;
+
     using Collections.Stack.Core.Concrete;
 
     [TestFixture]

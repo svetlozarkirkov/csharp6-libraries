@@ -1,6 +1,6 @@
 ﻿namespace Collections.Map.Core.Concrete
 {
-    using Collections.Core.ExceptionHandling.Concrete;
+    using Collections.Core.Exceptions;
     using Collections.Map.Core.Base;
 
     /// <summary>

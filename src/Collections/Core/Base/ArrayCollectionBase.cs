@@ -2,16 +2,18 @@
 {
     using System;
     using System.Threading.Tasks;
-    using Collections.Core.ExceptionHandling.Concrete;
     using Collections.Core.Contracts;
+    using Collections.Core.Exceptions;
     using Collections.Injectors.Clear;
 
     /// <summary>
     /// Class ArrayCollectionBase.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    /// <seealso cref="ICollection" />
-    public abstract class ArrayCollectionBase<T> : ICollection, IClearable
+    /// <seealso cref="Contracts.ICollection{T}" />
+    /// <seealso cref="IClearable" />
+    /// TODO Edit XML Comment Template for ArrayCollectionBase
+    public abstract class ArrayCollectionBase<T> : ICollection<T>, IClearable
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ArrayCollectionBase{T}"/> class.

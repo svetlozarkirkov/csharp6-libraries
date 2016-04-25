@@ -7,7 +7,7 @@
     /// </summary>
     /// <typeparam name="TKey">The type of the key.</typeparam>
     /// <typeparam name="TValue">The type of the value.</typeparam>
-    public interface IMap<in TKey, TValue> : ICollection
+    public interface IMap<TKey, TValue> : IKeyValueCollection<TKey, TValue>
     {
         /// <summary>
         /// Stores the specified key and associated value.

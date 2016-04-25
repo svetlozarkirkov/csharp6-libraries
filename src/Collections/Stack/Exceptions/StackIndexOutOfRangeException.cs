@@ -1,4 +1,4 @@
-﻿namespace Collections.Stack.ExceptionHandling.Core.Concrete
+﻿namespace Collections.Stack.Exceptions
 {
     using System;
     using System.Runtime.Serialization;

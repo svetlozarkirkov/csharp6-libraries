@@ -1,8 +1,7 @@
 ﻿namespace Collections.Stack.Core.Concrete
 {
-    using Collections.Core.ExceptionHandling.Concrete;
     using Collections.Stack.Core.Base;
-    using Collections.Stack.ExceptionHandling.Core.Concrete;
+    using Collections.Stack.Exceptions;
 
     /// <summary>
     /// Stack with permanent capacity.
@@ -14,7 +13,6 @@
         /// Initializes a new instance of the <see cref="PermanentArrayStack{T}"/> class.
         /// </summary>
         /// <param name="capacity">The initial capacity.</param>
-        /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         public PermanentArrayStack(int capacity) : base(capacity)
         {
         }

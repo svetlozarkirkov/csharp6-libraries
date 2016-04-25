@@ -43,10 +43,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Core\Base\ArrayCollectionBase.cs" />
-    <Compile Include="Core\ExceptionHandling\Concrete\EmptyCollectionException.cs" />
-    <Compile Include="Core\ExceptionHandling\Concrete\InvalidCollectionCapacityException.cs" />
-    <Compile Include="Core\ExceptionHandling\Concrete\InvalidCollectionIndexException.cs" />
     <Compile Include="Core\Contracts\ICollection.cs" />
+    <Compile Include="Core\Contracts\IKeyValueCollection.cs" />
+    <Compile Include="Core\Exceptions\EmptyCollectionException.cs" />
+    <Compile Include="Core\Exceptions\InvalidCollectionCapacityException.cs" />
     <Compile Include="Injectors\Clear\IClearable.cs" />
     <Compile Include="Injectors\Index\IIndexable.cs" />
     <Compile Include="Injectors\Node\Interface\IDoubleLinkNode.cs" />
@@ -58,17 +58,19 @@
     <Compile Include="Map\Core\Contracts\IMapItem.cs" />
     <Compile Include="Map\Core\Contracts\IMapNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Set\Core\Base\ArraySetBase.cs" />
     <Compile Include="Set\Core\Base\NodeSetBase.cs" />
+    <Compile Include="Set\Core\Concrete\ArraySet.cs" />
     <Compile Include="Set\Core\Concrete\NodeSet.cs" />
     <Compile Include="Set\Core\Contracts\ISet.cs" />
     <Compile Include="Stack\Core\Base\ArrayStackBase.cs" />
     <Compile Include="Stack\Core\Concrete\PermanentArrayStack.cs" />
     <Compile Include="Stack\Core\Concrete\ArrayStack.cs" />
     <Compile Include="Stack\Core\Contracts\IStack.cs" />
-    <Compile Include="Stack\ExceptionHandling\Core\Concrete\EmptyStackException.cs" />
-    <Compile Include="Stack\ExceptionHandling\Core\Concrete\FullStackException.cs" />
-    <Compile Include="Stack\ExceptionHandling\Core\Concrete\InvalidStackCapacityGivenException.cs" />
-    <Compile Include="Stack\ExceptionHandling\Core\Concrete\StackIndexOutOfRangeException.cs" />
+    <Compile Include="Stack\Exceptions\EmptyStackException.cs" />
+    <Compile Include="Stack\Exceptions\FullStackException.cs" />
+    <Compile Include="Stack\Exceptions\InvalidStackCapacityGivenException.cs" />
+    <Compile Include="Stack\Exceptions\StackIndexOutOfRangeException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -76,7 +78,7 @@
   <ItemGroup>
     <Folder Include="Injectors\Node\Base\" />
     <Folder Include="Injectors\Node\Concrete\" />
-    <Folder Include="Map\ExceptionHandling\" />
+    <Folder Include="Map\Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

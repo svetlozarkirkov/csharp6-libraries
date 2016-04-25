@@ -3,7 +3,6 @@
     using System;
     using System.Diagnostics.Contracts;
     using Collections.Core.Base;
-    using Collections.Core.ExceptionHandling.Concrete;
     using Collections.Stack.Core.Contracts;
 
     /// <summary>
@@ -17,7 +16,6 @@
         /// Initializes a new instance of the <see cref="ArrayStackBase{T}"/> class.
         /// </summary>
         /// <param name="capacity">The capacity.</param>
-        /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         protected ArrayStackBase(int capacity) : base(capacity)
         {
         }
@@ -25,7 +23,6 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="ArrayStackBase{T}"/> class.
         /// </summary>
-        /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
         protected ArrayStackBase()
         {
         }
@@ -50,7 +47,6 @@
         /// Returns and removes the top element in the stack.
         /// </summary>
         /// <returns>The tpp element in the stack.</returns>
-        /// <exception cref="EmptyCollectionException">The collection is empty.</exception>
         public virtual T Pop()
         {
             if (this.CurrentPosition == 0) this.EmptyCollectionHandler();
@@ -63,7 +59,6 @@
         /// Returns the top element in the stack.
         /// </summary>
         /// <returns>The top element in the stack.</returns>
-        /// <exception cref="EmptyCollectionException">The collection is empty.</exception>
         public virtual T Peek()
         {
             if (this.CurrentPosition == 0) this.EmptyCollectionHandler();

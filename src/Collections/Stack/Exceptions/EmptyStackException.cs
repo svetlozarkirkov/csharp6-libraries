@@ -1,46 +1,46 @@
-﻿namespace Collections.Core.ExceptionHandling.Concrete
+﻿namespace Collections.Stack.Exceptions
 {
     using System;
     using System.Runtime.Serialization;
 
     /// <summary>
-    /// Class EmptyCollectionException.
+    /// Class EmptyStackException.
     /// </summary>
-    /// <seealso cref="InvalidOperationException" />
+    /// <seealso cref="System.InvalidOperationException" />
     [Serializable]
-    public class EmptyCollectionException : InvalidOperationException
+    public class EmptyStackException : InvalidOperationException
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="EmptyCollectionException"/> class.
+        /// Initializes a new instance of the <see cref="EmptyStackException"/> class.
         /// </summary>
-        public EmptyCollectionException()
+        internal EmptyStackException()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EmptyCollectionException"/> class.
+        /// Initializes a new instance of the <see cref="EmptyStackException"/> class.
         /// </summary>
         /// <param name="message">The message that describes the error.</param>
-        public EmptyCollectionException(string message) : base(message)
+        internal EmptyStackException(string message) : base(message)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EmptyCollectionException"/> class.
+        /// Initializes a new instance of the <see cref="EmptyStackException"/> class.
         /// </summary>
         /// <param name="message">The error message that explains the reason for the exception.</param>
         /// <param name="innerException">The exception that is the cause of the current exception. If the <paramref name="innerException" /> parameter is not a null reference (Nothing in Visual Basic), the current exception is raised in a catch block that handles the inner exception.</param>
-        public EmptyCollectionException(string message, Exception innerException)
+        internal EmptyStackException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EmptyCollectionException"/> class.
+        /// Initializes a new instance of the <see cref="EmptyStackException"/> class.
         /// </summary>
         /// <param name="info">The object that holds the serialized object data.</param>
         /// <param name="context">The contextual information about the source or destination.</param>
-        protected EmptyCollectionException(SerializationInfo info, StreamingContext context)
+        protected EmptyStackException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }

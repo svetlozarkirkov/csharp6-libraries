@@ -3,7 +3,7 @@
     using System;
     using System.Diagnostics.Contracts;
     using Collections.Core.Base;
-    using Collections.Core.ExceptionHandling.Concrete;
+    using Collections.Core.Exceptions;
     using Collections.Map.Core.Contracts;
 
     /// <summary>

@@ -14,7 +14,7 @@
     /// <seealso cref="Collections.Core.Base.ArrayCollectionBase{IMapItem{TKey, TValue}}" />
     /// <seealso cref="Contracts.IMap{TKey, TValue}" />
     public class ArrayMap<TKey, TValue>
-        : ArrayCollectionBase<IMapItem<TKey, TValue>>
+        : ArrayCollectionBase<IMapItem<TKey, TValue>>, IMap<TKey, TValue>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ArrayMap{TKey, TValue}" /> class.

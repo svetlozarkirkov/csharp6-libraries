@@ -32,11 +32,11 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\artifacts\</OutputPath>
+    <OutputPath>..\..\artifacts\release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\artifacts\Collections.XML</DocumentationFile>
+    <DocumentationFile>..\..\artifacts\release\Collections.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />

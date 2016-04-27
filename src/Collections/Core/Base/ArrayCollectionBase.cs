@@ -1,6 +1,7 @@
 ﻿namespace Collections.Core.Base
 {
     using System;
+    using System.Text;
     using System.Threading.Tasks;
     using Collections.Core.Contracts;
     using Collections.Core.Exceptions;
@@ -108,6 +109,23 @@
                     });
 
             this.Collection = updatedCollection;
+        }
+
+        /// <summary>
+        /// Returns a <see cref="string" /> that represents this instance.
+        /// </summary>
+        /// <returns>A <see cref="string" /> that represents this instance.</returns>
+        /// TODO Edit XML Comment Template for ToString
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("{ ");
+            for (var i = 0; i < this.CurrentPosition; i++)
+            {
+                sb.Append($"[ {this.Collection[i]} ]");
+            }
+            sb.Append(" }");
+            return sb.ToString();
         }
     }
 }

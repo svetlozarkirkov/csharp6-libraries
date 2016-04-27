@@ -11,7 +11,9 @@
     /// </summary>
     /// <typeparam name="TKey">The type of the key.</typeparam>
     /// <typeparam name="TValue">The type of the value.</typeparam>
-    /// <seealso cref="Collections.Core.Base.ArrayCollectionBase{IMapItem{TKey, TValue}}" />
+    /// <seealso>
+    ///     <cref>Collections.Core.Base.ArrayCollectionBase{IMapItem{TKey, TValue}}</cref>
+    /// </seealso>
     /// <seealso cref="Contracts.IMap{TKey, TValue}" />
     public class ArrayMap<TKey, TValue>
         : ArrayCollectionBase<IMapItem<TKey, TValue>>, IMap<TKey, TValue>
@@ -51,7 +53,7 @@
             }
 
             this.Collection[this.CurrentPosition] =
-                new { Key = key, Value = value } as IMapItem<TKey, TValue>;
+                new MapItem { Key = key, Value = value };
 
             this.CurrentPosition++;
         }
@@ -104,6 +106,15 @@
         public override int Size()
         {
             throw new NotImplementedException();
+        }
+
+        private class MapItem : IMapItem<TKey, TValue>
+        {
+            public TKey Key { get; set; }
+
+            public TValue Value { get; set; }
+
+            public override string ToString() => $"{this.Key} -> {this.Value}";
         }
     }
 }

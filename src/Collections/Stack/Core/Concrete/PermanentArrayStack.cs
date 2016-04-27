@@ -7,10 +7,11 @@
     /// Stack with permanent capacity.
     /// </summary>
     /// <typeparam name="T">Type of the items in the stack.</typeparam>
-    public class PermanentArrayStack<T> : ArrayStackBase<T>
+    /// <seealso cref="Base.ArrayStack{T}" />
+    public class PermanentArrayStack<T> : ArrayStack<T>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PermanentArrayStack{T}"/> class.
+        /// Initializes a new instance of the <see cref="PermanentArrayStack{T}" /> class.
         /// </summary>
         /// <param name="capacity">The initial capacity.</param>
         public PermanentArrayStack(int capacity) : base(capacity)

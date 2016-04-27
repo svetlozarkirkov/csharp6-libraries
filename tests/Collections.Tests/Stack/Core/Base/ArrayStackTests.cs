@@ -1,18 +1,15 @@
 ﻿namespace Collections.Tests.Stack.Core.Base
 {
     using System;
-
-    using Collections.Core.Exceptions;
-
     using FluentAssertions;
     using Moq;
     using NUnit.Framework;
-
+    using Collections.Core.Exceptions;
     using Collections.Stack.Core.Base;
     using Collections.Stack.Exceptions;
 
     [TestFixture]
-    public class ArrayStackBaseTests
+    public class ArrayStackTests
     {
         /// <summary>
         /// When the stack is initialized
@@ -22,7 +19,7 @@
         public void WhenEmptyStack_SizeMustBeZero()
         {
             // Arrange
-            var mock = new Mock<ArrayStackBase<object>>() { CallBase = true };
+            var mock = new Mock<ArrayStack<object>>() { CallBase = true };
 
             // Act Assert
             mock.Object.Size().Should().Be(0);
@@ -37,7 +34,7 @@
         public void EmptyStack_Pop_ShouldThrowException()
         {
             // Arrange
-            var mock = new Mock<ArrayStackBase<object>>() {CallBase = true};
+            var mock = new Mock<ArrayStack<object>>() {CallBase = true};
 
             // Act Assert
             mock.Invoking(s => s.Object.Pop()).ShouldThrowExactly<EmptyCollectionException>();
@@ -52,7 +49,7 @@
         public void EmptyStack_Peek_ShouldThrowException()
         {
             // Arrange
-            var mock = new Mock<ArrayStackBase<object>>() { CallBase = true };
+            var mock = new Mock<ArrayStack<object>>() { CallBase = true };
 
             // Act Assert
             mock.Invoking(s => s.Object.Peek()).ShouldThrowExactly<EmptyCollectionException>();
@@ -68,7 +65,7 @@
         public void EmptyStack_WhenItemIsPushed_SizeMustBeOne()
         {
             // Arrange
-            var mock = new Mock<ArrayStackBase<object>>() {CallBase = true};
+            var mock = new Mock<ArrayStack<object>>() { CallBase = true };
 
             // Act
             mock.Object.Push(It.IsAny<object>());
@@ -87,7 +84,7 @@
         public void StackAtFullCapacity_WhenItemIsPushed_ShouldNotThrowException()
         {
             // Arrange
-            var mock = new Mock<ArrayStackBase<object>>(1) { CallBase = true };
+            var mock = new Mock<ArrayStack<object>>(1) { CallBase = true };
             mock.Object.Push(It.IsAny<object>());
 
             // Act Assert
@@ -107,7 +104,7 @@
         public void EmptyStack_ItemIsPushed_PopShouldReturnTheSameItem()
         {
             // Arrange
-            var mock = new Mock<ArrayStackBase<object>>() { CallBase = true };
+            var mock = new Mock<ArrayStack<object>>() { CallBase = true };
             var item = It.IsAny<object>();
             mock.Object.Push(item);
 
@@ -129,7 +126,7 @@
         public void EmptyStack_ItemIsPushed_PopInvoked_SizeMustBeZero()
         {
             // Arrange
-            var mock = new Mock<ArrayStackBase<object>>() { CallBase = true };
+            var mock = new Mock<ArrayStack<object>>() { CallBase = true };
             mock.Object.Push(It.IsAny<object>());
             mock.Object.Pop();
 
@@ -148,7 +145,7 @@
         public void EmptyStack_ItemIsPushed_PeekInvoked_ShouldReturnTheSameItem()
         {
             // Arrange
-            var mock = new Mock<ArrayStackBase<object>>() { CallBase = true };
+            var mock = new Mock<ArrayStack<object>>() { CallBase = true };
             var item = It.IsAny<object>();
             mock.Object.Push(item);
 
@@ -170,7 +167,7 @@
         public void EmptyStack_ItemIsPushed_PeekInvoked_SizeMustBeOne()
         {
             // Arrange
-            var mock = new Mock<ArrayStackBase<object>>() { CallBase = true };
+            var mock = new Mock<ArrayStack<object>>() { CallBase = true };
             mock.Object.Push(It.IsAny<object>());
             mock.Object.Peek();
 

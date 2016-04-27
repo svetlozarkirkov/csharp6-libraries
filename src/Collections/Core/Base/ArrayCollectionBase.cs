@@ -4,16 +4,14 @@
     using System.Threading.Tasks;
     using Collections.Core.Contracts;
     using Collections.Core.Exceptions;
-    using Collections.Injectors.Clear;
 
     /// <summary>
     /// Class ArrayCollectionBase.
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <seealso cref="Contracts.ICollection{T}" />
-    /// <seealso cref="IClearable" />
     /// TODO Edit XML Comment Template for ArrayCollectionBase
-    public abstract class ArrayCollectionBase<T> : ICollection<T>, IClearable
+    public abstract class ArrayCollectionBase<T> : ICollection<T>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ArrayCollectionBase{T}"/> class.
@@ -71,15 +69,8 @@
         /// Gets the size of the collection.
         /// </summary>
         /// <returns>System.Int32.</returns>
+        /// <exception cref="NotImplementedException"></exception>
         public abstract int Size();
-
-        /// <summary>
-        /// Clears all items in the collection.
-        /// </summary>
-        public void Clear()
-        {
-            this.Collection = new T[this.InitializedCapacity];
-        }
 
         /// <summary>
         /// Handles the behaviour when the collection is empty.

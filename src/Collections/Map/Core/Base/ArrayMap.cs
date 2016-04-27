@@ -7,40 +7,30 @@
     using Collections.Map.Core.Contracts;
 
     /// <summary>
-    /// Class ArrayMapBase.
+    /// Class ArrayMap.
     /// </summary>
     /// <typeparam name="TKey">The type of the key.</typeparam>
     /// <typeparam name="TValue">The type of the value.</typeparam>
+    /// <seealso cref="Collections.Core.Base.ArrayCollectionBase{IMapItem{TKey, TValue}}" />
     /// <seealso cref="Contracts.IMap{TKey, TValue}" />
-    public abstract class ArrayMapBase<TKey, TValue>
-        : ArrayCollectionBase<IMapItem<TKey, TValue>>, IMap<TKey, TValue>
+    public class ArrayMap<TKey, TValue>
+        : ArrayCollectionBase<IMapItem<TKey, TValue>>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ArrayMapBase{TKey, TValue}"/> class.
+        /// Initializes a new instance of the <see cref="ArrayMap{TKey, TValue}" /> class.
         /// </summary>
         /// <param name="capacity">The capacity.</param>
         /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
-        protected ArrayMapBase(int capacity) : base(capacity)
+        public ArrayMap(int capacity) : base(capacity)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ArrayMapBase{TKey, TValue}"/> class.
+        /// Initializes a new instance of the <see cref="ArrayMap{TKey, TValue}" /> class.
         /// </summary>
         /// <exception cref="InvalidCollectionCapacityException">The given capacity is less than or equal to zero.</exception>
-        protected ArrayMapBase()
+        public ArrayMap()
         {
-        }
-
-        /// <summary>
-        /// Gets the size of the collection.
-        /// </summary>
-        /// <returns>System.Int32.</returns>
-        /// <exception cref="NotImplementedException"></exception>
-        /// TODO Edit XML Comment Template for Size
-        public override int Size()
-        {
-            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -103,6 +93,17 @@
             Contract.Requires(value != null);
 
             throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// Gets the size of the collection.
+        /// </summary>
+        /// <returns>System.Int32.</returns>
+        /// <exception cref="NotImplementedException"></exception>
+        /// TODO Edit XML Comment Template for Size
+        public override int Size()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -6,24 +6,24 @@
     using Collections.Stack.Core.Contracts;
 
     /// <summary>
-    /// Class ArrayStackBase.
+    /// Class ArrayStack.
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <seealso cref="Contracts.IStack{T}" />
-    public abstract class ArrayStackBase<T> : ArrayCollectionBase<T>, IStack<T>
+    public class ArrayStack<T> : ArrayCollectionBase<T>, IStack<T>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ArrayStackBase{T}"/> class.
+        /// Initializes a new instance of the <see cref="ArrayStack{T}"/> class.
         /// </summary>
         /// <param name="capacity">The capacity.</param>
-        protected ArrayStackBase(int capacity) : base(capacity)
+        public ArrayStack(int capacity) : base(capacity)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ArrayStackBase{T}"/> class.
+        /// Initializes a new instance of the <see cref="ArrayStack{T}"/> class.
         /// </summary>
-        protected ArrayStackBase()
+        public ArrayStack()
         {
         }
 
@@ -67,10 +67,10 @@
         }
 
         /// <summary>
-        /// Gets the size of the collection.
+        /// Sizes this instance.
         /// </summary>
         /// <returns>System.Int32.</returns>
-        /// <exception cref="NotImplementedException"></exception>
+        /// TODO Edit XML Comment Template for Size
         public override int Size() => this.CurrentPosition;
     }
 }

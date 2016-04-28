@@ -37,6 +37,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Base\LogBase.cs" />
+    <Compile Include="Core\Base\SingletonStandardLogBase.cs" />
+    <Compile Include="Core\Concrete\StandardLog.cs" />
     <Compile Include="Core\Contracts\ILog.cs" />
     <Compile Include="LogLevel\Base\LogLevelBase.cs" />
     <Compile Include="LogLevel\Concrete\LogLevelError.cs" />
@@ -50,7 +52,16 @@
     <Compile Include="LogSchema\Contracts\ILogSchema.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{13182f21-d0be-4944-bf59-ad7558458e97}</Project>
+      <Name>Common</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Attributes\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

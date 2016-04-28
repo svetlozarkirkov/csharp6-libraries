@@ -117,7 +117,7 @@
             throw new NotImplementedException();
         }
 
-        public class MapItem : IMapItem<TKey, TValue>
+        private class MapItem : IMapItem<TKey, TValue>
         {
             public TKey Key { get; set; }
 

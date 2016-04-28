@@ -12,6 +12,8 @@
     /// TODO Edit XML Comment Template for LogBase
     public abstract class LogBase : ILog
     {
+        protected LogBase() { }
+
         /// <summary>
         /// Gets the log level.
         /// </summary>

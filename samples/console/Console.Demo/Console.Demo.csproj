@@ -33,8 +33,11 @@
     <DocumentationFile>..\..\..\artifacts\release\Console.Demo.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
@@ -62,6 +65,11 @@
     <ProjectReference Include="..\..\..\src\Serialization\Serialization.csproj">
       <Project>{67961eba-7c62-4a8b-881f-4c7f6679d3ba}</Project>
       <Name>Serialization</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\benchmarks\Benchmark.Method\Benchmark.Method.csproj">
+      <Project>{0f2cbb76-fa6b-4d5f-8857-252094787e30}</Project>
+      <Name>Benchmark.Method</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>

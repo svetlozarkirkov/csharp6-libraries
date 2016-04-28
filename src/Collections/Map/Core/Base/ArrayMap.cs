@@ -5,6 +5,7 @@
     using Collections.Core.Base;
     using Collections.Core.Exceptions;
     using Collections.Map.Core.Contracts;
+    using Collections.Map.Exceptions.ArrayMap;
 
     /// <summary>
     /// Class ArrayMap.
@@ -68,7 +69,15 @@
         {
             Contract.Requires(key != null);
 
-            throw new System.NotImplementedException();
+            for (var i = 0; i < this.CurrentPosition; i++)
+            {
+                if (this.Collection[i].Key.Equals(key))
+                {
+                    return this.Collection[i].Value;
+                }
+            }
+
+            throw new NoSuchKeyException("There is no such key.", nameof(key));
         }
 
         /// <summary>
@@ -108,7 +117,7 @@
             throw new NotImplementedException();
         }
 
-        private class MapItem : IMapItem<TKey, TValue>
+        public class MapItem : IMapItem<TKey, TValue>
         {
             public TKey Key { get; set; }
 

@@ -49,21 +49,6 @@
       <Name>Collections</Name>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\src\Common\Common.csproj">
-      <Project>{13182f21-d0be-4944-bf59-ad7558458e97}</Project>
-      <Name>Common</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\src\Logging\Logging.csproj">
-      <Project>{c98bbd07-ff0e-4c37-a7f0-f3fef291f0b2}</Project>
-      <Name>Logging</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\src\Serialization\Serialization.csproj">
-      <Project>{67961eba-7c62-4a8b-881f-4c7f6679d3ba}</Project>
-      <Name>Serialization</Name>
-      <Private>False</Private>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

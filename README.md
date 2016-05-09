@@ -1,4 +1,4 @@
-C# 6.0 - Libraries
+C# 6.0 - Micro Libraries
 ===
 
 [![Build Status](https://travis-ci.org/svetlozarkirkov/csharp6-libraries.svg?branch=master)](https://travis-ci.org/svetlozarkirkov/csharp6-libraries)
@@ -7,7 +7,7 @@ C# 6.0 - Libraries
 
 <h2>About</h2>
 
-Implementing various libraries for C# from scratch using C# 6.0 syntax where possible.
+Various micro libraries for C# written from scratch using C# 6.0 syntax and features.
 
 
 <h2>Goals</h2>

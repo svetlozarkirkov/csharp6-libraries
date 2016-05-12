@@ -14,20 +14,15 @@ Various micro libraries for C# written from scratch using C# 6.0 syntax and feat
 
 - :muscle: **SOLID**
 - :runner: **High Performance**
+- :fries: **Modularity**
 - :cop: **Complete unit-tests**
 - :books: **Full, correct and useful documentation**
 - :link: **Ports to other languages**
 
 ## Version
-* **Pre-Alpha**
+* **Early Alpha**
 
-<h2>Ports</h2>
-
-![Java](http://i.imgur.com/rDnhhLq.png?2)
-![JavaScript](http://i.imgur.com/jtpavhh.png?2)
-
-
-<h2>Dependencies</h2>
+<h2>Test Dependencies</h2>
 
 |Name|
 |---|
@@ -82,7 +77,7 @@ Various micro libraries for C# written from scratch using C# 6.0 syntax and feat
 ----------
 
 <!--## Download
-* [Version 0.2](https://github.com/svetlozarkirkov/csharp6-libraries/archive/master.zip)
+* [Early Alpha](https://github.com/svetlozarkirkov/csharp6-libraries/archive/master.zip)
 * Other Versions-->
 
 ## Usage

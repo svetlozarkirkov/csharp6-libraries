@@ -1,16 +1,16 @@
+
 language: csharp
 
 script:
-  - xbuild /p:Configuration=Debug csharp6-libraries.sln
+  - xbuild /p:Configuration=Debug csharp6-microlibraries.sln
 
 before_install:
   - sudo apt-get install nunit-console
 
 before_script:
-  - nuget restore csharp6-libraries.sln
+  - nuget restore csharp6-microlibraries.sln
 
 after_script:
-  - nunit-console tests/Collections.Tests/bin/Debug/Collections.Tests.dll
-  - nunit-console tests/Common.Tests/bin/Debug/Common.Tests.dll
-  - nunit-console tests/Logging.Tests/bin/Debug/Logging.Tests.dll
-  - nunit-console tests/Serialization.Tests/bin/Debug/Serialization.Tests.dll
+  - nunit-console artifacts/debug/tests/collections/ml.map.tests/ML.Map.Tests.dll
+  - nunit-console artifacts/debug/tests/collections/ml.set.tests/ML.Set.Tests.dll
+  - nunit-console artifacts/debug/tests/collections/ml.stack.tests/ML.Stack.Tests.dll

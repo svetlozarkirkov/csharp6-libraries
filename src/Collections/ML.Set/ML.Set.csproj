@@ -7,8 +7,8 @@
     <ProjectGuid>{30C707EF-4524-47A7-82C6-52D64D07C22A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Set</RootNamespace>
-    <AssemblyName>Set</AssemblyName>
+    <RootNamespace>ML.Set</RootNamespace>
+    <AssemblyName>ML.Set</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -28,7 +28,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\artifacts\release\collections\ml.set\Set.XML</DocumentationFile>
+    <DocumentationFile>..\..\..\artifacts\release\collections\ml.set\ML.Set.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

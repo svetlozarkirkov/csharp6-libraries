@@ -7,8 +7,8 @@
     <ProjectGuid>{81AA5B8E-8D68-4BB9-BE5B-1C0A3DC6A42B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Stack</RootNamespace>
-    <AssemblyName>Stack</AssemblyName>
+    <RootNamespace>ML.Stack</RootNamespace>
+    <AssemblyName>ML.Stack</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -28,18 +28,19 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\artifacts\release\collections\ml.stack\Stack.XML</DocumentationFile>
+    <DocumentationFile>..\..\..\artifacts\release\collections\ml.stack\ML.Stack.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Base\ArrayStackBase.cs" />
     <Compile Include="Core\Contracts\IStack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Core\Base\" />
+    <Folder Include="Core\Concrete\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

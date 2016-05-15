@@ -1,4 +1,4 @@
-﻿namespace Map.Core.Contracts
+﻿namespace ML.Map.Core.Contracts
 {
     public interface IMap
     {

@@ -1,38 +1,33 @@
-﻿namespace Stack.Core.Contracts
+﻿namespace ML.Stack.Core.Contracts
 {
     /// <summary>
-    /// Interface IStack
+    /// The default contract for a stack. Holds the four basic operations.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    /// TODO Edit XML Comment Template for IStack
     public interface IStack<T>
     {
         /// <summary>
-        /// Pushes the specified item.
+        /// Adds the specified item on the top of the stack.
         /// </summary>
-        /// <param name="item">The item.</param>
-        /// TODO Edit XML Comment Template for Push
+        /// <param name="item">The item to be inserted.</param>
         void Push(T item);
 
         /// <summary>
-        /// Pops this instance.
+        /// Returns the top item and removes it from the stack.
         /// </summary>
-        /// <returns>T.</returns>
-        /// TODO Edit XML Comment Template for Pop
+        /// <returns>The top item in stack.</returns>
         T Pop();
 
         /// <summary>
-        /// Peeks this instance.
+        /// Returns the top item in the stack.
         /// </summary>
-        /// <returns>T.</returns>
-        /// TODO Edit XML Comment Template for Peek
+        /// <returns>The top item in the stack.</returns>
         T Peek();
 
         /// <summary>
-        /// Sizes this instance.
+        /// Returns the count of items in the stack.
         /// </summary>
-        /// <returns>System.Int32.</returns>
-        /// TODO Edit XML Comment Template for Size
+        /// <returns>The count of items in the stack.</returns>
         int Size();
     }
 }

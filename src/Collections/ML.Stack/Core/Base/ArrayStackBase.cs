@@ -12,12 +12,14 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="ArrayStackBase{T}"/> class.
         /// </summary>
-        /// <param name="stackCapacity">The stack capacity.</param>
+        /// <param name="stackCapacity">The initial stack capacity.</param>
         protected ArrayStackBase(int stackCapacity)
         {
+            // TODO: validation
+
             this.Stack = new T[stackCapacity];
             this.InitializedStackCapacity = stackCapacity;
-            this.CurrentPosition = 0;
+            this.TopPosition = 0;
         }
 
         /// <summary>
@@ -35,21 +37,18 @@
         /// Gets or sets the stack.
         /// </summary>
         /// <value>The stack.</value>
-        /// TODO Edit XML Comment Template for Stack
         protected T[] Stack { get; set; }
 
         /// <summary>
-        /// Gets or sets the current position.
+        /// Gets or sets the top position of the stack.
         /// </summary>
-        /// <value>The current position.</value>
-        /// TODO Edit XML Comment Template for CurrentPosition
-        protected int CurrentPosition { get; set; }
+        /// <value>The top position of the stack.</value>
+        protected int TopPosition { get; set; }
 
         /// <summary>
-        /// Gets the initialized stack capacity.
+        /// Gets the capacity with which the stack was initialized.
         /// </summary>
         /// <value>The initialized stack capacity.</value>
-        /// TODO Edit XML Comment Template for InitializedStackCapacity
         protected int InitializedStackCapacity { get; }
 
         /// <summary>
@@ -66,30 +65,29 @@
         /// Returns the top item and removes it from the stack.
         /// </summary>
         /// <returns>The top item in stack.</returns>
-        /// <exception cref="System.NotImplementedException"></exception>
         public T Pop()
         {
-            throw new System.NotImplementedException();
+            // TODO: validation
+
+            this.TopPosition--;
+            return this.Stack[this.TopPosition];
         }
 
         /// <summary>
         /// Returns the top item in the stack.
         /// </summary>
         /// <returns>The top item in the stack.</returns>
-        /// <exception cref="System.NotImplementedException"></exception>
         public T Peek()
         {
-            throw new System.NotImplementedException();
+            // TODO: validation
+
+            return this.Stack[this.TopPosition - 1];
         }
 
         /// <summary>
         /// Returns the count of items in the stack.
         /// </summary>
         /// <returns>The count of items in the stack.</returns>
-        /// <exception cref="System.NotImplementedException"></exception>
-        public int Size()
-        {
-            throw new System.NotImplementedException();
-        }
+        public int Size() => this.TopPosition;
     }
 }

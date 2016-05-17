@@ -23,6 +23,14 @@
         bool Contains(T item);
 
         /// <summary>
+        /// Inserts the specified item.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <param name="index">The index.</param>
+        /// TODO Edit XML Comment Template for Insert
+        void Insert(T item, int index);
+
+        /// <summary>
         /// Removes the specified item.
         /// </summary>
         /// <param name="item">The item.</param>

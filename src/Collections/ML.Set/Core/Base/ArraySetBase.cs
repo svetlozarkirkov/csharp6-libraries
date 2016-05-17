@@ -14,6 +14,11 @@
             throw new System.NotImplementedException();
         }
 
+        public void Insert(T item, int index)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void Remove(T item)
         {
             throw new System.NotImplementedException();

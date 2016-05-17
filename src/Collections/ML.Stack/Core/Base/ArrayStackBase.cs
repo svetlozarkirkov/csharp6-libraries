@@ -55,10 +55,12 @@
         /// Adds the specified item on the top of the stack.
         /// </summary>
         /// <param name="item">The item to be inserted.</param>
-        /// <exception cref="System.NotImplementedException"></exception>
         public void Push(T item)
         {
-            throw new System.NotImplementedException();
+            // TODO: validation
+
+            this.Stack[this.TopPosition] = item;
+            this.TopPosition++;
         }
 
         /// <summary>

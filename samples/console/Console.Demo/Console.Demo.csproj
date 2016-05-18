@@ -43,6 +43,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Collections\ML.Map\ML.Map.csproj">
+      <Project>{2417ab44-1d7e-4d18-b1ca-ec5c9034f535}</Project>
+      <Name>ML.Map</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Collections\ML.Set\ML.Set.csproj">
+      <Project>{30c707ef-4524-47a7-82c6-52d64d07c22a}</Project>
+      <Name>ML.Set</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\Collections\ML.Stack\ML.Stack.csproj">
+      <Project>{81aa5b8e-8d68-4bb9-be5b-1c0a3dc6a42b}</Project>
+      <Name>ML.Stack</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

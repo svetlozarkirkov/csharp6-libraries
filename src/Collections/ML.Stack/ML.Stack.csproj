@@ -36,12 +36,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Base\ArrayStackBase.cs" />
+    <Compile Include="Core\Concrete\ArrayStack.cs" />
     <Compile Include="Core\Contracts\IStack.cs" />
+    <Compile Include="Core\Exceptions\EmptyStackException.cs" />
+    <Compile Include="Core\Exceptions\InvalidStackCapacityException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\Concrete\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

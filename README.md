@@ -36,44 +36,6 @@ Various micro libraries for C# written from scratch using C# 6.0 syntax and feat
 
 #### **Collections** ####
 
-- **Stack** ![Stack](http://i.imgur.com/qGOr4Gj.png?2)
-    - **ArrayStack** sub-class
-		- Implementations
-		
-			| Class | Description |
-			|---|---|
-			| ArrayStack | Default implementation |
-			| Permanent ArrayStack | Has fixed capacity |
-
-		- Public interface
-		        
-			| Method | Description |
-			|---|---|
-			| Push | Adds an item at the top of the stack |
-			| Pop | Returns and removes the top item in the stack |
-			| Peek | Returns the top item in the stack |
-			| Size | Returns the count of elements in the stack |
-			
-
-
-- **Set**
-    - **Node Set** sub-class
-		- Implementations
-		
-			| Class | Description |
-			|---|---|
-			| Single-Link Set | Default implementation |
-	
-		- Public interface
-		
-			| Method | Description |
-			|---|---|
-			| Add | Adds a node link to the set |
-			| Remove (index) | Removes the node link at the given index |
-
-- **Map**
-   - **Node Map** sub-class
-
 ----------
 
 <!--## Download

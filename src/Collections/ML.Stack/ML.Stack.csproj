@@ -37,8 +37,10 @@
   <ItemGroup>
     <Compile Include="Core\Base\ArrayStackBase.cs" />
     <Compile Include="Core\Concrete\ArrayStack.cs" />
+    <Compile Include="Core\Concrete\PermanentArrayStack.cs" />
     <Compile Include="Core\Contracts\IStack.cs" />
     <Compile Include="Core\Exceptions\EmptyStackException.cs" />
+    <Compile Include="Core\Exceptions\FullStackException.cs" />
     <Compile Include="Core\Exceptions\InvalidStackCapacityException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

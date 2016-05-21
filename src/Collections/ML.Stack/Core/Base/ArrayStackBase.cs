@@ -73,7 +73,7 @@
         {
             if (this.NextPosition == this.Stack.Length)
             {
-                this.ResizeStack();
+                this.FullStackHandler();
             }
 
             this.Stack[this.NextPosition] = item;
@@ -116,6 +116,17 @@
         /// </summary>
         /// <returns>The count of items in the stack.</returns>
         public int Size() => this.NextPosition;
+
+        /// <summary>
+        /// Handles the behaviour when the stack is at full capacity.
+        /// </summary>
+        /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
+        /// <exception cref="ArgumentNullException">The <paramref name="body" /> argument is null.</exception>
+        /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
+        protected virtual void FullStackHandler()
+        {
+            this.ResizeStack();
+        }
 
         /// <summary>
         /// Resizes the stack.

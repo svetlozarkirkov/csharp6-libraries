@@ -1,5 +1,7 @@
 ﻿namespace Console.Demo
 {
+    using ML.Stack.Core.Concrete;
+
     /// <summary>
     /// Class App.
     /// </summary>
@@ -10,6 +12,7 @@
         /// </summary>
         private static void Main()
         {
+            var stack = new ArrayStack<string>(int.MaxValue);
         }
     }
 }

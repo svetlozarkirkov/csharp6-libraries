@@ -22,19 +22,13 @@ Various micro libraries for C# written from scratch using C# 6.0 syntax and feat
 ## Version
 * **Early Alpha**
 
-<h2>Test Dependencies</h2>
-
-|Name|
-|---|
-|Fluent Assertions|
-|NUnit|
-|Moq|
-|SpecFlow|
-
-
 <h2>List of libraries (constantly updated ; work in progress):</h2>
 
 #### **Collections** ####
+
+  - Map
+  - Set
+  - Stack
 
 ----------
 

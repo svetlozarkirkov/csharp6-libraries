@@ -28,7 +28,7 @@
             }
 
             this.Stack = new T[stackCapacity];
-            this.InitializedStackCapacity = stackCapacity;
+            //this.InitializedStackCapacity = stackCapacity;
             this.NextPosition = 0;
         }
 
@@ -60,7 +60,7 @@
         /// Gets the capacity with which the stack was initialized.
         /// </summary>
         /// <value>The initialized stack capacity.</value>
-        protected int InitializedStackCapacity { get; }
+        //protected int InitializedStackCapacity { get; }
 
         /// <summary>
         /// Adds the specified item on the top of the stack.
@@ -125,7 +125,7 @@
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
         protected virtual void FullStackHandler()
         {
-            this.ResizeStack();
+            this.ResizeStack(2);
         }
 
         /// <summary>
@@ -134,9 +134,9 @@
         /// <exception cref="ArgumentNullException">The <paramref name="body" /> argument is null.</exception>
         /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
-        protected virtual void ResizeStack()
+        protected virtual void ResizeStack(int multiplier)
         {
-            var resizedStack = new T[this.Stack.Length * 2];
+            var resizedStack = new T[this.Stack.Length * multiplier];
             Parallel.For(0, this.Stack.Length, i => { resizedStack[i] = this.Stack[i]; });
             this.Stack = resizedStack;
         }

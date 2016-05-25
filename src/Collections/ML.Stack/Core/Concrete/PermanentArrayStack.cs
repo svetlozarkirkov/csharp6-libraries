@@ -15,7 +15,7 @@
         /// </summary>
         /// <param name="stackCapacity">The initial stack capacity.</param>
         /// <exception cref="InvalidStackCapacityException">If the supplied capacity is not greater than zero.</exception>
-        protected PermanentArrayStack(int stackCapacity) : base(stackCapacity)
+        public PermanentArrayStack(int stackCapacity) : base(stackCapacity)
         {
         }
 

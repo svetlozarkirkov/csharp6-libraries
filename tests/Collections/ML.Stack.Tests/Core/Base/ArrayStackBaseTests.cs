@@ -46,7 +46,7 @@
         /// <exception cref="InvalidStackCapacityException">If the supplied capacity is not greater than zero.</exception>
         [Test]
         public void WhenStackIsCreated_IfInvalidCapacityGiven_ShouldThrowException
-            ([Values(-1, -100, -1000, -10000, int.MinValue)] int capacity)
+            ([Values(0, -1, -100, -1000, -10000)] int capacity)
         {
             // Arrange
             Action act = () =>
@@ -62,7 +62,7 @@
         /// <exception cref="InvalidStackCapacityException">If the supplied capacity is not greater than zero.</exception>
         [Test]
         public void WhenStackIsCreated_IfValidCapacityGiven_ShouldNotThrowException
-            ([Values(1, 100, 1000, 10000, int.MaxValue)] int capacity)
+            ([Values(1, 100, 1000, 10000)] int capacity)
         {
             // Arrange
             Action act = () =>
@@ -101,7 +101,7 @@
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
         [Test]
         public void WhenItemIsPushed_IfCurrentCapacityIsReached_ShouldNotThrowException
-            ([Values(1, 10, 100)] int capacity)
+            ([Values(1, 10, 100, 1000)] int capacity)
         {
             // Arrange
             var stub = new ArrayStackBaseStub<string>(capacity);

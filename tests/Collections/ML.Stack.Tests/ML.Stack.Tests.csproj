@@ -66,6 +66,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Core\Base\ArrayStackBaseTests.cs" />
+    <Compile Include="Core\Concrete\ArrayStackTests.cs" />
+    <Compile Include="Core\Concrete\PermanentArrayStackTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

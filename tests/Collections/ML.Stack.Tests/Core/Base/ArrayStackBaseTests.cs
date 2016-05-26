@@ -35,7 +35,7 @@
             // Arrange
             Action act = () =>
                 {
-                    var arrayStackBaseStub = new ArrayStackBaseStub<object>();
+                    var stack = new ArrayStackBaseStub<object>();
                 };
 
             // Act Assert
@@ -51,7 +51,7 @@
             // Arrange
             Action act = () =>
                 {
-                    var arrayStackBaseStub = new ArrayStackBaseStub<object>(capacity);
+                    var stack = new ArrayStackBaseStub<object>(capacity);
                 };
 
             // Act Assert
@@ -67,7 +67,7 @@
             // Arrange
             Action act = () =>
                 {
-                    var stub = new ArrayStackBaseStub<object>(capacity);
+                    var stack = new ArrayStackBaseStub<object>(capacity);
                 };
 
             // Act Assert
@@ -84,11 +84,11 @@
             ([Values(1, 32.1458758, "Hello World!", null)] object item)
         {
             // Arrange
-            var stub = new ArrayStackBaseStub<object>();
-            stub.Push(item);
+            var stack = new ArrayStackBaseStub<object>();
+            stack.Push(item);
 
             // Act
-            var poppedItem = stub.Pop();
+            var poppedItem = stack.Pop();
 
             // Assert
             Assert.AreSame(item, poppedItem);
@@ -104,14 +104,15 @@
             ([Values(1, 10, 100, 1000)] int capacity)
         {
             // Arrange
-            var stub = new ArrayStackBaseStub<string>(capacity);
+            var stack = new ArrayStackBaseStub<string>(capacity);
+
             for (var i = 0; i < capacity; i++)
             {
-                stub.Push("Hello World!");
+                stack.Push("Hello World!");
             }
 
             // Act
-            Action act = () => stub.Push("Hello World!");
+            Action act = () => stack.Push("Hello World!");
 
             // Assert
             act.ShouldNotThrow<IndexOutOfRangeException>();
@@ -124,10 +125,10 @@
         public void WhenPeek_IfStackIsEmpty_ShouldThrowException()
         {
             // Arrange
-            var stub = new ArrayStackBaseStub<object>();
+            var stack = new ArrayStackBaseStub<object>();
 
             // Act
-            Action act = () => stub.Peek();
+            Action act = () => stack.Peek();
 
             // Assert
             act.ShouldThrowExactly<EmptyStackException>();
@@ -143,11 +144,11 @@
             ([Values(2, -1232.412412, "Hello World")] object item)
         {
             // Arrange
-            var stub = new ArrayStackBaseStub<object>();
-            stub.Push(item);
+            var stack = new ArrayStackBaseStub<object>();
+            stack.Push(item);
 
             // Act
-            var peekedItem = stub.Peek();
+            var peekedItem = stack.Peek();
 
             // Assert
             Assert.AreSame(item, peekedItem);
@@ -160,10 +161,10 @@
         public void WhenPop_IfStackIsEmpty_ShouldThrowException()
         {
             // Arrange
-            var stub = new ArrayStackBaseStub<object>();
+            var stack = new ArrayStackBaseStub<object>();
 
             // Act
-            Action act = () => stub.Pop();
+            Action act = () => stack.Pop();
 
             // Assert
             act.ShouldThrowExactly<EmptyStackException>();
@@ -178,17 +179,18 @@
             ([Values(0, 1, 10, 100)] int itemsCount)
         {
             // Arrange
-            var stub = new ArrayStackBaseStub<string>();
+            var stack = new ArrayStackBaseStub<string>();
+
             for (var i = 0; i < itemsCount; i++)
             {
-                stub.Push("Hello World!");
+                stack.Push("Hello World!");
             }
 
             // Act
-            var stubSize = stub.Size();
+            var stackSize = stack.Size();
 
             // Assert
-            Assert.AreEqual(itemsCount, stubSize);
+            Assert.AreEqual(itemsCount, stackSize);
         }
     }
 }

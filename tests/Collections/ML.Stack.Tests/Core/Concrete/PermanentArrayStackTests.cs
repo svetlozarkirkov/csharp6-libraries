@@ -51,14 +51,15 @@
             ([Values(1, 10, 100, 1000, 10000)] int capacity)
         {
             // Arrange
-            var stub = new PermanentArrayStack<string>(capacity);
+            var stack = new PermanentArrayStack<string>(capacity);
+
             for (var i = 0; i < capacity; i++)
             {
-                stub.Push("Hello World!");
+                stack.Push("Hello World!");
             }
 
             // Act
-            Action act = () => stub.Push("Hello World!");
+            Action act = () => stack.Push("Hello World!");
 
             // Assert
             act.ShouldThrowExactly<FullStackException>();

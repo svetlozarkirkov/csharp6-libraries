@@ -4,48 +4,42 @@
     /// Interface ISet
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    /// TODO Edit XML Comment Template for ISet
     public interface ISet<T>
     {
         /// <summary>
-        /// Adds the specified item.
+        /// Adds the specified item in the set.
         /// </summary>
         /// <param name="item">The item.</param>
-        /// TODO Edit XML Comment Template for Add
         void Add(T item);
 
         /// <summary>
-        /// Determines whether [contains] [the specified item].
+        /// Determines whether the set contains the specified item.
         /// </summary>
         /// <param name="item">The item.</param>
-        /// <returns><c>true</c> if [contains] [the specified item]; otherwise, <c>false</c>.</returns>
-        /// TODO Edit XML Comment Template for Contains
+        /// <returns><c>true</c> if the set contains the specified item; otherwise, <c>false</c>.</returns>
         bool Contains(T item);
 
         /// <summary>
-        /// Inserts the specified item.
+        /// Inserts the specified item at the specified index in the set.
         /// </summary>
         /// <param name="item">The item.</param>
         /// <param name="index">The index.</param>
-        /// TODO Edit XML Comment Template for Insert
         void Insert(T item, int index);
 
         /// <summary>
-        /// Removes the specified item.
+        /// Removes the specified item from the set.
         /// </summary>
-        /// <param name="item">The item.</param>
-        /// TODO Edit XML Comment Template for Remove
+        /// <param name="item">The item which will be removed.</param>
         void Remove(T item);
 
         /// <summary>
-        /// Removes at.
+        /// Removes the item at the specified index.
         /// </summary>
-        /// <param name="index">The index.</param>
-        /// TODO Edit XML Comment Template for RemoveAt
+        /// <param name="index">The index of the item we want to remove.</param>
         void RemoveAt(int index);
 
         /// <summary>
-        /// Sizes this instance.
+        /// Returns the count of items in the set.
         /// </summary>
         /// <returns>System.Int32.</returns>
         int Size();

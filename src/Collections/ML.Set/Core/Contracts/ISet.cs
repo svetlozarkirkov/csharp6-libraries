@@ -33,6 +33,12 @@
         void Remove(T item);
 
         /// <summary>
+        /// Removes all items from the set that match the given item.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        void RemoveAll(T item);
+
+        /// <summary>
         /// Removes the item at the specified index.
         /// </summary>
         /// <param name="index">The index of the item we want to remove.</param>

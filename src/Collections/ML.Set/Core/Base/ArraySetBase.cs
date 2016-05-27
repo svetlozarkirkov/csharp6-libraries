@@ -1,6 +1,7 @@
 ﻿namespace ML.Set.Core.Base
 {
     using System;
+    using System.Linq;
     using System.Threading.Tasks;
     using ML.Set.Core.Contracts;
     using ML.Set.Core.Exceptions;
@@ -62,7 +63,7 @@
         /// <exception cref="ArgumentNullException">The <paramref name="body" /> argument is null.</exception>
         /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
-        public void Add(T item)
+        public virtual void Add(T item)
         {
             if (this.LastPosition == this.Set.Length)
             {
@@ -78,17 +79,13 @@
         /// </summary>
         /// <param name="item">The item.</param>
         /// <returns><c>true</c> if the set contains the specified item; otherwise, <c>false</c>.</returns>
-        /// <exception cref="System.NotImplementedException"></exception>
-        public bool Contains(T item)
-        {
-            throw new System.NotImplementedException();
-        }
+        public virtual bool Contains(T item) => this.Set.Contains(item);
 
         /// <summary>
         /// Inserts the specified item at the specified index in the set.
         /// </summary>
-        /// <param name="item">The item.</param>
-        /// <param name="index">The index.</param>
+        /// <param name="item">The item to be inserted.</param>
+        /// <param name="index">The index where the item will be inserted.</param>
         /// <exception cref="System.NotImplementedException"></exception>
         public void Insert(T item, int index)
         {
@@ -103,6 +100,16 @@
         public void Remove(T item)
         {
             throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// Removes all items from the set that match the given item.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <exception cref="NotImplementedException"></exception>
+        public void RemoveAll(T item)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>

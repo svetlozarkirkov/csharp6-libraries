@@ -93,7 +93,7 @@
         }
 
         /// <summary>
-        /// Removes the specified item from the set.
+        /// Removes the first occurence of the specified item from the set.
         /// </summary>
         /// <param name="item">The item which will be removed.</param>
         /// <exception cref="System.NotImplementedException"></exception>

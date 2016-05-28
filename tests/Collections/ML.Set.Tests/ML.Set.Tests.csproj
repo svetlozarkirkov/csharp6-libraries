@@ -74,6 +74,12 @@
   <ItemGroup>
     <Analyzer Include="..\..\..\packages\MoqAnalyzer.1.0.5922.38414\analyzers\dotnet\cs\MoqAnalyzer.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Collections\ML.Set\ML.Set.csproj">
+      <Project>{30c707ef-4524-47a7-82c6-52d64d07c22a}</Project>
+      <Name>ML.Set</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

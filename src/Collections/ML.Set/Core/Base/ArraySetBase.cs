@@ -60,7 +60,7 @@
         /// Adds the specified item in the set.
         /// </summary>
         /// <param name="item">The item.</param>
-        /// <exception cref="ArgumentNullException">The <paramref name="body" /> argument is null.</exception>
+        /// <exception cref="ArgumentNullException">The <paramref name="item" /> argument is null.</exception>
         /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
         public virtual void Add(T item)
@@ -86,10 +86,26 @@
         /// </summary>
         /// <param name="item">The item to be inserted.</param>
         /// <param name="index">The index where the item will be inserted.</param>
-        /// <exception cref="System.NotImplementedException"></exception>
-        public void Insert(T item, int index)
+        /// <exception cref="ArgumentNullException">The <paramref name="item" /> argument is null.</exception>
+        /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
+        /// <exception cref="InvalidSetIndexException">If the given index is below zero.</exception>
+        /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
+        public virtual void Insert(T item, int index)
         {
-            throw new System.NotImplementedException();
+            if (index < 0)
+            {
+                throw new InvalidSetIndexException(
+                    nameof(index),
+                    index,
+                    "The specified index is not valid.");
+            }
+
+            if (index >= this.Set.Length)
+            {
+                this.ResizeSet(this.Set.Length + (index - this.Set.Length) + DefaultSetCapacity);
+            }
+
+            this.Set[index] = item;
         }
 
         /// <summary>
@@ -140,19 +156,19 @@
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
         protected virtual void FullSetHandler()
         {
-            this.ResizeSet(2);
+            this.ResizeSet(this.Set.Length + DefaultSetCapacity);
         }
 
         /// <summary>
         /// Resizes the set.
         /// </summary>
-        /// <param name="multiplier">The multiplier.</param>
+        /// <param name="newLength">The new length of the underlying array.</param>
         /// <exception cref="ArgumentNullException">The <paramref name="body" /> argument is null.</exception>
         /// <exception cref="AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
         /// <exception cref="OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue" /> elements.</exception>
-        protected virtual void ResizeSet(int multiplier)
+        protected virtual void ResizeSet(int newLength)
         {
-            var resizedSet = new T[this.Set.Length * multiplier];
+            var resizedSet = new T[newLength];
             Parallel.For(0, this.Set.Length, i => { resizedSet[i] = this.Set[i]; });
             this.Set = resizedSet;
         }

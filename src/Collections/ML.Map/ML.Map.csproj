@@ -36,7 +36,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Base\ArrayMapBase.cs" />
+    <Compile Include="Core\Concrete\ArrayMap.cs" />
     <Compile Include="Core\Contracts\IMap.cs" />
+    <Compile Include="Core\Contracts\IMapPair.cs" />
+    <Compile Include="Core\Exceptions\InvalidMapCapacityException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

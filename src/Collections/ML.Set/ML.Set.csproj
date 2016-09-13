@@ -39,6 +39,7 @@
     <Compile Include="Core\Concrete\ArraySet.cs" />
     <Compile Include="Core\Contracts\ISet.cs" />
     <Compile Include="Core\Exceptions\InvalidSetCapacityException.cs" />
+    <Compile Include="Core\Exceptions\InvalidSetIndexException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

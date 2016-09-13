@@ -1,7 +1,7 @@
 ﻿namespace Console.Demo
 {
     using System;
-    using ML.Set.Core.Concrete;
+    using ML.Map.Core.Concrete;
 
     /// <summary>
     /// Class App.
@@ -13,7 +13,7 @@
         /// </summary>
         private static void Main()
         {
-            
+            var map = new ArrayMap<string, string>();
         }
     }
 }

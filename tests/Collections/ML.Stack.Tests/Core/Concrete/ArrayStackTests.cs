@@ -2,10 +2,13 @@
 {
     using System;
     using FluentAssertions;
-    using NUnit.Framework;
     using ML.Stack.Core.Concrete;
     using ML.Stack.Core.Exceptions;
+    using NUnit.Framework;
 
+    /// <summary>
+    /// The array stack tests.
+    /// </summary>
     [TestFixture]
     public class ArrayStackTests
     {

@@ -1,11 +1,23 @@
-﻿namespace ML.Set.Tests.Core.Base
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ArraySetBaseTests.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The array set <see langword="base" /> tests.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace ML.Set.Tests.Core.Base
 {
     using System;
     using FluentAssertions;
-    using NUnit.Framework;
     using ML.Set.Core.Base;
     using ML.Set.Core.Exceptions;
+    using NUnit.Framework;
 
+    /// <summary>
+    /// The array set <see langword="base"/> tests.
+    /// </summary>
     [TestFixture]
     public class ArraySetBaseTests
     {

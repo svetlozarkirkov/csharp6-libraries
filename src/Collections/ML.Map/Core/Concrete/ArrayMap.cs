@@ -1,4 +1,13 @@
-﻿namespace ML.Map.Core.Concrete
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ArrayMap.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Class ArrayMap.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace ML.Map.Core.Concrete
 {
     using ML.Map.Core.Base;
     using ML.Map.Core.Exceptions;

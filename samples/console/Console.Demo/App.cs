@@ -1,4 +1,13 @@
-﻿namespace Console.Demo
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="App.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Class App.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace Console.Demo
 {
     using System;
     using ML.Map.Core.Concrete;
@@ -14,6 +23,7 @@
         private static void Main()
         {
             var map = new ArrayMap<string, string>();
+            Console.WriteLine(map);
         }
     }
 }

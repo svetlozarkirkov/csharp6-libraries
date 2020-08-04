@@ -11,7 +11,7 @@
     /// <seealso cref="Contracts.IMap{TKey, TValue}" />
     public abstract class ArrayMapBase<TKey, TValue> : IMap<TKey, TValue>
     {
-        /// <exception cref="InvalidMapCapacityException">If the capacity is zero or less.</exception>
+        /// <exception cref="InvalidMapCapacityException">If the <paramref name="capacity"/> is zero or less.</exception>
         protected ArrayMapBase(int capacity)
         {
             if (capacity <= 0)
@@ -29,14 +29,23 @@
         /// <exception cref="InvalidMapCapacityException">If the capacity is zero or less.</exception>
         protected ArrayMapBase() : this(DefaultMapCapacity) { }
 
+        /// <summary>
+        /// The default map capacity.
+        /// </summary>
         protected static int DefaultMapCapacity => 16;
 
+        /// <summary>
+        /// Gets or sets the map.
+        /// </summary>
         protected IMapPair<TKey, TValue>[] Map { get; set; }
 
+        /// <summary>
+        /// Gets or sets the last position.
+        /// </summary>
         protected int LastPosition { get; set; }
 
         /// <summary>
-        /// Adds the specified key and its value into the map.
+        /// Adds the specified <paramref name="key"/> and its <paramref name="value"/> into the map.
         /// </summary>
         /// <param name="key">The key.</param>
         /// <param name="value">The value.</param>
@@ -48,8 +57,8 @@
         /// <summary>
         /// Gets the value associated with the specified key.
         /// </summary>
-        /// <param name="key">The key.</param>
-        /// <returns>TValue.</returns>
+        /// <param name="key">The <paramref name="key"/>.</param>
+        /// <returns><typeparamref name="TValue"/>.</returns>
         /// <exception cref="System.NotImplementedException"></exception>
         public TValue Get(TKey key)
         {
@@ -57,10 +66,10 @@
         }
 
         /// <summary>
-        /// Determines whether the specified key exists in the map.
+        /// Determines whether the specified <paramref name="key"/> exists in the map.
         /// </summary>
-        /// <param name="key">The key.</param>
-        /// <returns><c>true</c> if the specified key exists in the map; otherwise, <c>false</c>.</returns>
+        /// <param name="key">The <paramref name="key"/>.</param>
+        /// <returns><c><see langword="true"/></c> if the specified <paramref name="key"/> exists in the map; otherwise, <c><see langword="false"/></c>.</returns>
         /// <exception cref="System.NotImplementedException"></exception>
         public bool HasKey(TKey key)
         {
@@ -68,10 +77,10 @@
         }
 
         /// <summary>
-        /// Determines whether the specified value exists in the map.
+        /// Determines whether the specified <paramref name="value"/> exists in the map.
         /// </summary>
-        /// <param name="value">The value.</param>
-        /// <returns><c>true</c> if the specified value exists in the map; otherwise, <c>false</c>.</returns>
+        /// <param name="value">The <paramref name="value"/>.</param>
+        /// <returns><c><see langword="true"/></c> if the specified value exists in the map; otherwise, <c>false</c>.</returns>
         /// <exception cref="System.NotImplementedException"></exception>
         public bool HasValue(TValue value)
         {

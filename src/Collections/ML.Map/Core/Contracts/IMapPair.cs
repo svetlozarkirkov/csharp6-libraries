@@ -1,4 +1,13 @@
-﻿namespace ML.Map.Core.Contracts
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="IMapPair.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Interface IMapPair
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace ML.Map.Core.Contracts
 {
     /// <summary>
     /// Interface IMapPair

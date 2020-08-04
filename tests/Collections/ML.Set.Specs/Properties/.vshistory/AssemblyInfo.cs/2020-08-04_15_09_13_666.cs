@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Map")]
+[assembly: AssemblyTitle("ML.Set.Specs")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Map")]
+[assembly: AssemblyProduct("ML.Set.Specs")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2417ab44-1d7e-4d18-b1ca-ec5c9034f535")]
+[assembly: Guid("ed89c309-f233-4d0b-a1f3-a4e218df892f")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.1.0.8")]
-[assembly: AssemblyFileVersion("1.0.0.38")]
+[assembly: AssemblyVersion("1.0.0.22")]
+[assembly: AssemblyFileVersion("1.0.0.22")]

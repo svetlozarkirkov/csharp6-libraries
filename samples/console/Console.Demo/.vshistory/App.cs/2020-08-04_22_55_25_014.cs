@@ -24,9 +24,8 @@ namespace Console.Demo
         /// </summary>
         private static void Main()
         {
-            var map = new ArrayMap<string, int>();
+            var map = new ArrayMap<string, int>(-1);
             Console.WriteLine(map);
-            Console.WriteLine(map.Size());
         }
     }
 }

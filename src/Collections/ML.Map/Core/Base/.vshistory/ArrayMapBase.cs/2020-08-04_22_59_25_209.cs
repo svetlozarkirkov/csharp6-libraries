@@ -12,7 +12,6 @@
     public abstract class ArrayMapBase<TKey, TValue> : IMap<TKey, TValue>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ArrayMapBase{TKey,TValue}"/> class. 
         /// The array map <see langword="base"/>.
         /// </summary>
         /// <param name="capacity">
@@ -35,13 +34,7 @@
             this.LastPosition = 0;
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ArrayMapBase{TKey,TValue}"/> class. 
-        /// The array map <see langword="base"/>.
-        /// </summary>
-        /// <exception cref="InvalidMapCapacityException">
-        /// If the capacity is zero or less.
-        /// </exception>
+        /// <exception cref="InvalidMapCapacityException">If the capacity is zero or less.</exception>
         protected ArrayMapBase() : this(DefaultMapCapacity) { }
 
         /// <summary>

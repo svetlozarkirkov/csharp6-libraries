@@ -11,16 +11,7 @@
     /// <seealso cref="Contracts.IMap{TKey, TValue}" />
     public abstract class ArrayMapBase<TKey, TValue> : IMap<TKey, TValue>
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ArrayMapBase{TKey,TValue}"/> class. 
-        /// The array map <see langword="base"/>.
-        /// </summary>
-        /// <param name="capacity">
-        /// The capacity.
-        /// </param>
-        /// <exception cref="InvalidMapCapacityException">
-        /// If the <paramref name="capacity"/> is zero or less.
-        /// </exception>
+        /// <exception cref="InvalidMapCapacityException">If the <paramref name="capacity"/> is zero or less.</exception>
         protected ArrayMapBase(int capacity)
         {
             if (capacity <= 0)
@@ -35,13 +26,7 @@
             this.LastPosition = 0;
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ArrayMapBase{TKey,TValue}"/> class. 
-        /// The array map <see langword="base"/>.
-        /// </summary>
-        /// <exception cref="InvalidMapCapacityException">
-        /// If the capacity is zero or less.
-        /// </exception>
+        /// <exception cref="InvalidMapCapacityException">If the capacity is zero or less.</exception>
         protected ArrayMapBase() : this(DefaultMapCapacity) { }
 
         /// <summary>

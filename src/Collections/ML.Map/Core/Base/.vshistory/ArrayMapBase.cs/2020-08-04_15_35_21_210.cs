@@ -11,16 +11,7 @@
     /// <seealso cref="Contracts.IMap{TKey, TValue}" />
     public abstract class ArrayMapBase<TKey, TValue> : IMap<TKey, TValue>
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ArrayMapBase{TKey,TValue}"/> class. 
-        /// The array map <see langword="base"/>.
-        /// </summary>
-        /// <param name="capacity">
-        /// The capacity.
-        /// </param>
-        /// <exception cref="InvalidMapCapacityException">
-        /// If the <paramref name="capacity"/> is zero or less.
-        /// </exception>
+        /// <exception cref="InvalidMapCapacityException">If the <paramref name="capacity"/> is zero or less.</exception>
         protected ArrayMapBase(int capacity)
         {
             if (capacity <= 0)
@@ -35,29 +26,23 @@
             this.LastPosition = 0;
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ArrayMapBase{TKey,TValue}"/> class. 
-        /// The array map <see langword="base"/>.
-        /// </summary>
-        /// <exception cref="InvalidMapCapacityException">
-        /// If the capacity is zero or less.
-        /// </exception>
+        /// <exception cref="InvalidMapCapacityException">If the capacity is zero or less.</exception>
         protected ArrayMapBase() : this(DefaultMapCapacity) { }
 
         /// <summary>
         /// The default map capacity.
         /// </summary>
-        private static int DefaultMapCapacity => 16;
+        protected static int DefaultMapCapacity => 16;
 
         /// <summary>
         /// Gets or sets the map.
         /// </summary>
-        private IMapPair<TKey, TValue>[] Map { get; set; }
+        protected IMapPair<TKey, TValue>[] Map { get; set; }
 
         /// <summary>
         /// Gets or sets the last position.
         /// </summary>
-        private int LastPosition { get; set; }
+        protected int LastPosition { get; set; }
 
         /// <summary>
         /// Adds the specified <paramref name="key"/> and its <paramref name="value"/> into the map.

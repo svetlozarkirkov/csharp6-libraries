@@ -26,6 +26,7 @@ namespace Console.Demo
         {
             var map = new ArrayMap<string, int>();
             Console.WriteLine(map);
+            Console.WriteLine(map.Size());
         }
     }
 }

@@ -3,7 +3,7 @@ C# 6.0 - Micro Libraries
 
 [![Build Status](https://travis-ci.org/svetlozarkirkov/csharp6-libraries.svg?branch=master)](https://travis-ci.org/svetlozarkirkov/csharp6-libraries)
 
-**Target framework: .NET 4.5**
+**Target framework: .NET 4.8**
 
 <h2>About</h2>
 
@@ -20,7 +20,7 @@ Various micro libraries for C# written from scratch using C# 6.0 syntax and feat
 - :link: **Ports to other languages**
 
 ## Version
-* **Early Alpha**
+* **Alpha**
 
 <h2>List of libraries (constantly updated ; work in progress):</h2>
 

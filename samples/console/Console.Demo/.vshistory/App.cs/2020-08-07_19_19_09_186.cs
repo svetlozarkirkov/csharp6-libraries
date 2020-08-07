@@ -23,7 +23,7 @@ namespace Console.Demo
         private static void Main()
         {
             var map = new ArrayMap<string, int>(5);
-            Console.WriteLine(map);
+            Console.WriteLine(map.Size());
         }
     }
 }

@@ -10,6 +10,8 @@
 namespace Console.Demo
 {
     using System;
+    using System.Net;
+
     using ML.Map.Core.Concrete;
 
     /// <summary>
@@ -22,7 +24,7 @@ namespace Console.Demo
         /// </summary>
         private static void Main()
         {
-            var map = new ArrayMap<string, int>(5);
+            var map = new ArrayMap<string, int>();
             Console.WriteLine(map);
         }
     }
